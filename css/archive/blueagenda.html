@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrum Essentials Workshop Agenda</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #eee;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Blue box with rounded corners and positioning */
+        .agenda-box {
+            background-color: #dbeef7;
+            border-radius: 30px; /* Adjust this value for more/less rounded corners */
+            padding: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            position: relative; /* Ensures that absolute positioning is relative to this container */
+            overflow: hidden; /* Prevents overflow of absolute elements */
+        }
+
+        /* Top and Bottom Banner Image Styles */
+        .banner {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: auto;
+            z-index: 10; /* Ensure banners are above other elements */
+            transition: all 0.3s ease; /* Optional: Smooth transitions */
+        }
+
+        .top-banner {
+            top: 0;
+        }
+
+        .bottom-banner {
+            bottom: 0;
+        }
+
+        /* Agenda Content Container */
+        .agenda-content {
+            padding-top: 100px; /* Space for top banner */
+            padding-bottom: 100px; /* Space for bottom banner */
+        }
+
+        /* Main Title Styles */
+        .main-title {
+            text-transform: uppercase;
+            font-size: 28px;
+            font-weight: bold;
+            color: rgb(24, 35, 64);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* Description Text Styles */
+        .main-description {
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Agenda Container */
+        .agenda-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap; /* Ensures responsiveness */
+        }
+
+        /* Agenda Title Styles */
+        .agenda-title-uppercase {
+            text-transform: uppercase;
+        }
+
+        .agenda-text-letter-spacing-xs {
+            letter-spacing: 1px;
+        }
+
+        .agenda-text-dark {
+            color: #333;
+        }
+
+        .agenda-text-sm {
+            font-size: 0.9em;
+        }
+
+        /* Day Heading Styles */
+        .agenda-day-heading {
+            color: rgb(24, 35, 64);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* Timeline Styles */
+        .agenda-list-timeline {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            list-style: none;
+        }
+
+        .agenda-list-timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #ccc;
+        }
+
+        .agenda-list-timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .agenda-list-timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Responsive Adjustments for Banners */
+        @media (max-width: 767.98px) {
+            .agenda-content {
+                padding-top: 80px; /* Reduced space for smaller screens */
+                padding-bottom: 80px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .agenda-content {
+                padding-top: 120px; /* Increased space for larger screens */
+                padding-bottom: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="agenda-box">
+        <!-- Top Banner -->
+        <img class="banner top-banner" 
+             src="images/Decoration Icons/topBannerforLightBlueSection.png" 
+             alt="Top Banner">
+
+        <!-- Agenda Content -->
+        <div class="agenda-content">
+            <!-- Main Title -->
+            <div class="main-title">COURSE SCHEDULE & HIGHLIGHTS</div>
+            <!-- Description -->
+            <div class="main-description">
+                This course runs from 9:00 AM to 5:00 PM Mountain Time on each day and is held virtually over Zoom. All sessions are fully live-online with your trainer.
+            </div>
+            <!-- Agenda Columns -->
+            <div class="agenda-container">
+                <!-- Day 1 Column -->
+                <div class="col-md-6">
+                    <h2 class="agenda-title-uppercase agenda-day-heading">Day 1</h2>
+                    <ul class="agenda-list-timeline">
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">What Scrum is NOT</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">The Agile Manifesto</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Scrum Overview</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Scrum Accountabilities</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Crafting Sprint Goals</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Choosing a Sprint Length</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Leadership Skills for Scrum Masters</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Working with the Product Owner</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Building Effective Teams</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Reducing Technical Debt</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Technical Practices</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Articulating the Value of Scrum</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Day 2 Column -->
+                <div class="col-md-6">
+                    <h2 class="agenda-title-uppercase agenda-day-heading">Day 2</h2>
+                    <ul class="agenda-list-timeline">
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Launching New Scrum Teams</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Scrum Team Formation</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Scrum Events Deep Dive</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Product Backlog Refinement</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Scrum Simulation</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Facilitation Skills</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Definition of Done</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Empirical Scrum Pillars</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Impediment Removal</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Practice Exam</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Q & A</p>
+                        </li>
+                        <li class="agenda-list-timeline-item">
+                            <p class="agenda-text-dark agenda-text-sm agenda-title-uppercase">Closing Activities</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Banner -->
+        <img class="banner bottom-banner" 
+             src="images/Decoration Icons/bottom-bannerforLightBlueSection.png" 
+             alt="Bottom Banner">
+    </div>
+
+    <!-- Bootstrap JS (optional, if using Bootstrap components that require JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

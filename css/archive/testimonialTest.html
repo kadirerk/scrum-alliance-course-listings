@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @media (max-width: 767px) {
+            .carousel-inner .carousel-item > div {
+                display: none;
+            }
+            .carousel-inner .carousel-item > div:first-child {
+                display: block;
+            }
+        }
+        .carousel-inner .carousel-item.active,
+        .carousel-inner .carousel-item-next,
+        .carousel-inner .carousel-item-prev {
+            display: flex;
+        }
+        @media (min-width: 768px) {
+            #carousel-0a1d2d59c4de4d45b6758886303ac7d5 > .carousel-inner .carousel-item-end.active,
+            #carousel-0a1d2d59c4de4d45b6758886303ac7d5 > .carousel-inner .carousel-item-next {
+                transform: translateX(100%);
+            }
+            #carousel-0a1d2d59c4de4d45b6758886303ac7d5 > .carousel-inner .carousel-item-start.active,
+            #carousel-0a1d2d59c4de4d45b6758886303ac7d5 > .carousel-inner .carousel-item-prev {
+                transform: translateX(-100%);
+            }
+        }
+        #carousel-0a1d2d59c4de4d45b6758886303ac7d5 > .carousel-inner .carousel-item-end,
+        #carousel-0a1d2d59c4de4d45b6758886303ac7d5 > .carousel-inner .carousel-item-start {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+
+<div id="wCustomContainer_0ccb4e49-01e5-4ffd-b244-5b3e2fe68062" class="container text-center p-0">
+    <div class="offset-lg-2 col-lg-8">
+        <div id="carousel-0a1d2d59c4de4d45b6758886303ac7d5" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner h-100 w-100">
+                <div class="carousel-item h-100 w-100">
+                    <div class="wCarousel__SlideContent h-100 w-100 ps-3 pe-3 pt-3">
+                        <div style="background-color: #FFFFFF;" class="card wCard-quote-layout2 text-center text-lg-start">
+                            <div style="text-align: center;">
+                                <img class="wCard-quote__icon" src="/images/quote-icon.svg">
+                                <div class="h3 mb-3">Walk away with ready-to-use skills</div>
+                                <p class="wCard-quote__text">"Excellent and informative course. I definitely took away tools and ideas I plan on using on the job. Would recommend ten times over. A++"</p>
+                                <span class="wCard-quote__author-name d-block py-1"></span>
+                                <div class="wCard-quote__author-position"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item h-100 w-100 active">
+                    <div class="wCarousel__SlideContent h-100 w-100 ps-3 pe-3 pt-3">
+                        <div style="background-color: #FFFFFF;" class="card wCard-quote-layout2 text-center text-lg-start">
+                            <div style="text-align: center;">
+                                <img class="wCard-quote__icon" src="/images/quote-icon.svg">
+                                <div class="h3 mb-3">Navigate everyday product issues</div>
+                                <p class="wCard-quote__text">"As a product owner, I was looking outside of my organization for new ways to tackle everyday product owner issues (backlog management, refinement, sprint goals, etc.) This class was great for providing some new ideas I can bring into our organization."</p>
+                                <span class="wCard-quote__author-name d-block py-1"></span>
+                                <div class="wCard-quote__author-position"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item h-100 w-100">
+                    <div class="wCarousel__SlideContent h-100 w-100 ps-3 pe-3 pt-3">
+                        <div style="background-color: #FFFFFF;" class="card wCard-quote-layout2 text-center text-lg-start">
+                            <div style="text-align: center;">
+                                <img class="wCard-quote__icon" src="/images/quote-icon.svg">
+                                <div class="h3 mb-3">Understand product owner skills and accountabilities</div>
+                                <p class="wCard-quote__text">"CSPO gives a clear understanding of the product owner's role and how it relates to the entire scrum team. Really a great course!"</p>
+                                <span class="wCard-quote__author-name d-block py-1"></span>
+                                <div class="wCard-quote__author-position"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a class="carousel-control-prev" href="#carousel-0a1d2d59c4de4d45b6758886303ac7d5" role="button" data-bs-slide="prev" style="display:none;">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-0a1d2d59c4de4d45b6758886303ac7d5" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carousel-0a1d2d59c4de4d45b6758886303ac7d5" data-bs-slide-to="0"></button>
+                <button class="active" type="button" data-bs-target="#carousel-0a1d2d59c4de4d45b6758886303ac7d5" data-bs-slide-to="1" aria-current="true"></button>
+                <button type="button" data-bs-target="#carousel-0a1d2d59c4de4d45b6758886303ac7d5" data-bs-slide-to="2"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,2521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags and Bootstrap CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superheroes Academy - Certified ScrumMaster® (CSM®)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js"></script>
+   <script>
+        window.addEventListener('message', function(event) {
+            // Verify the origin of the message
+            if (event.origin !== 'https://www.scrumalliance.org') { // Replace with your actual parent domain
+                console.warn('Received message from unauthorized origin:', event.origin);
+                return;
+            }
+        
+            const message = event.data;
+        
+            // Check the message type
+            if (message.type === 'dateInfo') {
+                const dateInfoContainer = document.getElementById('dateInfoContainer');
+                if (dateInfoContainer) {
+                    dateInfoContainer.innerHTML = message.data;
+                }
+            }
+        }, false);
+    </script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "otds3puo6a");
+    </script>
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+       .main-container {
+            max-width: none; /* Set a reasonable max width */
+            margin: 0; /* Center the container */
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 80px; /* Space between columns */
+            padding: 4%;
+            overflow-x: hidden;
+        }
+
+        /* padding to all row child elements */
+        .row > * {
+            padding: 1%
+        }
+
+       @font-face {
+            font-family: 'Graphik';
+            src: url('fonts/Graphik-Medium-Trial.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'Graphik-Semibold';
+            src: url('fonts/Graphik-Semibold-Trial.otf') format('opentype');
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Graphik', sans-serif;
+            font-size: 16px;
+            color: rgb(24, 35, 64);
+            margin: 0;
+            /* padding: 20px; */
+            line-height: 1.6;
+            background-color: rgb(255, 255, 255);
+        }
+
+        h1 {
+            font-family: 'Graphik-Semibold', sans-serif;
+            font-size: 62px;
+            font-weight: normal;
+            margin-bottom: 16px;
+            margin-top: 16px;
+        }
+
+        h2 {
+            font-family: 'Graphik-Semibold', sans-serif;
+            font-size: 42px;
+        }
+        @media (max-width: 767px) {
+            h2 {
+                font-size: 35px;
+            }
+        }
+
+        h3 {
+            font-family: 'Graphik-Semibold', sans-serif;
+            font-size: 32px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            width: 160px;
+        }
+
+        /* Primary Button Styles */
+        .btn-primary {
+            background-color: #395edf;
+            color: #ffffff;
+            border: none; /* Remove default border */
+            border-radius: 100px;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+        }
+
+        /* Secondary Button Styles */
+        .btn-secondary {
+            background-color: #ffffff;
+            color: #395edf;
+            border: 2px solid #395edf; /* Define border for visibility */
+            border-radius: 100px;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+
+        /* Hover State for Secondary Button */
+        .btn-secondary:hover {
+            background-color: #0b5ed7; /* Desired hover background color */
+            color: #ffffff;             /* Text color on hover */
+            border-color: #0b5ed7;      /* Border color matches background */
+        }
+
+        /* Active/Open State for Secondary Button when Dropdown is Open */
+        .dropdown.show .btn-secondary,
+        .btn-secondary[aria-expanded="true"] {
+            background-color: #0b5ed7; /* Same as hover background */
+            color: #ffffff;
+            border-color: #0b5ed7;
+        }
+
+        /* Focus State for Accessibility */
+        .btn-secondary:focus {
+            box-shadow: 0 0 0 3px rgba(11, 94, 215, 0.5);
+            outline: none; /* Remove default outline */
+        }
+
+        .courseIntroContainer {
+            min-height: 430px;
+            background-color: rgb(254, 228, 210);
+        }
+
+        .boxed-section {
+            /*padding: 40px;*/
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .trainer-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        .py-5 {
+            padding-top: 3rem !important;
+            padding-bottom: 3rem !important;
+        }
+
+        .pb-lg-0 {
+            padding-bottom: 0 !important;
+        }
+
+        .z-1 {
+            z-index: 1 !important;
+        }
+
+        .text-center {
+            text-align: center !important;
+        }
+
+        .col img {
+            transition: transform 0.2s ease;
+        }
+        
+        .col img:hover {
+            transform: scale(1.1);
+        }
+
+        .trainer-image {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        .trainer-name {
+            color: rgb(24, 35, 64);
+            margin-bottom: 5px;
+        }
+
+        .trainer-credentials {
+            color: #666;
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .trainer-bio p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Adjust margins for better flow */
+        .mb-2 {
+            margin-bottom: 0.5rem !important;
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem !important;
+        }
+
+        .mb-0 {
+            margin-bottom: 0 !important;
+        }
+
+        /* Add this new font-face declaration if not already present */
+        @font-face {
+            font-family: 'Graphik-Regular';
+            src: url('fonts/Graphik-Regular-Trial.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .section-label {
+            font-family: 'Graphik-Medium', sans-serif;  /* Updated font-family */
+            font-size: 12px;
+            color: rgb(24, 35, 64);
+            margin-bottom: 8px;
+        }
+
+        /* Agenda Styles */
+        /* Blue box with rounded corners and positioning */
+        .agenda-box {
+            background-color: #dbeef7;
+            border-radius: 30px; /* Adjust this value for more/less rounded corners */
+            padding: 70px 20px 45px 20px;
+            position: relative; /* Ensures that absolute positioning is relative to this container */
+            overflow: hidden; /* Prevents overflow of absolute elements */
+        }
+
+        /* Top and Bottom Banner Image Styles */
+        .banner {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: auto;
+            z-index: 10; /* Ensure banners are above other elements */
+            transition: all 0.3s ease; /* Optional: Smooth transitions */
+        }
+
+        .top-banner {
+            top: 0;
+        }
+
+        .bottom-banner {
+            bottom: 0;
+        }
+
+        /* Agenda Content Container */
+        .agenda-content {
+            padding-top: 100px; /* Space for top banner */
+            padding-bottom: 100px; /* Space for bottom banner */
+        }
+
+        /* Main Title Styles */
+        .main-title {
+            text-transform: uppercase;
+            font-size: 28px;
+            font-weight: bold;
+            color: rgb(24, 35, 64);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* Description Text Styles */
+        .main-description {
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Agenda Container */
+        .agenda-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Ensures responsiveness */
+        }
+
+        /* Agenda Title Styles */
+        .agenda-title-uppercase {
+            text-transform: uppercase;
+        }
+
+        .agenda-text-letter-spacing-xs {
+            letter-spacing: 1px;
+        }
+
+        .agenda-text-dark {
+            color: #333;
+        }
+
+        .agenda-text-sm {
+            font-size: 0.9em;
+        }
+
+        /* Day Heading Styles */
+        .agenda-day-heading {
+            color: rgb(24, 35, 64);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* Timeline Styles */
+        .agenda-list-timeline {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            list-style: none;
+        }
+
+        .agenda-list-timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #ccc;
+        }
+
+        .agenda-list-timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .agenda-list-timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Responsive Adjustments for Banners */
+        @media (max-width: 767.98px) {
+            .agenda-content {
+                padding-top: 80px; /* Reduced space for smaller screens */
+                padding-bottom: 80px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .agenda-content {
+                padding-top: 120px; /* Increased space for larger screens */
+                padding-bottom: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/carousel.js"></script>
+
+
+<div class="main-container px-0">
+    <!-- Title Section -->
+    <div class="row gx-0">
+        <div class="courseIntroContainer d-flex position-relative align-items-center justify-content-center" >
+            <div class="col-12 col-md-7 text-center z-1">
+                <!-- Decorative images -->
+                <img class="position-absolute start-0 top-0" 
+                    src="images/Decoration Icons/top-left-large.svg" 
+                    alt=""
+                    style="width: 30%; height: auto;">
+                
+                <img class="position-absolute end-0" 
+                    src="images/Decoration Icons/top-right-large.svg" 
+                    alt=""
+                    style="width: 20%; height: auto; top: 50px;">
+                
+                <img class="position-absolute end-0 bottom-0" 
+                    src="images/Decoration Icons/bottom-right-large.svg" 
+                    alt=""
+                    style="width: 70%; height: auto;">
+                
+                <!-- Centered content -->
+                <div class="py-5">
+                    <h2>The ORIGINAL class that's both 100% live-instruction AND self-paced | AI Accelerator Package | Delivered in manageable chunks | 100% money-back guarantee | Co-instructed by TWO CSTs</h2>
+                    <!-- <h2>Advanced Certified ScrumMaster® (A-CSM®)</h2>
+                    <div class="gText--sm" style="padding: 20px;">
+                        <p>The ORIGINAL class that's both 100% live-instruction AND self-paced | Delivered in manageable chunks | 100% money-back guarantee | Co-instructed by TWO CSTs | LiveChat Support</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* AI Accelerator Package Section */
+        .ai-accelerator-section {
+            background-color: #f0f4f8; /* Light background for distinction */
+            border-radius: 20px;
+            padding: 30px;
+        }
+    
+        .ai-accelerator-section .section-label {
+            font-family: 'Graphik-Medium', sans-serif;
+            font-size: 12px;
+            color: rgb(24, 35, 64);
+            margin-bottom: 8px;
+        }
+    
+        .ai-accelerator-section h2 {
+            font-family: 'Graphik-Semibold', sans-serif;
+            font-size: 42px;
+            color: rgb(24, 35, 64);
+        }
+    
+        .ai-accelerator-section p {
+            font-family: 'Graphik', sans-serif;
+            font-size: 16px;
+            color: rgb(24, 35, 64);
+            line-height: 1.8;
+        }
+    
+        .ai-image {
+            max-width: 100%;
+            border-radius: 15px;
+            height: auto;
+        }
+    </style>
+    
+    <div class="row gx-0 ai-accelerator-section">
+        <div class="row gx-0 align-items-center">
+            <!-- Text Column -->
+            <div class="col-lg-7 order-2 order-lg-1">
+                <!-- Headings -->
+                <div class="section-label">AI ACCELERATOR</div>
+                <h2 class="mb-2">Maximize Your Agile Future with AI</h2>
+                <p>Leap to the forefront of the Agile community with our exclusive AI Accelerator Package. This includes:</p>
+                <ul>
+                    <li><strong>An AI Agile Coach, Max Good:</strong> Ready to assist you with Agile challenges and learning after the class.</li>
+                    <li><strong>Free AI for Scrum Master Microcredential:</strong> A Scrum Alliance certification that ensures your Agile career is future-proof.</li>
+                    <li><strong>Access to Leading AI Models:</strong> Trained on seminal works by Lyssa Adkins, David J Anderson, Mary Poppendieck, and more.</li>
+                    <li><strong>Video Overview:</strong> A step-by-step guide to getting started with AI as a Scrum Master.</li>
+                </ul>
+                <p>Don't fear AI—embrace it to stay ahead in your Agile career.</p>
+            </div>
+            <!-- Image Column -->
+            <div class="col-lg-5 order-1 order-lg-2 text-center">
+                <img src="images/AI-SM.webp" alt="AI Agile Coach" class="ai-image">
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .testimonial-row {
+            background-color: #dbeef7;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 0px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .testimonial-image {
+            margin-right: 20px;
+            max-width: 100%;
+            max-height: 200px;
+            height: auto;
+        }
+        
+        .testimonial-quote {
+            flex: 1;
+            padding: 0 20px;
+            font-family: 'Graphik', sans-serif;
+            font-size: 16px;
+            color: rgb(24, 35, 64);
+            margin: 0;
+        }
+        
+        .vertical-divider {
+            height: 100%;
+            width: auto;
+        }
+        
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 0px;
+            margin-right: 20px;
+        }
+        
+
+
+        .testimonial-row .btn-register.btn-primary {
+            border-radius: 100px !important;
+        }
+        
+        @media (max-width: 996px) {
+            .testimonial-row {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding-left: 20px;
+            }
+            .testimonial-image {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .testimonial-quote {
+                margin-bottom: 20px;
+            }
+            .vertical-divider {
+                display: none;
+            }
+            .btn-group {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .btn-register {
+                margin-bottom: 10px;
+            }
+        }
+        </style>
+        
+        <div class="row gx-0">
+            <div class="testimonial-row">
+                <img src="images/testimonials/ChristopherSulat_Testimonial.png" alt="Christopher Sulat" class="testimonial-image">
+                <p class="testimonial-quote">"Superheroes Academy provided the perfect course structure for deep, weekly dives into each Scrum and Agile topic, allowing me to apply insights directly to my team and business!" – Christopher Sulat</p>
+                <img src="images/Decoration Icons/vertical.svg" alt="" class="vertical-divider">
+                <div class="btn-group">
+                    <a href="https://www.superheroes.academy/store/p/acsm" target="_blank" class="btn btn-primary btn-register">Buy now</a>
+                    <div class="dropdown mt-2">
+                        <button class="btn btn-secondary dropdown-toggle btn-register" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Contact us
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="loadTawkWidget()">LiveChat</a></li>
+                            <li><a class="dropdown-item scheduleCall" href="#">Schedule a call with an advisor</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+<!-- Trainer Introduction Section -->
+<div class="row gx-0">
+    <div class="boxed-section">
+        <!-- Headings for Small Screens -->
+        <div class="d-block d-lg-none text-center mb-4">
+            <h2 class="mb-2">Meet Your Trainers</h2>
+        </div>
+        <div class="row gx-0 align-items-center">
+            <!-- Erkan Kadir -->
+            <div class="row gx-0 align-items-center mb-4">
+                <!-- Image Column -->
+                <div class="col-lg-5 order-1 order-lg-2 text-center mb-4 mb-lg-0">
+                    <img src="images/ErkanScrumAllianceTrainerImage.svg" 
+                            alt="Erkan Kadir"
+                            class="trainer-image img-fluid">
+                </div>
+                
+                <!-- Text Column -->
+                <div class="col-lg-7 order-2 order-lg-1">
+                    <!-- Headings for Large Screens -->
+                    <div class="d-lg-block mb-4">
+                        <h2 class="mb-2">Meet Your Trainers</h2>
+                        <h3 class="trainer-name mb-0">Erkan Kadir</h3>
+                    </div>
+                    <p class="trainer-credentials mb-4">CST, CEC, CTC, LMC, ICF-PCC, ORSCC, SPC, BSc</p>
+                    
+                    <div class="trainer-bio">
+                        <p>Hey there, I'm Erkan! 🎉 One of the lucky few who's both a Certified Scrum Trainer (CST) and a Certified Enterprise Coach (CEC). 
+                            I've also got some extra agile coaching superpowers with ORSC, Leadership Maturity Coaching, and an ICF-PCC. 
+                            After 20 years of teaching and coaching Scrum, I’m now also the Director of Education at an ICF-accredited school for Agile Coaches.</p>
+                        
+                        <p>My adventure started in software development and project management (PMP), but Scrum swept me off my feet! 
+                            Now, I'm all about building strong relationships and helping teams and individuals shine. 
+                            I have a soft spot for project managers and anyone who connects with my journey, which shapes how I bring agility to life.</p>
+                        
+                        <p>Calgary is home, and I'm ready to make your Scrum experience not just a journey, but an absolute blast!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mishkin Berteig -->
+            <div class="row gx-0 align-items-center">
+                <!-- Image Column -->
+                <div class="col-lg-5 order-1 text-center mb-4 mb-lg-0">
+                    <img src="images/Mishkin Scrum Alliance Course Listing - Oct 2024.svg" 
+                            alt="Mishkin Berteig"
+                            class="trainer-image img-fluid">
+                </div>
+                
+                <!-- Text Column -->
+                <div class="col-lg-7 order-2">
+                    <!-- Headings for Large Screens -->
+                    <div class="d-lg-block mb-4">
+                        <h2 class="mb-2">Meet Your Trainers</h2>
+                        <h3 class="trainer-name mb-0">Mishkin Berteig</h3>
+                    </div>
+                    <p class="trainer-credentials mb-4">CST, Path to CSP Educator, SAFe SPC, BSc</p>
+                    
+                    <div class="trainer-bio">
+                        <p>Meet Mishkin Berteig! 🎉 A passionate educator, coach, and the longest-standing Certified Scrum Trainer (CST) in Canada since 2005, Mishkin learned directly from the founders of Scrum, Ken Schwaber and Jeff Sutherland. 
+                            As the President and Co-founder of BERTEIG, Mishkin has empowered over 10,000 professionals worldwide to embrace Agile practices through fun, interactive training and coaching.</p>
+                        
+                        <p>Mishkin’s expertise spans Scrum, SAFe, Kanban, and even OpenAgile (he’s the Master of it!). 
+                            From banking giants like RBC to tech innovators like Adobe, his diverse client list proves he’s worked magic in every industry you can think of. 
+                            Oh, and if you’re curious about Agile insights, check out his blog or his books—he’s not shy about sharing wisdom!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Benefits Icons Section. Icons from https://feathericons.com/ and https://lucide.dev/icons/ -->
+    <div class="row gx-0">
+        <div class="boxed-section">
+            <div class="row gx-0 text-center">
+                <div class="col px-3" data-bs-toggle="tooltip" title="Future-proof your career with our AI Accelerator Package! Includes the AI Agile Coach, Max Good, access to leading AI models trained on seminal Agile works, and a free AI for Scrum Masters Microcredential from Scrum Alliance.">
+                    <img src="images/benefits/microcredential.svg" 
+                         alt="AI Accelerator Package"
+                         style="width: 80px; height: auto; margin-bottom: 20px;">
+                    <p class="gText--sm">
+                        AI Accelerator<br>Package
+                    </p>
+                </div>
+               
+                <div class="col px-3" data-bs-toggle="tooltip" title="Cancel or reschedule for any reason within 30 days">
+                    <img src="images/benefits/guarantee.svg" 
+                         alt="Money Back Guarantee"
+                         style="width: 80px; height: auto; margin-bottom: 20px;">
+                    <p class="gText--sm">
+                        100% Money Back<br>
+                        Guarantee
+                    </p>
+                </div>
+                
+
+                <div class="col px-3" data-bs-toggle="tooltip" title="Your course registration covers everything you need to get certified. We believe in transparent pricing and no hidden costs.">
+                    <img src="images/benefits/certificationincluded.png" 
+                         alt="Certification Included"
+                         style="width: 80px; height: auto; margin-bottom: 20px;">
+                    <p class="gText--sm">
+                        No hidden certification<br>
+                        or exam fees<br>
+                    </p>
+                </div>
+
+  
+                <div class="col px-3" data-bs-toggle="tooltip" title="Our trainers provide unique, live online interaction based on their experience and custom content, unlike programs that rely on blogs and videos with only 4 hours of contact time. We offer 15 hours of live trainer interaction. We also have a self-paced option for those who want to complete the program faster.">
+                    <img src="images/benefits/paymentplans.png" 
+                         alt="Live Instruction"
+                         style="width: 80px; height: auto; margin-bottom: 20px;">
+                    <p class="gText--sm">
+                        Live Instruction<br>
+                        with two trainers OR complete the program self-paced
+                    </p>
+                </div>
+
+                
+                <div class="col px-3" data-bs-toggle="tooltip" title="Unlike a two-day course that’s designed to get you in and out as fast as possible, our programs are designed with your growth in mind. You’ll learn concepts in manageable chunks over 10-weeks and have the opportunity to practice hands-on during and in-between sessions. Our approach ensures that you integrate your learning along the way.">
+                    <img src="images/benefits/shortSegments.svg" 
+                         alt="Delivered in short segments"
+                         style="width: 80px; height: auto; margin-bottom: 20px;">
+                    <p class="gText--sm">
+                        Delivered in<br>
+                        short segments
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <style>
+        /* Custom Styles */
+        .video-container {
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    padding: 0px;
+    border-radius: 100px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+        .video-container video {
+            border: 2px solid #395edf;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .video-container {
+                padding: 0px;
+            }
+
+            .video-container h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <div class="container my-5" style="height: 100%; width: 100%;">
+        <div class="row justify-content-center" style="height: 100%; width: 100%;">
+            <div class="col-md-8" style="height: 100%; width: 100%;">
+                <div class="video-container p-4 bg-light rounded shadow" style="height: 100%; width: 100%;">
+                    <h2 class="text-center mb-4" style="height: 100%; width: 100%;">100% Live AND Self-Paced</h2>
+                    <div class="ratio ratio-16x9" style="height: 100%; width: 100%;">
+                        <video controls class="rounded" style="height: 100%; width: 100%;">
+                            <source src="videos/RotationalCourseIntro.mp4" type="video/mp4" style="height: 100%; width: 100%;">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <p class="mt-3 text-center text-muted">Watch to learn more about our one of a kind format.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="agenda-box">
+        <!-- Top Banner -->
+        <img class="banner top-banner" 
+             src="images/Decoration%20Icons/topBannerforLightBlueSection.png" 
+             alt="Top Banner">
+    
+        <!-- Agenda Content -->
+        <h2 class="agenda-title" style="margin-top: 50px;">Course Schedule &amp; Highlights</h2>
+    
+        <!-- Additional Information -->
+        <div class="program-details">
+            <p><strong>Format:</strong> 10 weekly sessions, 90 minutes each. All 10 sessions are live-online with your trainer, held weekly on Fridays from 8:00 am - 9:30 am Mountain.</p>
+    
+            <p><strong>Miss a few sessions?</strong> No problem! Our program runs continuously in a loop so you can always catch up on missed sessions. Get certified in as little as 10 weeks or take up to 6 months - our program fits your schedule.</p>
+
+            <p><strong>Complete the program faster?</strong> Complete up to 8/10 sessions offline on your own time and complete the program in as little as two weeks.</p>
+    
+            <p><strong>Global Access:</strong> Join from anywhere in the world as each session is held over video conference. Participants have access to an online discussion forum to connect with us and each other as they progress through the program.</p>
+    
+            <p><strong>Practice Requirements:</strong> Participants can expect an average of 45 minutes of offline practice between sessions.</p>
+    
+            <p><strong>Prerequisite:</strong> An active or expired Scrum Alliance Certified ScrumMaster℠ (CSM) certification and one year experience working with Scrum Master skills is required for earning an A-CSM. This experience may be gained before, during, or after attending our program. When you take our class with an expired CSM, we’ll have it automatically renewed on your behalf.</p>
+
+            <p>As a bonus, you'll learn from two Canadian trainers: Mishkin Berteig (CST) and Erkan Kadir (CST, CEC).</p>
+        </div>
+        
+        <div class="accordion" id="agendaAccordion">
+            <!-- Day 1 Accordion -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Curriculum
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#agendaAccordion">
+                    <div class="accordion-body">
+                        <ul>
+                            <li class="list-timeline-item"><p>Session 1: Setting Your Team Up for Success</p></li>
+                            <li class="list-timeline-item"><p>Session 2: Team Dynamics</p></li>
+                            <li class="list-timeline-item"><p>Session 3: Facilitation Skills</p></li>
+                            <li class="list-timeline-item"><p>Session 4: Articulating the Value of Scrum</p></li>
+                            <li class="list-timeline-item"><p>Session 5: Complementary Agile Frameworks</p></li>
+                            <li class="list-timeline-item"><p>Session 6: Conflict Management</p></li>
+                            <li class="list-timeline-item"><p>Session 7: Scaling Scrum</p></li>
+                            <li class="list-timeline-item"><p>Session 8: Change Management</p></li>
+                            <li class="list-timeline-item"><p>Session 9: Working with the Product Backlog</p></li>
+                            <li class="list-timeline-item"><p>Session 10: Professional Coaching Skills</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Bottom Banner -->
+        <!-- <img class="banner bottom-banner" 
+             src="images/Decoration Icons/bottom-bannerforLightBlueSection.png" 
+             alt="Bottom Banner"> -->
+    </div>
+
+
+
+
+
+    <div class="row gx-0">
+        <div class="boxed-section">
+            <!-- Headings for Small Screens -->
+            <div class="d-block d-lg-none text-center mb-4">
+                <div class="section-label">OUR STORY</div>
+                <h2 class="mb-2">The Superheroes Academy Story</h2>
+            </div>
+            <div class="row  gx-0 align-items-center">
+                <!-- Image Column -->
+                <div class="col-lg-5 order-1 order-lg-2 text-center mb-4 mb-lg-0">
+                    <img src="images/superheroes-academy-story.svg" 
+                         alt="Superheroes Academy Story"
+                         class="trainer-image img-fluid">
+                </div>
+                
+                <!-- Text Column -->
+                <div class="col-lg-7 order-2 order-lg-1">
+                    <!-- Headings for Large Screens -->
+                    <div class="d-none d-lg-block mb-4">
+                        <div class="section-label"><b>OUR STORY</b></div>
+                        <h2 class="mb-2">The Superheroes Academy Story</h2>
+                    </div>
+                    
+                    <div class="trainer-bio">
+                        <p>Superheroes Academy was founded in 2016 to level up agile professionals worldwide. We've trained students in over 100 countries and applied Scrum in every context imaginable.</p>
+                        
+                        <p>Once a Superhero, Always a Superhero!® Our trademarked approach prioritizes outcomes and partnership, not transactions. We go the extra mile and work with you for as long as it takes to meet your goals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Experiential Learning Section -->
+    <div class="row gx-0">
+        <div class="boxed-section">
+            <!-- Headings for Small Screens -->
+            <div class="d-block d-lg-none text-center mb-4">
+                <h2 class="mb-2">Experiential Learning Approach</h2>
+            </div>
+            <div class="row gx-0 align-items-center">
+                <!-- Image Column on the Left -->
+                <div class="col-lg-5 text-center mb-4 mb-lg-0">
+                    <img src="images/whitepaper.png"
+                         alt="Experiential Learning"
+                         class="trainer-image img-fluid">
+                </div>
+
+                <!-- Text Column -->
+                <div class="col-lg-7">
+                    <!-- Headings for Large Screens -->
+                    <div class="d-none d-lg-block mb-4">
+                        <h2 class="mb-2">Science-Backed Learning</h2>
+                    </div>
+                    <div class="trainer-bio">
+                        <p>Most training sessions bombard students with a blast of facts, failing to ensure retention and missing real-world context. Our program is designed using the most cutting-edge, science-backed method in adult education: Co-Constructed Developmental Teaching Theory. We’re the only trainers offering this model, guiding participants to better integrate knowledge into day-to-day, on-the-job applications. <a href="https://www.superheroes.academy/experiential-learning" target="_blank">Download our whitepaper</a> to see how Experiential Learning maximizes the impact of your training dollars.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        /* Grayscale filter for all carousel images */
+        .carousel-item img {
+            filter: grayscale(100%);
+            height: auto;
+            object-fit: contain; /* Maintain aspect ratio */
+        }
+
+        /* Flex container inside carousel-item */
+        .slide-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Each image container */
+        .image-container {
+            flex: 0 0 20%; /* 5 images per slide */
+            max-width: 20%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Adjust for mobile devices: 4 images per slide */
+        @media (max-width: 767.98px) {
+            .image-container {
+                flex: 0 0 25%; /* 4 images per slide */
+                max-width: 25%;
+            }
+        }
+
+        /* Modify carousel-item style */
+        .carousel-item {
+            display: none;  /* Hide all slides by default */
+        }
+
+        .carousel-item.active {
+            display: flex;  /* Only show active slide */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Carousel Heading */
+        .carousel-heading {
+            font-family: 'Graphik-Semibold', sans-serif;
+            font-size: 30px;
+            color: rgb(24, 35, 64);
+            text-align: center;
+            margin-bottom: 40px;  /* Add some space between heading and carousel */
+        }
+
+        /* --- Additions Start Here --- */
+
+        /* Set a fixed height for the carousel-inner to prevent height changes */
+        .carousel-inner {
+            height: 300px; /* Adjust this value based on your tallest image */
+        }
+
+        /* Ensure each carousel-item fills the carousel-inner height */
+        .carousel-item {
+            height: 100%;
+            display: none; /* Keep hiding by default */
+            /* The active class will override display to flex */
+        }
+
+        /* Active carousel-item styling remains the same to center content */
+        .carousel-item.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Style the slide-content to use full height and align items properly */
+        .slide-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* Ensure it fills the carousel-item */
+            width: 100%;  /* Ensure it fills the carousel-item */
+        }
+
+        /* Ensure images fit within their container without exceeding the fixed height */
+        .image-container img {
+            max-height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Optional: Handle overflow in image containers to prevent spillover */
+        .image-container {
+            overflow: hidden;
+        }
+
+        /* Responsive Adjustments for Carousel Height */
+
+        /* Adjust carousel height for smaller screens if necessary */
+        @media (max-width: 767.98px) {
+            .carousel-inner {
+                height: 65px; /* Example height for mobile devices */
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1199.98px) {
+            .carousel-inner {
+                height: 200px; /* Example height for tablets and small desktops */
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .carousel-inner {
+                height: 350px; /* Example height for large desktops */
+            }
+        }
+
+        /* --- Additions End Here --- */
+        .testimonials-container {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 15px;
+        }
+
+        .testimonials-wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .testimonial-item {
+            flex: 0 0 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .testimonials-card {
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            perspective: 500px;
+            border: none;
+            background: none;
+        }
+
+        .testimonials-card .testimonials-face {
+            position: absolute;
+            
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            background: none;
+            transform-style: preserve-3d;
+            transition: 0.5s;
+            backface-visibility: hidden;
+            border-top: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+        }
+
+        .testimonials-card .testimonials-face.front-face,
+        .testimonials-card .testimonials-face.back-face {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonials-card .testimonials-face.front-face .profile {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .testimonials-card .testimonials-face.front-face .name {
+            letter-spacing: 2px;
+        }
+
+        .testimonials-card .testimonials-face.front-face .designation {
+            font-size: .8rem;
+            letter-spacing: 0.8px;
+        }
+
+        .testimonials-card:hover .testimonials-face.front-face {
+            transform: rotateY(180deg);
+        }
+
+        .testimonials-card .testimonials-face.back-face {
+            position: absolute;
+            background: none;
+            transform: rotateY(180deg);
+            padding: 20px 30px;
+            text-align: center;
+            user-select: none;
+        }
+
+        .testimonials-card .testimonials-face.back-face .fa-quote-left {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            font-size: 1.2rem;
+        }
+
+        .testimonials-card .testimonials-face.back-face .fa-quote-right {
+            position: absolute;
+            bottom: 35px;
+            right: 25px;
+            font-size: 1.2rem;
+        }
+
+        .testimonials-card:hover .testimonials-face.back-face {
+            transform: rotateY(360deg);
+        }
+
+        @media(max-width: 991.5px) {
+            .testimonial-item {
+                margin: 20px 0;
+            }
+        }
+
+        .testimonial {
+            font-size: 14px; /* Adjust the size as needed */
+        }
+
+        /* Raves Section */
+        .raves-section {
+            gap: 10px; /* Adjust spacing between elements if needed */
+        }
+
+        .raves-link {
+            font-family: 'Graphik-Semibold', sans-serif;
+            font-size: 18px;
+            color: #395edf;
+            text-decoration: none;
+        }
+
+        .laurel-icon {
+            width: 24px; /* Adjust size if needed */
+            height: auto;
+        }
+
+        .raves-text {
+            text-align: center;
+        }
+        .raves-link {
+            display: inline-block;
+        }
+    </style>
+    <div class="row gx-0">
+        <div class="boxed-section">
+            <!-- 2. Carousel HTML Structure -->
+            <h2 class="carousel-heading" style="padding: 5px;">Superheroes Academy-trained experts fuel success at the world's top brands.</h2>
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" id="carousel-inner">
+                    <!-- Slides will be generated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- 2. Carousel HTML Structure -->
+            <div class="testimonials-container">
+                <div class="testimonials-wrapper">
+                    <div class="testimonial-item">
+                        <div class="testimonials-card">
+                            <div class="testimonials-face front-face">
+                                <img src="images/testimonials/Patrick_Isaac_Tesimonial.png"
+                                    alt="" class="profile" style="background: #a3d5eb;">
+                                <div class="pt-3 text-uppercase name">
+                                    Patrick Isaac
+                                </div>
+                                <div class="designation">Scrum Master</div>
+                            </div>
+                            <div class="testimonials-face back-face">
+                                <span class="fas fa-quote-left"></span>
+                                <div class="testimonial">
+                                    "Superheroes Academy is the go-to place if you want instructors who not only care about what you learn, but how you learn it. Their unique 10-week program allows you to absorb the knowledge and implement what you've just learned each week. I've taken three of their courses and I can not wait to take a fourth!"
+                                </div>
+                                <span class="fas fa-quote-right"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonials-card">
+                            <div class="testimonials-face front-face">
+                                <img src="images/testimonials/Michelle_Harris_Testimonial.png"
+                                    alt="" class="profile" style="background: #fb934a;">
+                                <div class="pt-3 text-uppercase name">
+                                    Michelle Harris
+                                </div>
+                                <div class="designation">Project Manager</div>
+                            </div>
+                            <div class="testimonials-face back-face">
+                                <span class="fas fa-quote-left"></span>
+                                <div class="testimonial">
+                                    "Attending the advanced Scrum Master course was a game-changer. 
+                                    It deepened my understanding of agile principles and provided practical strategies to handle complex team dynamics.
+                                    The insights I gained have already made a noticeable impact on our projects. 
+                                    Highly recommend it to anyone looking to elevate their Scrum mastery!"
+                                </div>
+                                <span class="fas fa-quote-right"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonials-card">
+                            <div class="testimonials-face front-face">
+                                <img src="images/testimonials/Lee_Cooke_Testimonial.png"
+                                    alt="" class="profile" style="background: #a3d5eb;">
+                                <div class="pt-3 text-uppercase name">
+                                    Lee Cooke
+                                </div>
+                                <div class="designation">Agile Coach</div>
+                            </div>
+                            <div class="testimonials-face back-face">
+                                <span class="fas fa-quote-left"></span>
+                                <div class="testimonial">
+                                    "Superheroes Academy is brilliant. The way they structure their course's timeline, the content, discussions and knowledge of trainers is super impressive. 
+                                    They make you feel part of the course and part of each other's learning journey. 
+                                    Each session is a different experience, organically unfolding while achieving the objectives of each class. 
+                                    Highly recommend these heroes!! 
+                                    Thank you all, truly."
+                                </div>
+                                <span class="fas fa-quote-right"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. New Section with Laurels and Link -->
+            <div class="raves-section d-flex align-items-center justify-content-center mt-5">
+                <img src="images/laurel-left.svg" alt="Left Laurel" class="laurel-icon">
+                <span class="raves-text">
+                    <a href="https://www.superheroes.academy/raves" target="_blank" class="raves-link">Check out more raves here</a>
+                </span>
+                <img src="images/laurel-right.svg" alt="Right Laurel" class="laurel-icon">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- FAQ Section -->
+    <style>
+         /* Adjust FAQ Box */
+         .faq-box {
+            background-color: #182241; /* Dark Blue Background */
+            border-radius: 30px;
+            padding: 90px 20px 45px 20px;
+            /*max-width: 800px; /* Reduced Width for Better Layout */
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            color: #ffffff; /* White Text for Contrast */
+        }
+
+        /* Top and Bottom Banner Image Styles for FAQ Section */
+        .faq-box .banner {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: auto;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .faq-box .top-banner {
+            top: 0;
+        }
+
+        .faq-box .bottom-banner {
+            bottom: 0;
+        }
+
+        /* Enhance Accordion Button Styles */
+        .faq-box .accordion-button {
+            background-color: #182241; /*Slightly Lighter Shade for Buttons */
+            color: #ffffff; /* White Text */
+            border: 1px solid #182241; /* Visible Border */
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Change Accordion Button on Hover */
+        .faq-box .accordion-button:hover {
+            background-color: #182241; /* Even Lighter Shade on Hover */
+            color: #4a63ad;
+        }
+
+        /* Active Accordion Button Styles */
+        .faq-box .accordion-button:not(.collapsed) {
+            background-color: #182241; /* Active State Color */
+            color: #ffffff;
+            box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+            border-color:#182241
+        }
+
+        /* Ensure Accordion Toggle Icons are Visible */
+        .faq-box .accordion-button::after {
+            filter: invert(1); /* Invert Icon Color to White */
+            transition: transform 0.3s ease;
+        }
+
+        /* Rotate Accordion Icon When Active */
+        .faq-box .accordion-button:not(.collapsed)::after {
+            transform: rotate(180deg); /* Rotate Icon */
+        }
+
+        /* Accordion Collapse Body Styles */
+        .faq-box .accordion-body {
+            background-color: #182241; /* Match Background */
+            color: #ffffff; /* White Text */
+            border-top: 1px solid #182241; /* Top Border for Separation */
+            padding: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Add Borders Around Each Accordion Item */
+        .faq-box .accordion-item {
+            border: 1px solid #4a6fa5; /* Visible Border */
+            border-radius: 5px;
+            margin-bottom: 15px; /* Space Between Items */
+            overflow: hidden; /* Ensure Rounded Corners */
+        }
+
+        /* Optional: Add Shadow for Depth */
+        .faq-box .accordion-item {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Adjust FAQ Title */
+        .faq-box .agenda-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Adjust List Styles within Accordion if Any */
+        .faq-box ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .faq-box ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+    <div class="row gx-0">
+        <h2 class="agenda-title">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="examFees">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseExamFees" aria-expanded="true" aria-controls="faqCollapseExamFees">
+                        Do I have to pay extra exam or certification fees?
+                    </button>
+                </h2>
+                <div id="faqCollapseExamFees" class="accordion-collapse collapse show" aria-labelledby="examFees" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Absolutely not! Your course registration covers everything you need to get certified. We believe in transparent pricing and no hidden costs.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeaderClassSize">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqClassSize" aria-expanded="true" aria-controls="faqClassSize">
+                        How big are your classes? 
+                    </button>
+                </h2>
+                <div id="faqClassSize" class="accordion-collapse collapse show" aria-labelledby="faqHeaderClassSize" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We keep class sizes small to ensure you receive personalized attention and support. Our classes typically have 6-15 participants. We build time into the schedule to discuss the ins and outs of applying Scrum in your unique context.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqAdditionalSupport">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAdditionalSupportQ" aria-expanded="true" aria-controls="faqAdditionalSupportQ">
+                        What support is available after the course? 
+                    </button>
+                </h2>
+                <div id="faqAdditionalSupportQ" class="accordion-collapse collapse show" aria-labelledby="faqAdditionalSupport" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We offer a range of support options after the course, including access to course materials and additional resources for further learning. We also provide lifetime backstage access to our Slack network where you can talk with your trainer and collaborate with over 1200 global agile professionals. We also provide LiveChat support for any questions you may have.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqProjectMAnagementHeadging">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqProjectMAnagementQ" aria-expanded="true" aria-controls="faqProjectMAnagementQ">
+                        I'm a project manager and don't work in software development. Will this course be relevant to me?
+                    </button>
+                </h2>
+                <div id="faqProjectMAnagementQ" class="accordion-collapse collapse show" aria-labelledby="faqProjectMAnagementHeadging" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Absolutely! Scrum is a versatile framework that can benefit any industry. Our course is crafted to deliver value to professionals from all backgrounds, and we’ve successfully trained students from fields as diverse as healthcare, finance, and education. As a certified Project Management Professionals (PMP) ourselves, we understand the value project managers bring, and we love working with them! This course provides project managers and others with the tools to make Scrum work in their unique contexts.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="discountsQuestions">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqDiscounts" aria-expanded="true" aria-controls="faqDiscounts">
+                        Do you offer discounts?
+                    </button>
+                </h2>
+                <div id="faqDiscounts" class="accordion-collapse collapse show" aria-labelledby="discountsQuestions" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes! We offer a range of discounts for students, self-paying individuals, groups, veterans, bundle pricing, corporate partnerships, referrals, just to name a few. Contact us at <a href="mailto:info@superheroes.academy">info@superheroes.academy</a> for more information.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="qualityQuestion">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqQuality" aria-expanded="true" aria-controls="faqQuality">
+                        Why are your courses less expensive than others? Is there a difference in quality?
+                    </button>
+                </h2>
+                <div id="faqQuality" class="accordion-collapse collapse show" aria-labelledby="qualityQuestion" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Our courses are priced to support our mission of upskilling agilists worldwide without compromising on quality. 
+                        We offer one of the highest-quality classes delivered from Canada, taught by trainers dual-certified as a CST and CEC.
+                        Erkan is the first trainer to provide the full CSM to CSP-SM Scrum Master certification series virtually back in 2016. We combine deep expertise and innovative delivery methods, 
+                        ensuring you receive an exceptional learning experience at a fair price.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqLearningGrowth">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseLearningGrowth" aria-expanded="true" aria-controls="faqCollapseLearningGrowth">
+                        I'm not just here for a cert. I want to learn and grow in my role. How can you help me?
+                    </button>
+                </h2>
+                <div id="faqCollapseLearningGrowth" class="accordion-collapse collapse show" aria-labelledby="faqLearningGrowth" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Great! You're the reason why we do what we do. We have programs that will support you from when you're just learning about Scrum all the way through industry leading Guide-level certifications (CST, CSAT, and CAC). 
+                        We have the longest running coach mentoring program and an ICF-Accredited Professional Coaching school for Scrum Masters serious about tackling the next level of growth. When you take this program, 
+                        you'll receive discounts on those programs, too.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                        What is the format of the course?
+                    </button>
+                </h2>
+                <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        This course runs over 10 weekly sessions, each 90 minutes long. Up to 8 of the 10 sessions can be completed offline on your own time, allowing you to complete the program in as little as 2 weeks.
+                        All live-online sessions are held via video conference weekly on Fridays from 8:00 am - 9:30 am Mountain Time.
+                        You can join from anywhere in the world and connect in real time with the trainer and your fellow participants. 
+                        Our program is designed to be flexible, allowing you to catch up on missed sessions and get certified in as little as 2 weeks or take up to 6 months. 
+                        Expect a hands-on, interactive experience—this isn’t your typical lecture! 
+                        We’ve built the course around the latest brain science and Learning From the Back of the Room techniques to 
+                        make sure you’re engaged, learning, and having fun the whole way through.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqAcceleratedDelivery">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseAcceleratedDelivery" aria-expanded="false" aria-controls="faqCollapseAcceleratedDelivery">
+                        Can I complete the program faster if I want to without waiting for live classes in the schedule?
+                    </button>
+                </h2>
+                <div id="faqCollapseAcceleratedDelivery" class="accordion-collapse collapse" aria-labelledby="faqAcceleratedDelivery" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Absolutely! 🎉 We offer supercharged options for accelerated delivery, so you can zoom through some sessions at your own pace. 🚀
+                    </div>
+                </div>
+            </div>
+            <!-- Question 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                        I'm not actively working as a Scrum Master. Can I still take this course?
+                    </button>
+                </h2>
+                <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Absolutely! You can leverage your past experience as a ScrumMaster to complete the activities.
+                    </div>
+                </div>
+            </div>
+            <!-- Question 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                        What materials are provided with the course?
+                    </button>
+                </h2>
+                <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Participants will receive a digital program workbook, access to an individual online graphic organizer via Mural, and additional resources to support further learning.
+                    </div>
+                </div>
+            </div>
+            <!-- Question 4 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                        Is there a certification after the course?
+                    </button>
+                </h2>
+                <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, participants will receive an Advanced Certified ScrumMaster® (A-CSM®) certification and any additional Microcredentials that were purchased.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
+                        What is the refund policy?
+                    </button>
+                </h2>
+                <div id="faqCollapseFive" class="accordion-collapse collapse" aria-labelledby="faqHeadingFive" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We’ve got your back with a 100% money-back guarantee on your purchase—anytime within 30 days of purchase, no questions asked! 
+                        For packages with microcredentials, here’s how it works: if you haven’t been granted access yet, you’re eligible for a full refund. 
+                        But once access is given by Scrum Alliance, we can still offer a refund, minus $75 for each microcredential included. 
+                        We want you to feel great about your investment in learning with us!
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingReschedule">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqReschedule" aria-expanded="false" aria-controls="faqReschedule">
+                        Can I reschedule or cancel without penalty?
+                    </button>
+                </h2>
+                <div id="faqReschedule" class="accordion-collapse collapse" aria-labelledby="faqHeadingReschedule" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        You bet. We understand that life happens! Just let us know within 30-days of purchase.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="taxInvoiceQuestion">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTaxInvoice" aria-expanded="false" aria-controls="faqTaxInvoice">
+                        My work is paying for the course. Can I get a tax invoice? 
+                    </button>
+                </h2>
+                <div id="faqTaxInvoice" class="accordion-collapse collapse" aria-labelledby="taxInvoiceQuestion" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Absolutely, we can provide a tax invoice for your employer. Just let us know the details and we'll take care of the rest.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqGraduationPackage">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseGraduationPackage" aria-expanded="true" aria-controls="faqCollapseGraduationPackage">
+                        Will you send me a cool graduation package including a t-shirt and book?
+                    </button>
+                </h2>
+                <div id="faqCollapseGraduationPackage" class="accordion-collapse collapse show" aria-labelledby="faqGraduationPackage" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes! 🎉 Upon completing the course, you'll receive an awesome graduation package that includes a stylish t-shirt and a fantastic book to keep your learning journey going.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all accordion items and collapse them on page load
+            let accordionItems = document.querySelectorAll('.accordion-collapse');
+            
+            accordionItems.forEach(item => {
+                item.classList.remove('show'); // Ensure each accordion starts collapsed
+            });
+    
+            // Prevent the state from persisting after page refresh
+            sessionStorage.removeItem('accordionState');
+        });
+    </script>
+
+    <!-- Associations Row Section -->
+<style>
+    /* Associates Row */
+    .associations-row {
+        margin: 0 auto; /* Centers the div horizontally */
+        display: flex; /* Ensures flexbox is applied */
+        flex-wrap: wrap; /* Allows items to wrap to the next line */
+        justify-content: center; /* Centers the images horizontally */
+        align-items: center; /* Vertically centers the images */
+        gap: 1rem; /* Adds consistent spacing between images */
+    }
+
+    .associations-row img {
+        max-width: 200px; /* Ensures images don't get too wide */
+        height: auto; /* Maintains aspect ratio */
+    }
+</style>
+<div class="associations-row">
+    <div class="col-auto px-3">
+        <img src="images/associations/scrumalliancelogo.png" alt="Scrum Alliance Logo">
+    </div>
+    <div class="col-auto px-3">
+        <img src="images/associations/pmilogo.png" alt="PMI Logo">
+    </div>
+    <div class="col-auto px-3">
+        <img src="images/associations/acsm-badge.png" alt="CSM Badge" style="max-width: 110px;">
+    </div>
+    <div class="col-auto px-3">
+        <img src="images/associations/icflogo.png" alt="ICF Logo">
+    </div>
+    <div class="col-auto px-3">
+        <img src="images/associations/crrlogo.jpg" alt="CRR Logo" style="max-width: 110px;">
+    </div>
+</div>
+
+
+<style>
+    /* General Styles */
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Blue Column Styles */
+    .blue-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Align content vertically to the bottom */
+        align-items: center;       /* Center content horizontally */
+        height: 100%;
+        padding: 20px;
+    }
+
+    /* Content Wrapper Styles */
+    .content-wrapper {
+        background-color: #dbeef7;
+        color: #182241;
+        border-radius: 15px;
+        text-align: center;
+        padding: 30px;
+        width: 100%;
+    }
+
+    /* Heading and Paragraph Styles */
+    .blue-column h2 {
+        font-family: 'Graphik-Semibold', sans-serif;
+        font-size: 26px;
+        margin-bottom: 10px;
+        color: #182241;
+    }
+
+    /* Image Styles */
+    .img-fluid-custom {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Fixed Width for Buttons on Large Screens */
+    
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+        .col-md-7, .col-md-5 {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+        .btn {
+            width: 100%;
+            max-width: 436px;
+            margin: 10px auto; /* Center the buttons */
+        }
+        .blue-column {
+            align-items: center;
+        }
+    }
+</style>
+<style>
+    /* ===== PRICING PAGE ===== */
+    .price-tabs {
+      display: none; /* Hide the tabs since we're removing the switch */
+    }
+    
+    .price-item {
+      background-color: #fff;
+      box-shadow: 0 5px 30px 0 rgba(39, 39, 39, 0.15);
+      border-radius: 10px;
+      margin: 20px;
+      position: relative;
+    }
+    
+    .price-item .price-top {
+      box-shadow: 0 5px 30px 0 rgba(39, 39, 39, 0.15);
+      padding: 50px 0 25px;
+      background-color: #395edf; 
+      border-radius: 10px;
+      position: relative;
+      z-index: 0;
+      margin-bottom: 33px;
+    }
+    
+    @media (min-width: 768px) {
+      .price-item .price-top {
+        margin: 0 -20px;
+        border-radius: 20px;
+      }
+    }
+    
+    .price-item .price-top:after {
+      height: 50px;
+      width: 100%;
+      border-radius: 0 0 10px 10px;
+      background-color: #395edf; 
+      position: absolute;
+      content: '';
+      left: 0;
+      bottom: -17px;
+      z-index: -1;
+      transform: skewY(5deg);
+      box-shadow: 0 5px 10px 0 rgba(113, 113, 113, 0.15);
+    }
+    
+    @media (min-width: 768px) {
+      .price-item .price-top:after {
+        border-radius: 0 0 20px 20px;
+      }
+    }
+    
+    .price-item .price-top * {
+      color: #fff;
+    }
+    
+    .price-item .price-top h2 {
+      font-weight: 700;
+    }
+    
+    .price-item .price-top h2 sup {
+      top: 13px;
+      left: -5px;
+      font-size: 0.35em;
+      font-weight: 500;
+      vertical-align: top;
+    }
+    
+    .price-item .price-content {
+      padding: 30px;
+      padding-bottom: 0px;
+    }
+    
+    .price-item .price-content ul {
+      list-style-type: none; /* Remove bullets */
+      padding: 0;
+    }
+    
+    .price-item .price-content ul:not(.dropdown-menu) > li {
+      position: relative;
+      margin-bottom: 15px;
+      margin-left: 10px;
+      margin-right: 10px;
+      text-align: center;
+    }
+    
+    @media (min-width: 992px) {
+      .price-item .price-content ul:not(.dropdown-menu) > li {
+        padding-left: 28px;
+        text-align: left;
+      }
+    }
+    
+    @media (min-width: 992px) {
+      .price-item .price-content ul:not(.dropdown-menu) > li .check-icon,
+      .price-item .price-content li .close-icon {
+        position: absolute;
+        left: 0;
+        top: 3px;
+      }
+    }
+    
+/* Existing check-icon color */
+.price-item .price-content .check-icon {
+    color: #28a745; /* Green color */
+}
+
+/* Override to white for all check-icons */
+.price-item .price-content ul li,
+.price-item .price-content ul li .close-icon,
+.price-item .price-content ul li .check-icon {
+    color: #fff !important;
+}
+
+/* Custom styles for the first and last pricing options */
+.row.justify-content-center > div:first-child .price-content .check-icon,
+.row.justify-content-center > div:last-child .price-content .check-icon {
+    color: #395edf !important; /* Desired blue color */
+}
+
+    
+    .price-item .price-content .close-icon {
+      color: #f00;
+    }
+    
+    .popular {
+      background-color: #395edf;
+    }
+    
+    .popular .price-top {
+      background-color: #fff;
+    }
+    
+    .popular .price-top:after {
+      background-color: #fff;
+    }
+    
+    .popular .price-top h4 {
+      color: #101f41;
+    }
+    
+    .popular .price-top h2,
+    .popular .price-top span,
+    .popular .price-top sup {
+      color: #395edf; 
+    }
+    
+    /* Star Icons */
+    .price-item .star-icons {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .price-item .star-icons span {
+      color: #fff;
+      font-size: 20px;
+      margin: 0 2px;
+    }
+    
+    .popular .star-icons span {
+      color: #fb934a; /* Adjust for light background */
+    }
+    
+    /* Question Icon */
+    .question-icon {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: url('images/Decoration Icons/tooltip.svg') no-repeat center center;
+      background-size: contain;
+      cursor: pointer;
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+    
+    /* Adjustments for the second tier star icon */
+    .popular .star-icons span {
+      color: #fb934a;
+    }
+
+    /* Adjustments specific to dropdown in pricing items */
+    .price-item .price-content .dropdown {
+           text-align: center; /* Center the dropdown */
+       }
+
+       .price-item .price-content .dropdown .btn-secondary {
+           margin: 0 auto; /* Center the button */
+           display: inline-block; /* Ensure proper alignment */
+       }
+
+       /* Ensure the dropdown menu aligns properly */
+       .price-item .price-content .dropdown-menu {
+           left: 50% !important;
+           transform: translateX(-50%) !important;
+       }
+
+       /* Optional: Adjust the width of the dropdown menu */
+       .price-item .price-content .dropdown-menu {
+           min-width: 200px; /* Adjust as needed */
+       }
+
+       /* Optional: If the dropdown menu is being affected by text alignment */
+       .price-item .price-content {
+           text-align: center;
+       }
+
+       /* Strike through original price with red diagonal line */
+        .strike-text {
+            position: relative;
+            font-size: 1.5em; /* Adjust to fit your design */
+            color: #ccc; /* Grey out the original price */
+            display: inline-block;
+        }
+
+        .strike-text::before {
+            content: '';
+            position: absolute;
+            top: 60%; /* Adjust for diagonal strike position */
+            left: 0;
+            width: 100%;
+            height: 6px; /* Thickness of the line */
+            background-color: red; /* Colour of the diagonal strike */
+            transform: rotate(-10deg); /* Diagonal effect */
+            transform-origin: left center;
+        }
+
+        /* Discounted price styling */
+        .discounted-price {
+            font-size: 2em; /* Larger, prominent font */
+            color: #395edf; /* Highlighted new price */
+            font-weight: bold;
+        }
+
+        .limited-time {
+            font-size: 0.8em; /* Smaller text for the offer note */
+            color: #fb934a; /* Highlight with orange */
+            font-style: italic;
+            margin-left: 10px;
+        }
+
+</style>
+
+<!-- Calendly Widget and Tawk scripts -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    function loadTawkWidget() {
+        const isMobileDevice = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+        if (isMobileDevice) {
+            // Open the direct chat link in a new tab on mobile devices
+            window.open("https://tawk.to/chat/6570a4f5bfb79148e59abbe9/1hh008o3q", "_blank");
+        } else {
+            // Load and maximize the Tawk.to widget for desktop users
+            if (!window.Tawk_API || !window.Tawk_API.onLoad) {
+                Tawk_API.onLoad = function() {
+                    Tawk_API.maximize(); // Open the chat window
+                };
+                var s1 = document.createElement("script");
+                var s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/6570a4f5bfb79148e59abbe9/1hh008o3q';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            } else {
+                Tawk_API.maximize(); // If already loaded, just maximize
+            }
+        }
+    }
+
+    function updateScheduleLinksByDevice() {
+        const scheduleLinks = document.querySelectorAll(".scheduleCall");
+        const isMobileDevice = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+        scheduleLinks.forEach(function(scheduleLink) {
+            if (isMobileDevice) {
+                scheduleLink.onclick = function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+                    window.open("https://www.superheroes.academy/schedule", "_blank");
+                };
+            } else {
+                scheduleLink.onclick = function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+                    Calendly.initPopupWidget({
+                        url: 'https://calendly.com/product-specific-meetings/free-constultation?hide_event_type_details=1&hide_gdpr_banner=1'
+                    });
+                    return false;
+                };
+            }
+        });
+    }
+
+    // Run the function on page load
+    window.addEventListener('load', updateScheduleLinksByDevice);
+</script>
+
+<div >
+    <div class="row">
+        <div class="col">
+            <div class="tab-content" id="myTabContent">
+                <!-- All Pricing Plans Displayed Together -->
+                <div class="row justify-content-center">
+                    <!-- Signature Plan -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="price-item text-center h-100">
+                            <div class="star-icons">
+                                <span>&#9733;</span>
+                            </div>
+                            <div class="price-top">
+                                <h4>Signature</h4>
+                                <h2 class="mb-0"><sup>$</sup>549</h2>
+                                <span class="text-capitalize">USD</span>
+                            </div>
+                            <div class="price-content">
+                                <ul class="border-bottom mb-4 mt-md-4 pb-3 text-start">
+                                    <li>
+                                        <span class="check-icon me-2">✓</span>
+                                        <span class="text-black">A-CSM certification. All fees included.</span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon me-2">✓</span>
+                                        <span class="text-black">Exclusive resources
+                                            <span class="question-icon" data-bs-toggle="tooltip" title="Program workbook, graduation package, and lifetime access to Slack network."></span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon me-2">✓</span>
+                                        <span class="text-black">
+                                            16 PMI PDUs
+                                            <span class="question-icon" data-bs-toggle="tooltip" title="Professional Development Units for PMI certification"></span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon me-2">✓</span>
+                                        <span class="text-black">CSM renewal and 2 year extension to Scrum Alliance Membership ($50 value)</span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon me-2">✓</span>
+                                        <span class="text-black">
+                                            100% Live Instruction
+                                            <span class="question-icon" data-bs-toggle="tooltip" title="15 hours with your trainer. Others may offer less face-time or meet requirements through pre-recorded content."></span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon me-2">✓</span>
+                                        <span class="text-black">
+                                            Accelerated delivery options
+                                            <span class="question-icon" data-bs-toggle="tooltip" title="Complete up to 8/10 sessions offline."></span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon me-2">✓</span>
+                                        <span class="text-black">
+                                            Lifetime access to Slack network
+                                            <span class="question-icon" data-bs-toggle="tooltip" title="Join our Slack community where you can talk with your trainer and collaborate with over 1200 global agile professionals."></span>
+                                        </span>
+                                    </li>
+                                </ul>
+                                <a href="https://www.superheroes.academy/store/p/acsm" target="_blank" class="btn btn-primary">Buy now</a>
+                                <div class="dropdown mt-2">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Contact us
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="loadTawkWidget()">LiveChat</a></li>
+                                        <li><a class="dropdown-item scheduleCall" href="#">Schedule a call with an advisor</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plus Plan -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="price-item text-center popular h-100">
+                            <div class="star-icons">
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                            </div>
+                            <div class="price-top">
+                                <h4>AI Plus</h4>
+                                <h2 class="mb-0"><sup>$</sup>749</h2>
+                                <span class="text-capitalize">USD</span>
+                            </div>
+                            <div class="price-content">
+                                <ul class="border-bottom mb-4 mt-md-4 pb-3 text-start">
+                                    <li>
+                                        <span class="check-icon me-2">✓</span>
+                                        <span>All features in the Signature plan</span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon me-2">✓</span>
+                                        <span>
+                                            Max Good AI Coach (6 months access)
+                                            <span class="question-icon" data-bs-toggle="tooltip" title="Your subscription includes access to Max Good AI Coach and to advanced AI models for personalized support and expert-level insights."></span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon me-2">✓</span>
+                                        <span>
+                                            Introduction to AI for Agilists Video
+                                            <span class="question-icon" data-bs-toggle="tooltip" title="Video introducing AI concepts tailored for Agilists, helping you integrate AI into your practice."></span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon me-2">✓</span>
+                                        <span>
+                                            One-on-one consulting (30 mins)
+                                            <span class="question-icon" data-bs-toggle="tooltip" title="30-minute private session with your trainer. We'll chat about Scrum in your world, give your resume a glow-up, or dive into some career magic."></span>
+                                        </span>
+                                    </li>
+                                </ul>
+                                <a href="https://www.superheroes.academy/store/p/acsm" target="_blank" class="btn btn-secondary">Buy now</a>
+                                <div class="dropdown mt-2">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Contact us
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="loadTawkWidget()">LiveChat</a></li>
+                                        <li><a class="dropdown-item scheduleCall" href="#">Schedule a call with an advisor</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pro Plan -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="price-item text-center h-100">
+                            <div class="star-icons">
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                            </div>
+                            <div class="price-top">
+                                <h4>AI Accelerator Pro</h4>
+                                <h2 class="original-price">
+                                    <span class="strike-text"><sup>$</sup>989</span>
+                                </h2>
+                                <h2 class="discounted-price">$749 <span class="limited-time">Limited Time Offer</span></h2>
+                            </div>
+                            <div class="price-content">
+                                <ul class="border-bottom mb-4 mt-md-4 pb-3 text-start">
+                                    <li>
+                                        <span class="check-icon me-2">✓</span>
+                                        <span class="text-black">All features in the AI Plus plan</span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon me-2">✓</span>
+                                        <span>
+                                            <span class="text-black">AI for Scrum Masters Microcredential</span>
+                                            <span class="question-icon" data-bs-toggle="tooltip" title="AI for ScrumMasters Microcredential or your choice of any on-demand Scrum Alliance Microcredential of equal or lesser value. See Scrum Alliance Microcredential site for a complete list."></span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon me-2">✓</span>
+                                        <span class="text-black">$50 discount on your next class (CSP-SM)
+                                            <span class="question-icon" data-bs-toggle="tooltip" title="Grow with a company that offers every level of support from A-CSM and CSP-SM to Guide level (CST, CAC) mentoring programs."></span>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon me-2">✓</span>
+                                        <span class="text-black">
+                                            One-on-one career and resume support (60 mins)
+                                            <span class="question-icon" data-bs-toggle="tooltip" title="In addition to your one-on-one consulting session in the AI Plus plan, we’ll plan career goals and review your resume together for personalized improvement."></span>
+                                        </span>
+                                    </li>
+                                </ul>
+                                <a href="https://www.superheroes.academy/store/p/acsm" target="_blank" class="btn btn-primary">Buy now</a>
+                                <div class="dropdown mt-2">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Contact us
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="loadTawkWidget()">LiveChat</a></li>
+                                        <li><a class="dropdown-item scheduleCall" href="#">Schedule a call with an advisor</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Initialize Bootstrap Tooltips -->
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
+
+<style>
+    /* Styles for the Three Testimonials Section */
+    .three-testimonials-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px; /* Space between boxes */
+         /* Top and bottom margin for the section */
+        padding: 0 15px; /* Horizontal padding for better alignment on small screens */
+    }
+
+    .three-testimonials-section .testimonial-box {
+        background-color: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        padding: 30px 20px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .three-testimonials-section .testimonial-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .three-testimonials-section .testimonial-box img {
+        width: 40px;
+        align-self: center;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .three-testimonials-section .testimonial-box strong {
+        display: block;
+        font-size: 18px;
+        color: #182241;
+        margin-bottom: 10px;
+    }
+
+    .three-testimonials-section .testimonial-box p.quote-text {
+        font-size: 16px;
+        color: #333333;
+        margin-bottom: 15px;
+        flex-grow: 1;
+    }
+
+    .three-testimonials-section .testimonial-box p.client-name {
+        font-size: 16px;
+        color: #182241;
+        margin-top: auto;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+        .three-testimonials-section {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .three-testimonials-section {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<!-- Three Testimonials Section -->
+<div class="three-testimonials-section">
+    <!-- Testimonial 1 -->
+    <div class="testimonial-box">
+        <img src="images/quote-icon.svg" alt="Quote Icon">
+        <strong>There was noticeably better absorption and application of the material.</strong>
+        <p class="quote-text">"Doing pre-work and a schedule of 1-2 sessions a week gave me a chance to focus more deeply than an in-person class."</p>
+        <p class="client-name">– Joe Reifer</p>
+    </div>
+    <!-- Testimonial 2 -->
+    <div class="testimonial-box">
+        <img src="images/quote-icon.svg" alt="Quote Icon">
+        <strong>This course was a richly rewarding experience.</strong>
+        <p class="quote-text">"The coursework expanded and deepened my knowledge of Agile and Scrum topics, techniques and practices. This was an important step in my journey toward becoming a more transformational and inspirational Servant-Leader."</p>
+        <p class="client-name">– Robert O’Connor</p>
+    </div>
+    <!-- Testimonial 3 -->
+    <div class="testimonial-box">
+        <img src="images/quote-icon.svg" alt="Quote Icon">
+        <strong>Going through the course felt like Green Lantern discovering his lantern.</strong>
+        <p class="quote-text">"I picked up so many realizations, tools, and techniques during the course that I truly feel like a superhero who can make a difference to teams and individuals I work with."</p>
+        <p class="client-name">– Joseph Ike</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+<style>
+    /* 1. Set the background of the courses-section to transparent */
+    .courses-section {
+        background-color: transparent;
+        color: #FFFFFF; /* 2. Set all text within this section to white */
+        margin-top: 20px;
+    }
+
+    /* 3. Style the headings */
+    .courses-section h2 {
+        font-family: 'Graphik-Semibold', sans-serif;
+        font-size: 30px;
+        margin-bottom: 30px;
+        /* Remove the existing color property to inherit white */
+        text-align: center;
+    }
+
+    /* 4. Style the columns */
+    .courses-section .col-lg-6 {
+        padding: 20px;
+    }
+
+    /* 5. Style the paragraphs */
+    .courses-section .text-content p {
+        line-height: 1.8;
+        font-size: 16px;
+        /* Remove any existing color properties to inherit white */
+    }
+
+    /* 6. Style the images */
+    .courses-section .images img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        border-radius: 8px;
+    }
+
+    /* Optional: Ensure all text elements inherit the white color */
+    .courses-section a,
+    .courses-section strong {
+        color: #FFFFFF;
+    }
+
+    /* Override boxed-section background within courses-section inside faq-box */
+    .faq-box .courses-section .boxed-section {
+        background-color: #182241; /* Dark Blue Background */
+        color: #ffffff; /* Ensure text remains white */
+        /* Optional: Remove box-shadow if not needed */
+        box-shadow: none;
+    }
+
+    /* Additional styles for the custom form */
+    .custom-email-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .custom-email-form input[type="email"] {
+        padding: 10px;
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 10px;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+    }
+
+    .custom-email-form button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .custom-email-form button:hover {
+        background-color: #0056b3;
+    }
+
+    .thank-you-message {
+        display: none;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .thank-you-message ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+
+    .courses-section .trainer-image {
+        width: 100%; /* Adjust this value as needed */
+        max-width: 380px; /* Set a maximum width to prevent it from becoming too large */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 auto; /* Center the image if desired */
+        display: block; /* Ensure margin auto works */
+    }
+
+    /* Specific CSS for buttons within the .courses-section */
+    .courses-section .button-links .course-button {
+        width: 100%;
+        max-width: 250px; /* Maintains the desired max width on larger screens */
+        margin: 5px auto; /* Centers the button and adds vertical spacing */
+        display: block; /* Ensures the button takes the full width available */
+    }
+
+    /* Media Query for Extra Small Devices (Mobile Phones) */
+    @media (max-width: 576px) {
+        .courses-section .button-links .course-button {
+            max-width: 100%; /* Allows the button to take full width on very small screens */
+        }
+    }
+</style>
+<div class="row gx-0">
+    <div class="faq-box">
+        <img class="banner top-banner" 
+             src="images/Decoration%20Icons/topbannerforBlueSection.png"
+             alt="Top Banner">
+        
+        <div class="courses-section">
+            <div class="boxed-section">
+                <!-- Headings for Small Screens -->
+                <div class="d-block d-lg-none text-center mb-4">
+                    <h2>Still not convinced? Experience what it’s like to take one of our courses for FREE</h2>
+                </div>
+                <div class="row gx-0 align-items-center">
+                    <!-- Images Column -->
+                    <div class="col-lg-6 order-1 order-lg-2 text-center mb-4 mb-lg-0">
+                        <img src="images/WorkingAgreementsProductBox-removebg.png" 
+                             alt="Erkan Speaking at a Conference" 
+                             class="trainer-image img-fluid">
+                    </div>
+                    <!-- Text Column -->
+                    <div class="col-lg-6 order-2 order-lg-1">
+                        <!-- Headings for Large Screens -->
+                        <div class="d-none d-lg-block mb-4">
+                            <h2>Still not convinced? Experience what it’s like to take one of our courses for FREE</h2>
+                        </div>
+                        <!-- Text content -->
+                        <div class="text-content">
+                            <p>Here are two online courses created and delivered by us, <strong>Working Agreements that Work (Level 1)</strong> and <strong>Working Agreements that Evolve (Level 2)</strong>—our gift to you! Join over 15,000 others who have gained 3.5 SEUs with these courses—on us.</p>
+                            <p>The research is clear. Teams that invest in creating working agreements outperform those that do not.</p>
+                            <p>According to a recent Scrum Alliance survey, Scrum Masters cited creating effective working agreements as their biggest area of need. Join us and learn how to proactively manage conflict, define team boundaries, and take your team to the next level of performance.</p>
+                        </div>
+                        <!-- Direct Access Buttons -->
+                        <div class="button-links">
+                            <a href="https://resources.scrumalliance.org/Course/working-agreements-work-level-1" 
+                            target="_blank" 
+                            class="btn btn-primary mb-2 course-button">
+                                Free Level 1 Course
+                            </a>
+                            <a href="https://resources.scrumalliance.org/Course/working-agreements-evolve-level-2" 
+                            target="_blank" 
+                            class="btn btn-primary course-button">
+                                Free Level 2 Course
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript to handle form submission -->
+<script>
+    document.getElementById('emailForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const emailInput = document.getElementById('email');
+        const email = emailInput.value.trim();
+
+        // Basic email validation
+        if (!validateEmail(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        // Prepare the data to send
+        const data = { 
+            email: email,
+            token: 'mySecretToken123' // Replace with your actual secret token if implemented
+        };
+
+        // Web App URL provided by user
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbws8LzGPBtocvchQl5-AI9nMzZbJ-vdFoB5S2RD3jfE/dev';
+
+        // Send the POST request to the Apps Script
+        fetch(scriptURL, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(response => {
+            if (response.result === 'success') {
+                // Hide the form and show the thank-you message
+                document.querySelector('.google-form-wrapper').style.display = 'none';
+                document.getElementById('thankYouMessage').style.display = 'block';
+            } else if (response.result === 'error') {
+                alert(response.message);
+            } else {
+                alert('There was an unexpected response. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            alert('There was an error submitting your email. Please try again.');
+        });
+    });
+
+    // Simple email validation function
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    }
+</script>
+
+    <!-- <div class="container">
+        <div class="row gx-0 d-flex items-center">
+            
+            <div class="col-lg-7 order-lg-1 order-2 d-flex items-center">
+                <img src="images/person-cta.webp" alt="Person Image" class="img-fluid img-fluid-custom">
+            </div>
+
+            
+            <div class="col-lg-5 d-flex justify-content-center h-100 order-lg-2 order-1 align-self-end">
+                <div class="blue-column d-flex flex-column justify-content-center">
+                    <div class="content-wrapper">
+                        <h2>Enroll today!</h2>
+                        <p>Advance your career, unlock new professional opportunities, and acquire in-demand agile skills with the CSM.</p>
+                        <a href="https://www.superheroes.academy/store/p/csm" class="btn btn-primary mb-2" target="_blank">Buy now</a>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Contact us
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="loadTawkWidget()">LiveChat</a></li>
+                                <li><a class="dropdown-item scheduleCall" href="#">Schedule a call with an advisor</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div> <!--Container has been implemented down to here!! -->
+</body>
+</html>
