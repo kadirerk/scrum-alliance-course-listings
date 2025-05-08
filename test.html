@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to the Certified ScrumMaster® Training</title>
+    <title>Welcome to Superheroes Academy - Certified Scrum Product Owner®</title>
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -31,15 +31,14 @@
             border-bottom: 2px solid #2E86C1;
             padding-bottom: 5px;
         }
-        h3 {
-            color: #2E86C1;
-            margin: 0 0 8px 0;
-            font-size: 18px;
-        }
         p {
             font-size: 16px;
-            line-height: 1.5;
-            margin: 10px 0;
+            line-height: 1.6;
+        }
+        ul {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-left: 20px;
         }
         a {
             color: #2E86C1;
@@ -55,9 +54,22 @@
             border-radius: 5px;
             font-size: 16px;
         }
+        .signature {
+            margin-top: 40px;
+            font-size: 16px;
+        }
+        .signature a {
+            color: #2E86C1;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #999;
+            text-align: center;
+        }
         .highlight {
             background-color: #eaf2f8;
-            padding: 15px 20px;
+            padding: 10px;
             border-left: 4px solid #2E86C1;
             margin: 20px 0;
         }
@@ -65,132 +77,83 @@
             font-style: italic;
             color: #555;
         }
-        .signature {
-            margin-top: 40px;
-            font-size: 16px;
+        .badge {
+            display: block;
+            margin: 20px auto;
+            max-width: 150px;
         }
         .logo {
             display: block;
             margin-top: 20px;
             max-width: 200px;
         }
-        /* Module Box Styles for Variation */
-        .module-box {
-            border-radius: 6px;
-            padding: 10px 15px;
-            margin: 15px 0;
-            color: #333;
-        }
-        .module-day1 {
-            background-color: #EAF2F8;
-            border-left: 5px solid #2E86C1;
-        }
-        .module-day2 {
-            background-color: #E8F9F3;
-            border-left: 5px solid #20C997;
-        }
-        .module-title {
-            margin-top: 0;
-            font-weight: bold;
-        }
-        .module-desc {
-            margin-bottom: 5px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome, {firstName}!</h1>
+        <img src="https://courses.superheroes.academy/images/associations/cspo.png" alt="CSPO Certification Badge" class="badge">
         <p>
-            We’re looking forward to having you at our two-day, <strong>Certified ScrumMaster® (CSM®) training</strong> 
-            on April 9 &amp; 10, from 9:00am ET to 5:00pm ET each day. This is a certification class, so 
-            please ensure you can attend the full duration on both days to be eligible.
+            Welcome to <strong>{startDate} Superheroes Academy Certified Scrum Product Owner® (CSPO®)</strong>! I’m so excited to journey with you on this training.
         </p>
 
-        <!-- PREWORK SECTION -->
-        <h2>Prework</h2>
+        <h2>Learning Objectives</h2>
+        <ul>
+            <li>By the end of the first day, students will understand the Scrum framework well enough to explain it to a stranger.</li>
+            <li>By the end of the second day, students will experience the skills and tools essential to the Product Owner accountability.</li>
+            <li>By the end of this course, students will be equipped with the knowledge, tools and strategies needed to be an effective Product Owner.</li>
+        </ul>
+
         <div class="highlight">
             <p>
-                Before we meet, please read through the <strong>Scrum Guide</strong> at 
-                <a href="https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf" target="_blank">
-                    scrumguides.org
-                </a>.
+                This program includes optional prep work and two days of classroom training. 
+                Completing the prep work will help you to get the most out of the program and to 
+                familiarize yourself with the technology we will be using in class.
+            </p>
+            <p>
+                The class is highly interactive, and you'll need to be on camera for the duration of the session. Please test your camera and audio in advance to ensure everything is working properly.
             </p>
         </div>
 
-        <!-- WORKSHOP MODULES -->
-        <h2>Workshop Modules</h2>
+        <h2>Classroom Training Details</h2>
+        <ul>
+            <li><strong>Date:</strong> {startDate}</li>
+            <li><strong>Time:</strong> 8:00 a.m. - 4:00 p.m. MT</li>
+            <li><strong>Location:</strong> Virtual over Zoom</li>
+            <li><strong>Materials:</strong> You'll need 10 peices of printer paper, a sharpie and a pen.</li>
+        </ul>
         <p>
-            Over the two days, we’ll cover a variety of Scrum topics. Here’s a snapshot of our agenda:
+            Please arrive at least 5 minutes before the start of class to get settled and be ready to participate. Compare the start time with your local time zone by clicking <a href="https://time.is/MT">here</a>.
+        </p>
+        <p>
+            Each day will have a 45-minute lunch break at 12:00 pm MT and four 10-minute breaks spread throughout the day.
+        </p>
+        <p>
+            <strong>Zoom Link:</strong> <a href="{zoomLink}">{zoomLink}</a>
         </p>
 
-        <!-- DAY 1 MODULES -->
-        <div class="module-box module-day1">
-            <h3 class="module-title">Day 1</h3>
-            <ul>
-                <li>What Scrum is not</li>
-                <li>The Manifesto for Agile Software Development</li>
-                <li>Scrum Overview Learning Centres</li>
-                <li>Scrum Accountabilities Deep Dive</li>
-                <li>Sprint Goals</li>
-                <li>Sprint Length</li>
-                <li>True Leaders Who Serve</li>
-                <li>Service to the Product Owner</li>
-                <li>Effective Scrum Teams</li>
-                <li>Technical Debt</li>
-                <li>Technical Practices</li>
-                <li>Articulating the value of Scrum</li>
-            </ul>
-        </div>
+        <a href="https://app.mural.co/t/superheroesacademy0673/m/superheroesacademy0673/1746735745488/67104c990e2593171a235b6a4c1b997f82243617" class="button">Access Prep Work Here</a>
 
-        <!-- DAY 2 MODULES -->
-        <div class="module-box module-day2">
-            <h3 class="module-title">Day 2</h3>
-            <ul>
-                <li>Launching Scrum</li>
-                <li>Scrum Team Formation</li>
-                <li>Shared Understanding of Scrum Events:
-                    <ul>
-                        <li>Sprint Planning</li>
-                        <li>Daily Scrum</li>
-                        <li>Sprint Review</li>
-                        <li>Sprint Retrospective</li>
-                    </ul>
-                </li>
-                <li>Product Backlog Refinement</li>
-                <li>Scrum Simulation</li>
-                <li>Facilitation Skills</li>
-                <li>Definition of Done</li>
-                <li>Empirical Scrum Pillars</li>
-                <li>Impediment Removal</li>
-                <li>Closing Activities</li>
-                <li>*Workshop topics may adjust or evolve with your needs.</li>
-            </ul>
-        </div>
-
-        <!-- WHEN & WHERE -->
-        <h2>When &amp; Where</h2>
         <p>
-            <strong>Dates:</strong> April 9 &amp; 10, 9:00am – 5:00pm ET both days<br>
-            <strong>Location:</strong> Home Depot Canada - Corporate Office<br>
-            1 Concorde Gate #400, North York, ON M3C 4H9<br>
-            <strong>Training Room:</strong> Killarney Room
+            No signup is necessary. Simply head over to the Prep Obstacle Course at the top of the Mural and follow the instructions. When you're done, you'll be ready for class! <b>We use Mural throughout the entire class, so if you’re new to it, the prep work is highly recommended—it’ll help you feel comfortable and ready to go.</b> If you require assistance or have any questions, please email me, and I’ll be happy to help.
         </p>
 
-        <!-- SIGNATURE -->
         <p class="ps-note">
-            If you have any questions leading up to our training, please feel free to reach out. 
-            See you soon and get ready to supercharge your Scrum practice!
+            P.S. We’re thrilled to have you join us on this journey. If you know anyone who might also benefit from this program, please share on your social networks that you've just started and include this link: <a href="https://www.superheroes.academy/cspo-certification-training">https://www.superheroes.academy/cspo-certification-training</a>. Your support helps us grow our community and reach more people like you!
         </p>
+
         <div class="signature">
-            <p>Thanks,</p>
+            <p>Thanks, and I’m looking forward to working with you,</p>
             <p>
-                <strong>Erkan Kadir</strong><br>
-                Leadership Development, Corporate Facilitation, Agile Consulting<br>
+                Erkan Kadir<br>
                 CST, CEC, CTC, ICF-PCC, Certified LMC™, ORSCC, SPC, BSc<br>
                 <a href="https://www.superheroes.academy/">https://www.superheroes.academy/</a>
             </p>
             <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfyruxOFwZB8qgFL-VN2MqhmowCHiN1Wk_dhsBu1YhPIpqMCg2Im2XSI_DF25T99o2fBLKcqCgz598avDhv-HC5yQEhC7oU7X9kPdNyquXlAmvE3VLaluSDVUVodMKJIDV9bVmToFphVP03XQpC0h2Ja8-J?key=0r5fPmY6FVKSQ1-AVtPzwQ" alt="Superheroes Academy Logo" class="logo">
+        </div>
+
+        <div class="footer">
+            &copy; Superheroes Academy. All rights reserved.
         </div>
     </div>
 </body>
