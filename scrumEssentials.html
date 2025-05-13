@@ -33,42 +33,57 @@
         })(window, document, "clarity", "script", "otds3puo6a");
     </script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            fetch('https://ipapi.co/json/')
-            .then(r => r.json())
-            .then(d => {
-            if (d.country === 'CA') {
-                /* pick the right label */
-                let label = 'Canadian';
-                if (d.city && d.city.toLowerCase() === 'calgary') {
-                label = 'Calgarian';
-                } else if (d.region_code === 'AB' || (d.region && d.region.toLowerCase() === 'alberta')) {
-                label = 'Albertan';
-                }
+<script>
+const TOKEN = '3257e2cf9f0f6e';           /* IPinfo token tied to superheroes.academy */
 
-                const banner = document.createElement('div');
-                banner.innerHTML = `
-                <div style="background:linear-gradient(90deg,#ff0000,#ffffff,#ff0000);color:#000;padding:12px 20px;display:flex;align-items:center;justify-content:center;font-family:sans-serif;font-size:16px;font-weight:bold;">
-                    <img src="https://flagcdn.com/ca.svg" alt="Canadian Flag" style="height:20px;margin-right:12px;">
-                    Support&nbsp;Local&nbsp;–&nbsp;Buy&nbsp;${label}<img src="https://flagcdn.com/ca.svg" alt="Canadian Flag" style="height:20px;margin-left:12px;">
-                </div>
-                `;
-
-                /* put banner at very top */
-                document.body.prepend(banner);
-
-                /* push fixed / sticky header down by banner height */
-                const moveHeader = () => {
-                const header = document.querySelector('header#header');
-                if (header) header.style.top = banner.offsetHeight + 'px';
-                };
-                requestAnimationFrame(moveHeader);
-                window.addEventListener('resize', moveHeader);
+document.addEventListener('DOMContentLoaded', () => {
+  /* 1‑step: get country (unlimited, plain text) */
+  fetch(`https://ipinfo.io/country?token=${TOKEN}`)
+    .then(r => r.text())
+    .then(code => {
+      if (code.trim() === 'CA') {
+        /* 2‑step: detailed lookup (counts toward 50 000/mo quota) */
+        fetch(`https://ipinfo.io/json?token=${TOKEN}`)
+          .then(r => r.json())
+          .then(loc => {
+            let label = 'Canadian';
+            if (loc.city && loc.city.toLowerCase() === 'calgary') {
+              label = 'Calgarian';
+            } else if (loc.region && loc.region.toLowerCase() === 'alberta') {
+              label = 'Albertan';
             }
-            });
-        });
-    </script>
+            showBanner(label);
+          })
+          .catch(() => showBanner('Canadian'));   // fallback if quota exceeded
+      }
+    })
+    .catch(() => { /* silent fail if country call fails */ });
+
+  /* banner injector + header bump */
+  function showBanner(label) {
+    const bar = document.createElement('div');
+    bar.innerHTML = `
+      <div style="background:linear-gradient(90deg,#ff0000,#ffffff,#ff0000);color:#000;
+                  padding:12px 20px;display:flex;align-items:center;justify-content:center;
+                  font-family:sans-serif;font-size:16px;font-weight:bold;">
+        <img src="https://flagcdn.com/ca.svg" alt="Canadian Flag"
+             style="height:20px;margin-right:12px;">
+        Support&nbsp;Local&nbsp;–&nbsp;Buy&nbsp;${label}
+        <img src="https://flagcdn.com/ca.svg" alt="Canadian Flag"
+             style="height:20px;margin-left:12px;">
+      </div>`;
+    document.body.prepend(bar);
+
+    /* push Squarespace fixed header down */
+    const nudge = () => {
+      const header = document.querySelector('header#header');
+      if (header) header.style.top = bar.offsetHeight + 'px';
+    };
+    requestAnimationFrame(nudge);
+    window.addEventListener('resize', nudge);
+  }
+});
+</script>
 
 
     <!-- Bootstrap CSS -->
