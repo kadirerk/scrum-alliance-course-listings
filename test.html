@@ -1,160 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome to Superheroes Academy - Certified Scrum Product Owner®</title>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            background-color: #fff;
-            max-width: 700px;
-            margin: 30px auto;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #2E86C1;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #2E86C1;
-            font-size: 22px;
-            margin-top: 30px;
-            border-bottom: 2px solid #2E86C1;
-            padding-bottom: 5px;
-        }
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        ul {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-left: 20px;
-        }
-        a {
-            color: #2E86C1;
-            text-decoration: none;
-        }
-        .button {
-            display: inline-block;
-            background-color: #2E86C1;
-            color: #fff;
-            padding: 12px 25px;
-            margin: 20px 0;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .signature {
-            margin-top: 40px;
-            font-size: 16px;
-        }
-        .signature a {
-            color: #2E86C1;
-        }
-        .footer {
-            margin-top: 40px;
-            font-size: 14px;
-            color: #999;
-            text-align: center;
-        }
-        .highlight {
-            background-color: #eaf2f8;
-            padding: 10px;
-            border-left: 4px solid #2E86C1;
-            margin: 20px 0;
-        }
-        .ps-note {
-            font-style: italic;
-            color: #555;
-        }
-        .badge {
-            display: block;
-            margin: 20px auto;
-            max-width: 150px;
-        }
-        .logo {
-            display: block;
-            margin-top: 20px;
-            max-width: 200px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome, {firstName}!</h1>
-        <img src="https://courses.superheroes.academy/images/associations/cspo.png" alt="CSPO Certification Badge" class="badge">
-        <p>
-            Welcome to <strong>{startDate} Superheroes Academy Certified Scrum Product Owner® (CSPO®)</strong>! I’m so excited to journey with you on this training.
-        </p>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        if (data.country === 'CA') {
+          const banner = document.createElement('div');
+          banner.innerHTML = `
+            <div style="background: linear-gradient(90deg, #ff0000, #ffffff, #ff0000); color: #000; padding: 12px 20px; display: flex; align-items: center; justify-content: center; font-family: sans-serif; font-size: 16px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 9999;">
+              <img src="https://flagcdn.com/ca.svg" alt="Canadian Flag" style="height: 20px; margin-right: 12px;">
+              Support Local – Buy Canadian &nbsp; <img src="https://flagcdn.com/ca.svg" alt="Canadian Flag" style="height: 20px; margin-right: 12px;">
+            </div>
+          `;
 
-        <h2>Learning Objectives</h2>
-        <ul>
-            <li>By the end of the first day, students will understand the Scrum framework well enough to explain it to a stranger.</li>
-            <li>By the end of the second day, students will experience the skills and tools essential to the Product Owner accountability.</li>
-            <li>By the end of this course, students will be equipped with the knowledge, tools and strategies needed to be an effective Product Owner.</li>
-        </ul>
-
-        <div class="highlight">
-            <p>
-                This program includes optional prep work and two days of classroom training. 
-                Completing the prep work will help you to get the most out of the program and to 
-                familiarize yourself with the technology we will be using in class.
-            </p>
-            <p>
-                The class is highly interactive, and you'll need to be on camera for the duration of the session. Please test your camera and audio in advance to ensure everything is working properly.
-            </p>
-        </div>
-
-        <h2>Classroom Training Details</h2>
-        <ul>
-            <li><strong>Date:</strong> {startDate}</li>
-            <li><strong>Time:</strong> 8:00 a.m. - 4:00 p.m. MT</li>
-            <li><strong>Location:</strong> Virtual over Zoom</li>
-            <li><strong>Materials:</strong> You'll need 10 peices of printer paper, a sharpie and a pen.</li>
-        </ul>
-        <p>
-            Please arrive at least 5 minutes before the start of class to get settled and be ready to participate. Compare the start time with your local time zone by clicking <a href="https://time.is/MT">here</a>.
-        </p>
-        <p>
-            Each day will have a 45-minute lunch break at 12:00 pm MT and four 10-minute breaks spread throughout the day.
-        </p>
-        <p>
-            <strong>Zoom Link:</strong> <a href="{zoomLink}">{zoomLink}</a>
-        </p>
-
-        <a href="https://app.mural.co/t/superheroesacademy0673/m/superheroesacademy0673/1746735745488/67104c990e2593171a235b6a4c1b997f82243617" class="button">Access Prep Work Here</a>
-
-        <p>
-            No signup is necessary. Simply head over to the Prep Obstacle Course at the top of the Mural and follow the instructions. When you're done, you'll be ready for class! <b>We use Mural throughout the entire class, so if you’re new to it, the prep work is highly recommended—it’ll help you feel comfortable and ready to go.</b> If you require assistance or have any questions, please email me, and I’ll be happy to help.
-        </p>
-
-        <p class="ps-note">
-            P.S. We’re thrilled to have you join us on this journey. If you know anyone who might also benefit from this program, please share on your social networks that you've just started and include this link: <a href="https://www.superheroes.academy/cspo-certification-training">https://www.superheroes.academy/cspo-certification-training</a>. Your support helps us grow our community and reach more people like you!
-        </p>
-
-        <div class="signature">
-            <p>Thanks, and I’m looking forward to working with you,</p>
-            <p>
-                Erkan Kadir<br>
-                CST, CEC, CTC, ICF-PCC, Certified LMC™, ORSCC, SPC, BSc<br>
-                <a href="https://www.superheroes.academy/">https://www.superheroes.academy/</a>
-            </p>
-            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfyruxOFwZB8qgFL-VN2MqhmowCHiN1Wk_dhsBu1YhPIpqMCg2Im2XSI_DF25T99o2fBLKcqCgz598avDhv-HC5yQEhC7oU7X9kPdNyquXlAmvE3VLaluSDVUVodMKJIDV9bVmToFphVP03XQpC0h2Ja8-J?key=0r5fPmY6FVKSQ1-AVtPzwQ" alt="Superheroes Academy Logo" class="logo">
-        </div>
-
-        <div class="footer">
-            &copy; Superheroes Academy. All rights reserved.
-        </div>
-    </div>
-</body>
-</html>
+          const anchor = document.querySelector('.sqs-announcement-bar-custom-location');
+          if (anchor && anchor.parentNode) {
+            anchor.parentNode.insertBefore(banner, anchor.nextSibling);
+          } else {
+            document.body.style.paddingTop = '50px';
+            document.body.insertBefore(banner, document.body.firstChild);
+          }
+        }
+      });
+  });
+</script>
