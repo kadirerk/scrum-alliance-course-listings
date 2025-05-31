@@ -1914,49 +1914,18 @@ document.addEventListener('DOMContentLoaded', () => {
     var Tawk_LoadStart = new Date();
 
     function loadTawkWidget() {
-        const isMobileDevice = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-        if (isMobileDevice) {
-            // Open the direct chat link in a new tab on mobile devices
-            window.open("https://tawk.to/chat/6570a4f5bfb79148e59abbe9/1hh008o3q", "_blank");
-        } else {
-            // Load and maximize the Tawk.to widget for desktop users
-            if (!window.Tawk_API || !window.Tawk_API.onLoad) {
-                Tawk_API.onLoad = function() {
-                    Tawk_API.maximize(); // Open the chat window
-                };
-                var s1 = document.createElement("script");
-                var s0 = document.getElementsByTagName("script")[0];
-                s1.async = true;
-                s1.src = 'https://embed.tawk.to/6570a4f5bfb79148e59abbe9/1hh008o3q';
-                s1.charset = 'UTF-8';
-                s1.setAttribute('crossorigin', '*');
-                s0.parentNode.insertBefore(s1, s0);
-            } else {
-                Tawk_API.maximize(); // If already loaded, just maximize
-            }
-        }
+        // Redirect to the chat URL in a new tab
+        window.open("https://www.superheroes.academy/chat", "_blank");
     }
 
     function updateScheduleLinksByDevice() {
         const scheduleLinks = document.querySelectorAll(".scheduleCall");
-        const isMobileDevice = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
         scheduleLinks.forEach(function(scheduleLink) {
-            if (isMobileDevice) {
-                scheduleLink.onclick = function(event) {
-                    event.preventDefault(); // Prevent default link behavior
-                    window.open("https://www.superheroes.academy/schedule", "_blank");
-                };
-            } else {
-                scheduleLink.onclick = function(event) {
-                    event.preventDefault(); // Prevent default link behavior
-                    Calendly.initPopupWidget({
-                        url: 'https://calendly.com/product-specific-meetings/free-constultation?hide_event_type_details=1&hide_gdpr_banner=1'
-                    });
-                    return false;
-                };
-            }
+            scheduleLink.onclick = function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                window.open("https://www.superheroes.academy/schedule", "_blank");
+            };
         });
     }
 
