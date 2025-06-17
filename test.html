@@ -1,25 +1,150 @@
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    fetch('https://ipapi.co/json/')
-      .then(response => response.json())
-      .then(data => {
-        if (data.country === 'CA') {
-          const banner = document.createElement('div');
-          banner.innerHTML = `
-            <div style="background: linear-gradient(90deg, #ff0000, #ffffff, #ff0000); color: #000; padding: 12px 20px; display: flex; align-items: center; justify-content: center; font-family: sans-serif; font-size: 16px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 9999;">
-              <img src="https://flagcdn.com/ca.svg" alt="Canadian Flag" style="height: 20px; margin-right: 12px;">
-              Support Local – Buy Canadian &nbsp; <img src="https://flagcdn.com/ca.svg" alt="Canadian Flag" style="height: 20px; margin-right: 12px;">
-            </div>
-          `;
-
-          const anchor = document.querySelector('.sqs-announcement-bar-custom-location');
-          if (anchor && anchor.parentNode) {
-            anchor.parentNode.insertBefore(banner, anchor.nextSibling);
-          } else {
-            document.body.style.paddingTop = '50px';
-            document.body.insertBefore(banner, document.body.firstChild);
-          }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Agile in Sales Microcredential Workshop</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
         }
-      });
-  });
-</script>
+        .container {
+            background-color: #fff;
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2E86C1;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #2E86C1;
+            font-size: 22px;
+            margin-top: 30px;
+            border-bottom: 2px solid #2E86C1;
+            padding-bottom: 5px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        ul {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-left: 20px;
+            padding-left: 0;
+        }
+        a {
+            color: #2E86C1;
+            text-decoration: none;
+        }
+        .highlight, .important {
+            background-color: #eaf2f8;
+            padding: 10px;
+            border-left: 4px solid #2E86C1;
+            margin: 20px 0;
+        }
+        .signature {
+            margin-top: 40px;
+            font-size: 16px;
+        }
+        .signature a {
+            color: #2E86C1;
+        }
+        .badge {
+            display: block;
+            margin: 20px auto;
+            max-width: 150px;
+        }
+        .logo {
+            display: block;
+            margin-top: 20px;
+            max-width: 200px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #999;
+            text-align: center;
+        }
+        .ps-note {
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {firstName}!</h1>
+        <img src="https://www.scrumalliance.org/images/default-source/badges/agile-in-sales_300-x-300.png" alt="Microcredential Badge" class="badge">
+        <p>
+            Welcome to the <strong>{startDate} Superheroes Academy Scrum Alliance® Agile in Sales Microcredential Workshop</strong>! I’m thrilled to join you on this exciting journey.
+        </p>
+
+        <h2>Workshop Details</h2>
+        <ul>
+            <li><strong>Date and Time:</strong> {startDate}</li>
+            <li><strong>Location:</strong> Virtual over Zoom (<a href="{zoomLink}">{zoomLink}</a>)</li>
+        </ul>
+
+        <p>
+            Please arrive at least 5 minutes before the start time to get settled. Compare the start time with your local time zone by clicking <a href="https://time.is/MT">here</a>.
+        </p>
+
+        <div class="highlight">
+            <h2>Workshop Agreements</h2>
+            <ul>
+                <li>Webcam ON</li>
+                <li>Active collaboration, but right to pass</li>
+                <li>Breaks every hour</li>
+                <li>Bring writing utensils</li>
+            </ul>
+        </div>
+
+        <h2>Important Links</h2>
+        <ul>
+            <li><a href="https://docs.google.com/document/d/1JE24lxWCeKh3DFJBgtVqA_hWX8_rUBOk/edit?usp=sharing&ouid=100982808586628703574&rtpof=true&sd=true">Download Participant Guide</a></li>
+            <li><a href="https://docs.google.com/presentation/d/11aLJ6viC_ayRzFQUHGENoMiOUxqj0ocX/edit?usp=sharing&ouid=100982808586628703574&rtpof=true&sd=true">Download Class Presentation</a></li>
+        </ul>
+
+        <div class="highlight">
+            <h2>On-Camera Requirement</h2>
+            <p>
+                This workshop is highly interactive, and you'll need to have your camera on for the entire session. Please test your camera and audio beforehand using the <a href="https://zoom.us/test">Zoom test meeting</a>.
+            </p>
+        </div>
+
+        <p>
+            If you have any questions or need assistance, feel free to reach out. I'm looking forward to seeing you there!
+        </p>
+
+        <p>
+            Thanks, and I’m excited to work with you,
+        </p>
+
+        <div class="signature">
+            <p>
+                Erkan Kadir<br>
+                CST, CEC, CTC, ICF-PCC, Certified LMC™, ORSCC, SPC<br>
+                <a href="https://www.superheroes.academy/">https://www.superheroes.academy/</a>
+            </p>
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfyruxOFwZB8qgFL-VN2MqhmowCHiN1Wk_dhsBu1YhPIpqMCg2Im2XSI_DF25T99o2fBLKcqCgz598avDhv-HC5yQEhC7oU7X9kPdNyquXlAmvE3VLaluSDVUVodMKJIDV9bVmToFphVP03XQpC0h2Ja8-J?key=0r5fPmY6FVKSQ1-AVtPzwQ" alt="Superheroes Academy Logo" class="logo">
+        </div>
+
+        <p class="ps-note">
+            P.S. If you know anyone who might benefit from this program, please share on your social networks that you've just started this class. Your support helps us grow our community!
+        </p>
+
+        <div class="footer">
+            &copy; Superheroes Academy. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
