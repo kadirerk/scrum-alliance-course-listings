@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .agenda-box {
             background-color: #dbeef7;
             border-radius: 30px; /* Adjust this value for more/less rounded corners */
-            padding: 70px 20px 45px 20px;
+            padding: 70px 20px 30px 20px;
             position: relative; /* Ensures that absolute positioning is relative to this container */
             overflow: hidden; /* Prevents overflow of absolute elements */
         }
@@ -433,6 +433,205 @@ document.addEventListener('DOMContentLoaded', () => {
             .agenda-content {
                 padding-top: 120px; /* Increased space for larger screens */
                 padding-bottom: 120px;
+            }
+        }
+
+        /* CURRICULUM OPTIONS STYLING */
+        .curriculum-options-container {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+        }
+
+        .option-title {
+            font-family: 'Graphik-Semibold', sans-serif;
+            font-size: 28px;
+            color: #395edf;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #395edf;
+            display: inline-block;
+        }
+
+        .curriculum-option {
+            margin-bottom: 40px;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(57, 94, 223, 0.1);
+        }
+
+
+        /* OPTION 2: TIMELINE-BASED LEARNING JOURNEY - COMPACT VERSION */
+        .timeline-container {
+            position: relative;
+            padding: 15px 0;
+            /* max-height: 75vh; */
+            /* overflow: hidden; */
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 35px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #395edf, #6b8fff);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item.lab-milestone .timeline-marker {
+            background: linear-gradient(135deg, #395edf, #6b8fff);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #395edf;
+        }
+
+        .timeline-marker {
+            position: relative;
+            z-index: 2;
+            width: 70px;
+            height: 70px;
+            background: white;
+            border: 3px solid #395edf;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 6px 18px rgba(57, 94, 223, 0.2);
+        }
+
+        .timeline-icon {
+            font-size: 24px;
+        }
+
+        .timeline-item.lab-milestone .timeline-icon {
+            filter: brightness(0) invert(1);
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 24px rgba(57, 94, 223, 0.1);
+            border-left: 3px solid #395edf;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 32px rgba(57, 94, 223, 0.2);
+        }
+
+        .timeline-content h4 {
+            margin: 0 0 12px 0;
+            font-family: 'Graphik-Semibold', sans-serif;
+            color: #182340;
+            font-size: 16px;
+            line-height: 1.3;
+        }
+
+        .timeline-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .topic-bubble {
+            background: linear-gradient(135deg, #395edf, #6b8fff);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .topic-bubble:hover {
+            transform: scale(1.05);
+        }
+
+
+
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .curriculum-option {
+                padding: 20px;
+            }
+
+            .timeline-container::before {
+                left: 25px;
+            }
+
+            .timeline-marker {
+                width: 50px;
+                height: 50px;
+            }
+
+            .timeline-icon {
+                font-size: 18px;
+            }
+
+            .timeline-content {
+                padding: 15px;
+            }
+
+            .timeline-content h4 {
+                font-size: 14px;
+            }
+
+            .timeline-item {
+                margin-bottom: 20px;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .option-title {
+                font-size: 22px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+                margin-bottom: 15px;
+            }
+
+            .timeline-container::before {
+                display: none;
+            }
+
+            .timeline-marker {
+                width: 40px;
+                height: 40px;
+            }
+
+            .timeline-icon {
+                font-size: 16px;
+            }
+
+            .timeline-content h4 {
+                font-size: 13px;
+            }
+
+            .topic-bubble {
+                font-size: 10px;
+                padding: 3px 8px;
             }
         }
     </style>
@@ -828,26 +1027,120 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>Led by product and Scrum experts including Erkan Kadir (CST, CEC) with real-world experience in product leadership and entrepreneurship.</p>
         </div>
         
-        <div class="accordion" id="agendaAccordion">
-            <!-- Day 1 Accordion -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Curriculum
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#agendaAccordion">
-                    <div class="accordion-body">
-                        <ul>
-                            <li class="list-timeline-item"><p>Module 1: Product & Customer Discovery</p></li>
-                            <li class="list-timeline-item"><p>Module 2: Defining, Testing, and Measuring Hypotheses</p></li>
-                            <li class="list-timeline-item"><p>Module 3: Defining Vision & Strategy</p></li>
-                            <li class="list-timeline-item"><p>Product Lab #1: Product Idea Incubation</p></li>
-                            <li class="list-timeline-item"><p>Module 4: Leadership Skills for Product Owners</p></li>
-                            <li class="list-timeline-item"><p>Module 5: Advanced Roadmapping and Refinement</p></li>
-                            <li class="list-timeline-item"><p>Module 6: Product Ownership with Multiple Teams</p></li>
-                            <li class="list-timeline-item"><p>Product Lab #2: Product Pitch Presentation</p></li>
-                        </ul>
+        <!-- CURRICULUM -->
+        
+            
+            <!-- TIMELINE-BASED LEARNING JOURNEY -->
+            <div class="curriculum-option" id="curriculum">
+                <h3 class="option-title">Learning Journey</h3>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">🔍</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Module 1: Product & Customer Discovery</h4>
+                            <div class="timeline-topics">
+                                <div class="topic-bubble">Discovery Techniques</div>
+                                <div class="topic-bubble">Connecting Developers to Customers</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">🧪</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Module 2: Defining, Testing, and Measuring Hypotheses</h4>
+                            <div class="timeline-topics">
+                                <div class="topic-bubble">Experiment Canvas</div>
+                                <div class="topic-bubble">Hypothesis Development</div>
+                                <div class="topic-bubble">Cognitive Biases</div>
+                                <div class="topic-bubble">Validating Assumptions</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">🎯</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Module 3: Defining Vision & Strategy</h4>
+                            <div class="timeline-topics">
+                                <div class="topic-bubble">Defining Vision</div>
+                                <div class="topic-bubble">Value Modeling</div>
+                                <div class="topic-bubble">Product Strategy</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item lab-milestone">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">🚀</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Product Lab #1: Product Idea Incubation</h4>
+                            <div class="timeline-topics">
+                                <div class="topic-bubble">Hands-on Workshop</div>
+                                <div class="topic-bubble">Product Development Practice</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">👥</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Module 4: Leadership Skills for Product Owners</h4>
+                            <div class="timeline-topics">
+                                <div class="topic-bubble">Product Ownership</div>
+                                <div class="topic-bubble">Stakeholder Management</div>
+                                <div class="topic-bubble">Facilitation Skills</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">🗺️</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Module 5: Advanced Roadmapping and Refinement</h4>
+                            <div class="timeline-topics">
+                                <div class="topic-bubble">Product Backlog Refinement</div>
+                                <div class="topic-bubble">Milestone Forecasting</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">⚖️</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Module 6: Product Ownership with Multiple Teams</h4>
+                            <div class="timeline-topics">
+                                <div class="topic-bubble">Scaling Responsibly</div>
+                                <div class="topic-bubble">Team Structure</div>
+                                <div class="topic-bubble">Scaling Frameworks</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item lab-milestone">
+                        <div class="timeline-marker">
+                            <div class="timeline-icon">🎤</div>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Product Lab #2: Product Pitch Presentation</h4>
+                            <div class="timeline-topics">
+                                <div class="topic-bubble">Presentation Workshop</div>
+                                <div class="topic-bubble">Final Presentation</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -857,7 +1150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <!-- <img class="banner bottom-banner" 
              src="images/Decoration Icons/bottom-bannerforLightBlueSection.png" 
              alt="Bottom Banner"> -->
-    </div>
+
 
 
 
@@ -2476,5 +2769,89 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </div> -->
 </div> <!--Container has been implemented down to here!! -->
+
+<script>
+// Curriculum Timeline Interactive Features
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Timeline Animation on Scroll
+    function animateTimeline() {
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }
+            });
+        }, { threshold: 0.3 });
+
+        timelineItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-50px)';
+            item.style.transition = 'all 0.6s ease';
+            observer.observe(item);
+        });
+    }
+
+    // Add animation keyframes
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideInLeft {
+            from { 
+                opacity: 0; 
+                transform: translateX(-50px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateX(0); 
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Initialize animations
+    animateTimeline();
+
+    // Smooth scrolling for title click
+    const optionTitle = document.querySelector('.option-title');
+    if (optionTitle) {
+        optionTitle.style.cursor = 'pointer';
+        optionTitle.addEventListener('click', function() {
+            const option = this.closest('.curriculum-option');
+            option.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    }
+
+    // Add floating action button for quick navigation to curriculum
+    const fab = document.createElement('div');
+    fab.innerHTML = `
+        <div style="position: fixed; bottom: 30px; right: 30px; z-index: 1000;">
+            <div style="background: linear-gradient(135deg, #395edf, #6b8fff); 
+                        color: white; 
+                        width: 60px; 
+                        height: 60px; 
+                        border-radius: 50%; 
+                        display: flex; 
+                        align-items: center; 
+                        justify-content: center; 
+                        font-size: 24px; 
+                        cursor: pointer; 
+                        box-shadow: 0 8px 24px rgba(57, 94, 223, 0.3);
+                        transition: all 0.3s ease;"
+                 onmouseover="this.style.transform='scale(1.1)'" 
+                 onmouseout="this.style.transform='scale(1)'"
+                 onclick="document.getElementById('curriculum').scrollIntoView({behavior: 'smooth'})">
+                📚
+            </div>
+        </div>
+    `;
+    document.body.appendChild(fab);
+
+    console.log('🎉 Timeline curriculum design is now live and interactive!');
+});
+</script>
+
 </body>
 </html>
