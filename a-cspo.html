@@ -464,6 +464,104 @@ document.addEventListener('DOMContentLoaded', () => {
             box-shadow: 0 2px 10px rgba(57, 94, 223, 0.1);
         }
 
+        /* OPTION 1: INTERACTIVE FEATURE CARDS - COMPACT VERSION */
+        .program-details-option1 {
+            margin: 30px 0;
+        }
+
+        .feature-cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            padding: 15px;
+            align-items: stretch;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 6px 20px rgba(57, 94, 223, 0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #395edf, #6b8fff);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(57, 94, 223, 0.2);
+            border-color: #395edf;
+        }
+
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-align: center;
+            line-height: 1;
+        }
+
+        .feature-card h4 {
+            font-family: 'Graphik-Semibold', sans-serif;
+            font-size: 17px;
+            color: #395edf;
+            margin-bottom: 12px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .feature-card p {
+            color: #555;
+            line-height: 1.4;
+            text-align: center;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .expert-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+        }
+
+        /* RESPONSIVE DESIGN FOR OPTION 1 - COMPACT VERSION */
+        @media (max-width: 768px) {
+            .feature-cards-container {
+                grid-template-columns: 1fr;
+                padding: 10px;
+                gap: 12px;
+            }
+            
+            .feature-card {
+                padding: 15px;
+            }
+            
+            .feature-icon {
+                font-size: 30px;
+                margin-bottom: 8px;
+            }
+            
+            .feature-card h4 {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            
+            .feature-card p {
+                font-size: 13px;
+            }
+        }
+
         .curriculum-option {
             margin-bottom: 40px;
             padding: 40px;
@@ -1021,23 +1119,48 @@ document.addEventListener('DOMContentLoaded', () => {
     
         <!-- Agenda Content -->
         <h2 class="agenda-title" style="margin-top: 50px;">Program Structure &amp; Highlights</h2>
-    
-        <!-- Additional Information -->
-        <div class="program-details">
-            <p><strong>Format:</strong> Self-paced training with six modules completed over 18 hours, plus two live Product Labs for personalized support and feedback.</p>
-    
-            <p><strong>Self-Paced Learning:</strong> Complete the six training modules at your own pace using our Learning Management System (LMS). Receive continuous feedback and grading on your activities as you build your product strategy.</p>
-
-            <p><strong>Live Product Labs:</strong> Two face-to-face sessions provide personalized support - Product Lab #1 for product idea incubation, and Product Lab #2 for your final Shark Tank-style pitch presentation.</p>
-    
-            <p><strong>Real Product Development:</strong> Work on an actual product idea throughout the program, developing it from concept to investor-ready business plan using the Superheroes Academy Product Incubation Framework.</p>
-    
-            <p><strong>Continuous Coaching:</strong> Receive ongoing guidance through activity grading and feedback touchpoints as you progress through the modules.</p>
-    
-            <p><strong>Prerequisite:</strong> An active or expired Scrum Alliance Certified Scrum Product Owner℠ (CSPO) certification and one year experience working with Product Owner skills is required for earning an A-CSPO. This experience may be gained before, during, or after attending our program. When you take our class with an expired CSPO, we’ll have it automatically renewed on your behalf.</p>
-
-            <p>Led by product and Scrum experts including Erkan Kadir (CST, CEC) with real-world experience in product leadership and entrepreneurship.</p>
+        
+        <!-- INTERACTIVE FEATURE CARDS -->
+        <div class="program-details-option1">
+            <div class="feature-cards-container">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h4>Format</h4>
+                    <p>Self-paced training with six modules completed over 12 hours, plus two live Product Labs for personalized support and feedback.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h4>Self-Paced Learning</h4>
+                    <p>Complete the six training modules at your own pace using our Learning Management System (LMS). Receive continuous feedback and grading on your activities as you build your product strategy.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h4>Live Product Labs</h4>
+                    <p>Two face-to-face sessions provide personalized support - Product Lab #1 for product idea incubation, and Product Lab #2 for your final Shark Tank-style pitch presentation.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h4>Real Product Development</h4>
+                    <p>Work on an actual product idea throughout the program, developing it from concept to investor-ready business plan using the Superheroes Academy Product Incubation Framework.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h4>Prerequisite</h4>
+                    <p>An active or expired CSPO and one year of experience using Product Owner skills. If your CSPO is expired, we’ll renew it for you when you join our class.</p>
+                </div>
+                
+                <div class="feature-card expert-card">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <h4>Expert Leadership</h4>
+                    <p>Led by product and Scrum experts including Erkan Kadir (CST, CEC) with real-world experience in product leadership and entrepreneurship.</p>
+                </div>
+            </div>
         </div>
+
         
         <!-- CURRICULUM -->
         
