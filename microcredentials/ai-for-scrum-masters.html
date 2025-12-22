@@ -831,6 +831,53 @@ document.addEventListener('DOMContentLoaded', () => {
     </div> -->
 
 
+    <style>
+        /* Video Section */
+        .video-container {
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            padding: 0px;
+            border-radius: 100px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .video-max-width {
+            max-width: 820px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .video-container {
+                padding: 0px;
+            }
+
+            .video-container h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-12 video-max-width">
+                <div class="video-container p-4 bg-light rounded shadow">
+                    <h2 class="text-center mb-2">A quick intro to this microcredential</h2>
+                    <p class="text-center text-muted mb-4">A short walkthrough to help you decide if the course is the right fit.</p>
+                    <div class="ratio ratio-16x9">
+                        <iframe class="rounded"
+                                src="https://www.youtube.com/embed/GCy6EmcJZV4"
+                                title="AI for Scrum Masters microcredential intro"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="agenda-box">
         <!-- Top Banner -->
         <img class="banner top-banner" 
