@@ -1,150 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Welcome to the Scrum Better with Kanban (Dual Credentials) Workshop</title>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            background-color: #fff;
-            max-width: 700px;
-            margin: 30px auto;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #2E86C1;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #2E86C1;
-            font-size: 22px;
-            margin-top: 30px;
-            border-bottom: 2px solid #2E86C1;
-            padding-bottom: 5px;
-        }
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        ul {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-left: 20px;
-            padding-left: 0;
-        }
-        a {
-            color: #2E86C1;
-            text-decoration: none;
-        }
-        .highlight, .important {
-            background-color: #eaf2f8;
-            padding: 10px;
-            border-left: 4px solid #2E86C1;
-            margin: 20px 0;
-        }
-        .signature {
-            margin-top: 40px;
-            font-size: 16px;
-        }
-        .signature a {
-            color: #2E86C1;
-        }
-        .badge {
-            display: block;
-            margin: 20px auto;
-            max-width: 150px;
-        }
-        .logo {
-            display: block;
-            margin-top: 20px;
-            max-width: 200px;
-        }
-        .footer {
-            margin-top: 40px;
-            font-size: 14px;
-            color: #999;
-            text-align: center;
-        }
-        .ps-note {
-            font-style: italic;
-            color: #555;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Reminder: Your Upcoming {programName} Class</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      background-color: #fff;
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #2E86C1;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #2E86C1;
+      font-size: 22px;
+      margin-top: 30px;
+      border-bottom: 2px solid #2E86C1;
+      padding-bottom: 5px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    ul {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-left: 20px;
+      padding-left: 0;
+    }
+    li {
+      margin: 8px 0;
+    }
+    a {
+      color: #2E86C1;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .highlight, .important {
+      background-color: #eaf2f8;
+      padding: 14px 16px;
+      border-left: 4px solid #2E86C1;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    .signature {
+      margin-top: 40px;
+      font-size: 16px;
+    }
+    .signature a {
+      color: #2E86C1;
+    }
+    .logo {
+      display: block;
+      margin-top: 20px;
+      max-width: 200px;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+    }
+    .ps-note {
+      font-style: italic;
+      color: #555;
+      margin-top: 24px;
+    }
+    .details {
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome, {firstName}!</h1>
-        <img src="https://images.squarespace-cdn.com/content/v1/5e2089e23e00db5647f72f89/f83437c8-4ff3-4378-9579-152a52b9fca5/download-1.png?format=2500w" alt="Microcredential Badge" class="badge">
-        <p>
-            Welcome to the <strong>{date} Superheroes Academy Scrum Better with Kanban (Dual Credentials) Workshop</strong>! I’m thrilled to join you on this exciting journey.
-        </p>
+  <div class="container">
+    <h1>Quick reminder, {firstName}!</h1>
 
-        <h2>Workshop Details</h2>
-        <ul>
-            <li><strong>Date:</strong> {date}</li><li><strong>Time:</strong> {time}</li>
-            <li><strong>Location:</strong> Virtual over Zoom (<a href="{zoomLink}">{zoomLink}</a>)</li>
-        </ul>
+    <p>
+      This is a friendly reminder <strong>{reminderLeadTime}</strong> before your <strong>{programName}</strong> class. I wanted to make sure you have everything you need to join smoothly.
+    </p>
 
-        <p>
-            Please arrive at least 5 minutes before the start time to get settled. Compare the start time with your local time zone by clicking <a href="https://time.is/MT">here</a>.
-        </p>
+    <h2>Class Details</h2>
+    <ul class="details">
+      <li><strong>Program:</strong> {programName}</li>
+      <li><strong>Date:</strong> {classDate}</li>
+      <li><strong>Time:</strong> {classTime}</li>
+      <li><strong>Location:</strong> Virtual over Zoom (<a href="{zoomLink}">{zoomLink}</a>)</li>
+    </ul>
 
-        <div class="highlight">
-            <h2>Workshop Agreements</h2>
-            <ul>
-                <li>Webcam ON</li>
-                <li>Active collaboration, but right to pass</li>
-                <li>45 minute lunch break roughly around 12:00 pm MT</li>
-                <li>Breaks every 90 minutes</li>
-            </ul>
-        </div>
-
-        <!--h2>Important Links</h2>
-        <ul>
-            <li><a href="https://drive.google.com/file/d/1QHiPP3fJYe_UPsSxGb0UtHX8cs8Ad6OI/view?usp=sharing">Download Training Materials</a> (we will email a version of this with your work completed in it after the course).</li>
-            <li><a href="https://chatgpt.com/">Sign up for a free account on ChatGPT</a> or another large language model such as Google Gemini or Claude.</li>
-        </ul-->
-
-        <div class="highlight">
-            <h2>On-Camera Requirement</h2>
-            <p>
-                This workshop is highly interactive, and you'll need to have your camera on for the entire session. Please test your camera and audio beforehand using the <a href="https://zoom.us/test">Zoom test meeting</a>.
-            </p>
-        </div>
-
-        <p>
-            If you have any questions or need assistance, feel free to reach out. I'm looking forward to seeing you there!
-        </p>
-
-        <p>
-            Thanks, and I’m excited to work with you,
-        </p>
-
-        <div class="signature">
-            <p>
-                Erkan Kadir<br>
-                AKT, CST, CEC, CTC, ICF-PCC, Certified LMC™, ORSCC, SPC<br>
-                <a href="https://www.superheroes.academy/">https://www.superheroes.academy/</a>
-            </p>
-            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfyruxOFwZB8qgFL-VN2MqhmowCHiN1Wk_dhsBu1YhPIpqMCg2Im2XSI_DF25T99o2fBLKcqCgz598avDhv-HC5yQEhC7oU7X9kPdNyquXlAmvE3VLaluSDVUVodMKJIDV9bVmToFphVP03XQpC0h2Ja8-J?key=0r5fPmY6FVKSQ1-AVtPzwQ" alt="Superheroes Academy Logo" class="logo">
-        </div>
-
-        <p class="ps-note">
-            P.S. If you know anyone who might benefit from this program, please share on your social networks that you've just started this class. Your support helps us grow our community!
-        </p>
-
-        <div class="footer">
-            &copy; Superheroes Academy. All rights reserved.
-        </div>
+    <div class="highlight">
+      <h2>Most important prep</h2>
+      <p>
+        Please take a quick look back at your <strong>welcome email</strong>. It includes the key details on how to prepare, how to dial in, and the links you’ll want handy before we start.
+      </p>
     </div>
+
+    <h2>A couple of quick reminders</h2>
+    <ul>
+      <li>Please join about <strong>5 minutes early</strong> so you can settle in.</li>
+      <li>Test your audio and camera beforehand using the <a href="https://zoom.us/test">Zoom test meeting</a>.</li>
+      <li>If you want to double-check the start time in your local time zone, you can use <a href="https://time.is/MT">this time zone checker</a>.</li>
+    </ul>
+
+    <div class="important">
+      <p>
+        If anything is unclear, just reply to this email and I’ll help you get sorted out.
+      </p>
+    </div>
+
+    <p>
+      Looking forward to seeing you in class.
+    </p>
+
+    <div class="signature">
+      <p>
+        Erkan Kadir<br>
+        AKT, CST, CEC, CTC, ICF-PCC, Certified LMC™, ORSCC, BSc<br>
+        <a href="https://www.superheroes.academy/">https://www.superheroes.academy/</a>
+      </p>
+      <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfyruxOFwZB8qgFL-VN2MqhmowCHiN1Wk_dhsBu1YhPIpqMCg2Im2XSI_DF25T99o2fBLKcqCgz598avDhv-HC5yQEhC7oU7X9kPdNyquXlAmvE3VLaluSDVUVodMKJIDV9bVmToFphVP03XQpC0h2Ja8-J?key=0r5fPmY6FVKSQ1-AVtPzwQ" alt="Superheroes Academy Logo" class="logo">
+    </div>
+
+    <p class="ps-note">
+      P.S. If you know someone who would benefit from this program, I’d be grateful if you shared it with them.
+    </p>
+
+    <div class="footer">
+      &copy; Superheroes Academy. All rights reserved.
+    </div>
+  </div>
 </body>
 </html>
