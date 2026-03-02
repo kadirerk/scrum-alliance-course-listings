@@ -1,147 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Reminder: Your Upcoming {programName} Class</title>
-  <style>
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      background-color: #fff;
-      max-width: 700px;
-      margin: 30px auto;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    h1 {
-      color: #2E86C1;
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-    h2 {
-      color: #2E86C1;
-      font-size: 22px;
-      margin-top: 30px;
-      border-bottom: 2px solid #2E86C1;
-      padding-bottom: 5px;
-    }
-    p {
-      font-size: 16px;
-      line-height: 1.6;
-    }
-    ul {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-left: 20px;
-      padding-left: 0;
-    }
-    li {
-      margin: 8px 0;
-    }
-    a {
-      color: #2E86C1;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .highlight, .important {
-      background-color: #eaf2f8;
-      padding: 14px 16px;
-      border-left: 4px solid #2E86C1;
-      margin: 20px 0;
-      border-radius: 4px;
-    }
-    .signature {
-      margin-top: 40px;
-      font-size: 16px;
-    }
-    .signature a {
-      color: #2E86C1;
-    }
-    .logo {
-      display: block;
-      margin-top: 20px;
-      max-width: 200px;
-    }
-    .footer {
-      margin-top: 40px;
-      font-size: 14px;
-      color: #999;
-      text-align: center;
-    }
-    .ps-note {
-      font-style: italic;
-      color: #555;
-      margin-top: 24px;
-    }
-    .details {
-      margin-top: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Welcome to the Certified Scrum Professional Product Owner (CSP-PO)® by Superheroes Academy</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: #fff;
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2E86C1;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #2E86C1;
+            font-size: 22px;
+            margin-top: 30px;
+            border-bottom: 2px solid #2E86C1;
+            padding-bottom: 5px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        ul {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-left: 20px;
+        }
+        a {
+            color: #2E86C1;
+            text-decoration: none;
+        }
+        .button {
+            display: inline-block;
+            background-color: #2E86C1;
+            color: #fff;
+            padding: 12px 25px;
+            margin: 20px 0;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .signature {
+            margin-top: 40px;
+            font-size: 16px;
+        }
+        .signature a {
+            color: #2E86C1;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #999;
+            text-align: center;
+        }
+        .highlight {
+            background-color: #eaf2f8;
+            padding: 10px;
+            border-left: 4px solid #2E86C1;
+            margin: 20px 0;
+        }
+        .ps-note {
+            font-style: italic;
+            color: #555;
+        }
+        .badge {
+            display: block;
+            margin: 20px auto;
+            max-width: 150px;
+        }
+        .logo {
+            display: block;
+            margin-top: 20px;
+            max-width: 200px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Quick reminder, {firstName}!</h1>
+    <div class="container">
+        <h1>Welcome, {firstName}!</h1>
+        <img src="/images/associations/csp-po-badge.png" alt="CSP-PO" class="badge">
+        <p>
+            Thank you for signing up for our <strong>Certified Scrum Professional Product Owner (CSP-PO)® program</strong> and welcome to the Superheroes Academy!
+        </p>
 
-    <p>
-      This is a friendly reminder <strong>{reminderLeadTime}</strong> before your <strong>{programName}</strong> class. I wanted to make sure you have everything you need to join smoothly.
-    </p>
+        <h2>Program Modules</h2>
+        <p>Across six self‑paced modules you’ll build a product from idea to investor‑ready pitch:</p>
+        <ul>
+            <li>Module 1: Advanced interactions with customers and users</li>
+            <li>Module 2: Complex product assumption validation</li>
+            <li>Module 3: Implementing goal setting and planning</li>
+            <li>Module 4: Product owner core competencies I</li>
+            <li>Module 5: Advanced product backlog management</li>
+            <li>Module 6: Product owner core competencies II</li>
+        </ul>
+        <p>
+            Successful completion of all 6 modules plus two live Product Lab sessions will earn your <strong>CSP-PO certification</strong>.
+        </p>
 
-    <h2>Class Details</h2>
-    <ul class="details">
-      <li><strong>Program:</strong> {programName}</li>
-      <li><strong>Date:</strong> {classDate}</li>
-      <li><strong>Time:</strong> {classTime}</li>
-      <li><strong>Location:</strong> Virtual over Zoom (<a href="{zoomLink}">{zoomLink}</a>)</li>
-    </ul>
+        <div class="highlight">
+            <p>
+                You’ll schedule two live <strong>Product Lab</strong> mentoring sessions: one after you complete <em>Module 3: Implementing goal, setting and planning</em>, and a second Product Lab after <em>Module 6: Product owner core competencies II</em>. Work through the modules at your own pace; the whole program remains open for six months.
+            </p>
+        </div>
 
-    <div class="highlight">
-      <h2>Most important prep</h2>
-      <p>
-        Please take a quick look back at your <strong>welcome email</strong>. It includes the key details on how to prepare, how to dial in, and the links you’ll want handy before we start.
-      </p>
+        <h2>Get Started</h2>
+        <p>
+            <strong>Ready to get started?</strong> Click the link below to log in to our learning portal, create your account, and enrol in the program.
+        </p>
+        <a href="https://ecommerce.lms.superheroes.academy/coupons/offer/?code=J273IY36XEEL6UKA" class="button">Access the Online Campus</a>
+
+        <p>
+            Thanks again, and feel free to reply to this email if you run into any issues signing up. Let’s build something amazing.
+        </p>
+
+        <p class="ps-note">
+            P.S. We’re thrilled to have you join us on this journey. If you know anyone who might also benefit from this program, please share on your social networks that you've just joined the CSP-PO program and include this link: <a href="https://www.superheroes.academy/csp-po">https://www.superheroes.academy/csp-po</a>. Your support helps us grow our community and reach more people like you!
+        </p>
+
+        <div class="signature">
+            <p>Thank you,</p>
+            <p>
+                Erkan Kadir (CST, CEC) and Mishkin Berteig (CST)<br>
+                <a href="https://www.superheroes.academy/">https://www.superheroes.academy/</a><br>
+                <a href="https://twitter.com/SuperheroesAcad/">https://twitter.com/SuperheroesAcad/</a><br>
+                <a href="https://www.superheroes.academy/privacy">Privacy Policy</a>
+            </p>
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfyruxOFwZB8qgFL-VN2MqhmowCHiN1Wk_dhsBu1YhPIpqMCg2Im2XSI_DF25T99o2fBLKcqCgz598avDhv-HC5yQEhC7oU7X9kPdNyquXlAmvE3VLaluSDVUVodMKJIDV9bVmToFphVP03XQpC0h2Ja8-J?key=0r5fPmY6FVKSQ1-AVtPzwQ" alt="Superheroes Academy Logo" class="logo">
+        </div>
+
+        <div class="footer">
+            &copy; Superheroes Academy. All rights reserved.
+        </div>
     </div>
-
-    <h2>A couple of quick reminders</h2>
-    <ul>
-      <li>Please join about <strong>5 minutes early</strong> so you can settle in.</li>
-      <li>Test your audio and camera beforehand using the <a href="https://zoom.us/test">Zoom test meeting</a>.</li>
-      <li>If you want to double-check the start time in your local time zone, you can use <a href="https://time.is/MT">this time zone checker</a>.</li>
-    </ul>
-
-    <div class="important">
-      <p>
-        If anything is unclear, just reply to this email and I’ll help you get sorted out.
-      </p>
-    </div>
-
-    <p>
-      Looking forward to seeing you in class.
-    </p>
-
-    <div class="signature">
-      <p>
-        Erkan Kadir<br>
-        AKT, CST, CEC, CTC, ICF-PCC, Certified LMC™, ORSCC, BSc<br>
-        <a href="https://www.superheroes.academy/">https://www.superheroes.academy/</a>
-      </p>
-      <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfyruxOFwZB8qgFL-VN2MqhmowCHiN1Wk_dhsBu1YhPIpqMCg2Im2XSI_DF25T99o2fBLKcqCgz598avDhv-HC5yQEhC7oU7X9kPdNyquXlAmvE3VLaluSDVUVodMKJIDV9bVmToFphVP03XQpC0h2Ja8-J?key=0r5fPmY6FVKSQ1-AVtPzwQ" alt="Superheroes Academy Logo" class="logo">
-    </div>
-
-    <p class="ps-note">
-      P.S. If you know someone who would benefit from this program, I’d be grateful if you shared it with them.
-    </p>
-
-    <div class="footer">
-      &copy; Superheroes Academy. All rights reserved.
-    </div>
-  </div>
 </body>
 </html>
