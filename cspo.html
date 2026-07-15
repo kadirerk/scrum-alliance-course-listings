@@ -1871,38 +1871,44 @@ document.addEventListener('DOMContentLoaded', () => {
            text-align: center;
        }
 
-       /* Strike through original price with red diagonal line */
+       /* Keep the Pro comparison price compact so the sale price matches the other cards. */
+       .original-price {
+            font-size: 1rem;
+            line-height: 1.25;
+            margin: 0.5rem 0 0;
+        }
+
        .strike-text {
             position: relative;
-            font-size: 1.5em; /* Adjust to fit your design */
-            color: #ccc; /* Grey out the original price */
+            font-size: 1em;
+            color: #ccc;
             display: inline-block;
         }
 
         .strike-text::before {
             content: '';
             position: absolute;
-            top: 60%; /* Adjust for diagonal strike position */
+            top: 55%;
             left: 0;
             width: 100%;
-            height: 6px; /* Thickness of the line */
-            background-color: red; /* Colour of the diagonal strike */
-            transform: rotate(-10deg); /* Diagonal effect */
+            height: 2px;
+            background-color: red;
+            transform: rotate(-6deg);
             transform-origin: left center;
         }
 
-        /* Discounted price styling */
         .discounted-price {
-            font-size: 2em; /* Larger, prominent font */
-            color: #395edf; /* Highlighted new price */
             font-weight: bold;
+            line-height: 1.2;
         }
 
         .limited-time {
-            font-size: 0.8em; /* Smaller text for the offer note */
-            color: #fb934a; /* Highlight with orange */
+            display: block;
+            font-size: 0.875rem;
+            line-height: 1.3;
+            color: #fb934a;
             font-style: italic;
-            margin-left: 10px;
+            margin-top: 0.35rem;
         }
 </style>
 
@@ -1947,8 +1953,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                             <div class="price-top">
                                 <h4>Signature</h4>
-                                <h2 class="mb-0"><sup>$</sup>556</h2>
-                                <span class="text-capitalize">USD / $778 CAD</span>
+                                <h2 class="mb-0"><sup>$</sup>778</h2>
+                                <span class="text-capitalize">CAD</span>
                             </div>
                             <div class="price-content">
                                 <ul class="border-bottom mb-4 mt-md-4 pb-3 text-start">
@@ -2016,8 +2022,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                             <div class="price-top">
                                 <h4>AI Plus</h4>
-                                <h2 class="mb-0"><sup>$</sup>778</h2>
-                                <span class="text-capitalize">USD / $1,082 CAD</span>
+                                <h2 class="mb-0"><sup>$</sup>1,082</h2>
+                                <span class="text-capitalize">CAD</span>
                             </div>
                             <div class="price-content">
                                 <ul class="border-bottom mb-4 mt-md-4 pb-3 text-start">
@@ -2070,10 +2076,10 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                             <div class="price-top">
                                 <h4>AI Accelerator Pro</h4>
-                                <h2 class="original-price">
-                                    <span class="strike-text"><sup>$</sup>964 USD / $1,328 CAD</span>
-                                </h2>
-                                <h2 class="discounted-price">$778 USD / $1,082 CAD <span class="limited-time">Limited Time Offer</span></h2>
+                                <h2 class="discounted-price mb-0"><sup>$</sup>1,082</h2>
+                                <span class="text-capitalize">CAD</span>
+                                <span class="limited-time">Limited Time Offer</span>
+                                <p class="original-price">Regular <span class="strike-text">$1,328 CAD</span></p>
                             </div>
                             <div class="price-content">
                                 <ul class="border-bottom mb-4 mt-md-4 pb-3 text-start">
