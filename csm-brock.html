@@ -506,21 +506,52 @@
       text-align: center;
     }
 
-    .logo-wall {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 20px;
-      align-items: center;
+    .logo-marquee {
+      position: relative;
+      overflow: hidden;
       margin: 26px 0 38px;
+      padding: 8px 0;
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+      mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
     }
 
-    .logo-wall img {
+    .logo-marquee:focus-visible {
+      outline: 3px solid var(--teal);
+      outline-offset: 4px;
+    }
+
+    .logo-track {
+      display: flex;
+      width: max-content;
+      animation: brand-scroll 48s linear infinite;
+      will-change: transform;
+    }
+
+    .logo-marquee:hover .logo-track,
+    .logo-marquee:focus .logo-track {
+      animation-play-state: paused;
+    }
+
+    .logo-set {
+      display: flex;
+      flex-shrink: 0;
+      gap: 28px;
+      padding-right: 28px;
+    }
+
+    .logo-set img {
       display: block;
-      width: 100%;
+      width: 160px;
       height: 74px;
       object-fit: contain;
       filter: grayscale(100%);
       opacity: .78;
+    }
+
+    @keyframes brand-scroll {
+      to {
+        transform: translateX(-50%);
+      }
     }
 
     .rave-grid {
@@ -606,8 +637,14 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .logo-wall {
-        grid-template-columns: repeat(3, 1fr);
+      .logo-set {
+        gap: 20px;
+        padding-right: 20px;
+      }
+
+      .logo-set img {
+        width: 140px;
+        height: 68px;
       }
 
       .featured-quote,
@@ -622,9 +659,24 @@
     }
 
     @media (max-width: 460px) {
-      .benefit-strip,
-      .logo-wall {
+      .benefit-strip {
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .logo-marquee {
+        overflow-x: auto;
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+
+      .logo-track {
+        animation: none;
+      }
+
+      .logo-set[aria-hidden="true"] {
+        display: none;
       }
     }
   </style>
@@ -946,13 +998,47 @@
 
   <section class="social-proof" aria-labelledby="brands-heading">
     <h2 id="brands-heading">Superheroes Academy-trained experts fuel success at the world’s top brands.</h2>
-    <div class="logo-wall" aria-label="Organizations our team and alumni have worked with">
-      <img src="images/logos/Picture1.png-4.png" alt="Federal Reserve Bank of New York">
-      <img src="images/logos/Picture1.png-2.png" alt="ADP">
-      <img src="images/logos/Picture1.png-17.png" alt="Benevity">
-      <img src="images/logos/Picture1.png-5.png" alt="Calgary Public Library">
-      <img src="images/logos/Picture1.png-13.png" alt="NAIT">
-      <img src="images/logos/Picture1.png-7.png" alt="Alectra">
+    <div class="logo-marquee" tabindex="0" aria-label="Organizations our team and alumni have worked with. Animation pauses on hover or keyboard focus.">
+      <div class="logo-track">
+        <div class="logo-set">
+          <img src="images/logos/Picture1.png-1.png" alt="+GF+">
+          <img src="images/logos/Picture1.png-2.png" alt="ADP">
+          <img src="images/logos/Picture1.png-3.png" alt="LAVVI">
+          <img src="images/logos/Picture1.png-4.png" alt="Federal Reserve Bank of New York">
+          <img src="images/logos/Picture1.png-5.png" alt="Calgary Public Library">
+          <img src="images/logos/Picture1.png-6.png" alt="Nude Solutions">
+          <img src="images/logos/Picture1.png-7.png" alt="Alectra">
+          <img src="images/logos/Picture1.png-8.png" alt="Drillinginfo">
+          <img src="images/logos/Picture1.png-9.png" alt="Escher Group">
+          <img src="images/logos/Picture1.png-10.png" alt="Oildex">
+          <img src="images/logos/Picture1.png-11.png" alt="GBS Data Corporation">
+          <img src="images/logos/Picture1.png-12.png" alt="Prairie Lithium">
+          <img src="images/logos/Picture1.png-13.png" alt="NAIT">
+          <img src="images/logos/Picture1.png-14.png" alt="Nuvei">
+          <img src="images/logos/Picture1.png-15.png" alt="Circle Cardiovascular Imaging">
+          <img src="images/logos/Picture1.png-16.png" alt="Credivera">
+          <img src="images/logos/Picture1.png-17.png" alt="Benevity">
+        </div>
+        <div class="logo-set" aria-hidden="true">
+          <img src="images/logos/Picture1.png-1.png" alt="">
+          <img src="images/logos/Picture1.png-2.png" alt="">
+          <img src="images/logos/Picture1.png-3.png" alt="">
+          <img src="images/logos/Picture1.png-4.png" alt="">
+          <img src="images/logos/Picture1.png-5.png" alt="">
+          <img src="images/logos/Picture1.png-6.png" alt="">
+          <img src="images/logos/Picture1.png-7.png" alt="">
+          <img src="images/logos/Picture1.png-8.png" alt="">
+          <img src="images/logos/Picture1.png-9.png" alt="">
+          <img src="images/logos/Picture1.png-10.png" alt="">
+          <img src="images/logos/Picture1.png-11.png" alt="">
+          <img src="images/logos/Picture1.png-12.png" alt="">
+          <img src="images/logos/Picture1.png-13.png" alt="">
+          <img src="images/logos/Picture1.png-14.png" alt="">
+          <img src="images/logos/Picture1.png-15.png" alt="">
+          <img src="images/logos/Picture1.png-16.png" alt="">
+          <img src="images/logos/Picture1.png-17.png" alt="">
+        </div>
+      </div>
     </div>
 
     <div class="rave-grid" aria-label="Student raves">
