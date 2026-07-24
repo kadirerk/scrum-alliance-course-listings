@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A practical, live-online Certified ScrumMaster course with Brock Argue and Superheroes Academy.">
+  <title>Superheroes Academy - Certified ScrumMaster with Brock Argue</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js"></script>
+  <script>
+    window.addEventListener("message", function (event) {
+      if (event.origin !== "https://www.scrumalliance.org") return;
+      if (!event.data || event.data.type !== "dateInfo") return;
+
+      const dateInfoContainer = document.getElementById("dateInfoContainer");
+      if (dateInfoContainer) {
+        dateInfoContainer.innerHTML = event.data.data;
+        dateInfoContainer.hidden = false;
+      }
+    }, false);
+  </script>
+  <style>
+    :root {
+      --ink: #17313a;
+      --muted: #48646b;
+      --navy: #092932;
+      --teal: #0f5660;
+      --aqua: #35aead;
+      --mist: #e8f6f5;
+      --paper: #ffffff;
+      --canvas: #f7fbfb;
+      --gold: #ffc95b;
+      --orange: #ff8c26;
+      --border: #d7e6e7;
+      --shadow: 0 14px 36px rgba(9, 41, 50, .10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      width: min(1040px, 100%);
+      margin: 0 auto;
+      padding: 28px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 70% 5%, rgba(53, 174, 173, .32), transparent 35%),
+        var(--navy);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 32px 42px 38px;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+    }
+
+    .hero-media {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      background: var(--navy);
+    }
+
+    .hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: .88rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0 0 16px;
+      font-size: clamp(2.35rem, 6vw, 4.1rem);
+      line-height: 1.02;
+      letter-spacing: -.035em;
+    }
+
+    h2 {
+      margin: 44px 0 14px;
+      color: var(--teal);
+      font-size: clamp(1.55rem, 3vw, 2.1rem);
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-size: 1.12rem;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    .lede {
+      max-width: 720px;
+      margin: 0;
+      color: #e8fbfb;
+      font-size: 1.15rem;
+    }
+
+    .date-info,
+    .callout {
+      margin: 28px 0;
+      padding: 22px 24px;
+      background: var(--mist);
+      border-left: 6px solid var(--aqua);
+      border-radius: 8px;
+    }
+
+    .date-info[hidden] {
+      display: none;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      padding: 20px;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 7px 22px rgba(9, 41, 50, .05);
+    }
+
+    .card p:last-child,
+    .card ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .activity {
+      position: relative;
+      padding-top: 46px;
+    }
+
+    .activity::before {
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      width: 38px;
+      height: 5px;
+      background: var(--orange);
+      border-radius: 999px;
+      content: "";
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 22px;
+    }
+
+    li + li {
+      margin-top: 7px;
+    }
+
+    .schedule-card {
+      border-top: 5px solid var(--aqua);
+    }
+
+    .plan {
+      display: flex;
+      flex-direction: column;
+      border-top: 5px solid var(--teal);
+    }
+
+    .plan.featured {
+      border-color: var(--orange);
+      box-shadow: var(--shadow);
+    }
+
+    .plan-label {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .price {
+      margin: 0 0 12px;
+      color: var(--teal);
+      font-size: 1.6rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .compare {
+      color: var(--muted);
+      font-size: .95rem;
+      font-weight: 400;
+      text-decoration: line-through;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .cta-band {
+      margin-top: 42px;
+      padding: 28px;
+      color: white;
+      background: var(--navy);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .cta-band h2 {
+      margin: 0 0 8px;
+      color: white;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 18px;
+      color: #1d1d1d;
+      background: var(--orange);
+      border-radius: 7px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .cta:focus,
+    .cta:hover {
+      background: var(--gold);
+      outline: 3px solid rgba(255, 201, 91, .35);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 760px) {
+      main {
+        padding: 14px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 32px 24px 28px;
+      }
+
+      .hero-media {
+        padding: 16px;
+      }
+
+      h2 {
+        margin-top: 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <section class="hero" aria-labelledby="course-title">
+    <div class="hero-media">
+      <img src="images/BrockArgue-csm-header-v3.png" alt="Brock Argue, Certified Scrum Trainer, with CST, CEC, CTC, ICF-PCC, ORSC, ICP-ACC, SPC, VeDA, TBR Practitioner, and TBR Certified Trainer credentials. Superheroes Academy: Practice. Reflect. Grow. Repeat.">
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">Superheroes Academy | Live-online CSM certification program</p>
+      <h1 id="course-title">Certified ScrumMaster® with Brock Argue</h1>
+      <p class="lede">Do not just memorize Scrum. Experience how it works. Form a Scrum Team, build a product through three Sprints, and leave ready to make Scrum more useful in the real world.</p>
+    </div>
+  </section>
+
+  <div id="dateInfoContainer" class="date-info" hidden></div>
+
+  <h2>Course Summary</h2>
+  <p>This is a practical, two-day, live-online Certified ScrumMaster course for people who want more than a slide marathon. You will work in a Scrum Team, make real decisions under time pressure, build and inspect a product, adapt your plan, and reflect on what helped or hindered the team.</p>
+  <p>Along the way, Brock connects the Scrum framework to the human work behind it: creating clarity, facilitating useful conversations, supporting self-management, responding to impediments, and helping teams learn from experience.</p>
+
+  <div class="callout">
+    <strong>Brock's promise:</strong> Expect an active learning environment with real practice, useful reflection, playful challenge, and grounded conversation. You will leave with a clearer understanding of Scrum and practical next steps you can use with your team.
+  </div>
+
+  <h2>Who This Course Is For</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>New and aspiring Scrum Masters</h3>
+      <p>Build a strong foundation and practice the accountability before or while stepping into the role.</p>
+    </div>
+    <div class="card">
+      <h3>Scrum Team members</h3>
+      <p>Develop a shared understanding of Scrum accountabilities, events, artifacts, commitments, and empiricism.</p>
+    </div>
+    <div class="card">
+      <h3>Leaders and change agents</h3>
+      <p>Learn how Scrum changes decision-making, team design, leadership, and the way organizations respond to complexity.</p>
+    </div>
+  </div>
+  <p class="note">No prior Scrum experience or certification is required.</p>
+
+  <h2>What You Will Learn and Practice</h2>
+  <div class="grid">
+    <div class="card activity">
+      <h3>Scrum foundations and empiricism</h3>
+      <p>Define Scrum, connect it to the Agile Manifesto, and experience transparency, inspection, and adaptation.</p>
+    </div>
+    <div class="card activity">
+      <h3>Accountabilities and collaboration</h3>
+      <p>Explore how the Product Owner, Developers, and Scrum Master work together to create valuable Increments.</p>
+    </div>
+    <div class="card activity">
+      <h3>Events, artifacts, and commitments</h3>
+      <p>Understand the purpose and boundaries of Scrum's events, artifacts, Product Goal, Sprint Goal, and Definition of Done.</p>
+    </div>
+    <div class="card activity">
+      <h3>A complete Scrum simulation</h3>
+      <p>Perform Sprint Planning, Sprint Review, and Sprint Retrospective across three Sprints while building a product with your team.</p>
+    </div>
+    <div class="card activity">
+      <h3>Quality and technical debt</h3>
+      <p>See the impact of an unclear Definition of Done, then improve quality and reduce surprises in later Sprints.</p>
+    </div>
+    <div class="card activity">
+      <h3>Facilitation and group decisions</h3>
+      <p>Practice techniques that help teams form, make decisions, surface different perspectives, and move forward together.</p>
+    </div>
+    <div class="card activity">
+      <h3>Product Backlog work</h3>
+      <p>Explore Product Backlog refinement, stakeholder collaboration, Product Owner authority, and the role of the Sprint Goal.</p>
+    </div>
+    <div class="card activity">
+      <h3>Impediments and true leadership</h3>
+      <p>Analyze organizational impediments and distinguish when a Scrum Master facilitates, teaches, mentors, or coaches.</p>
+    </div>
+  </div>
+
+  <h2>How the Learning Works</h2>
+  <p>The course uses Zoom, Mural, breakout teams, short teaching segments, games, simulations, structured reflection, and frequent debriefs. Activities include Agile Manifesto Bingo, an empiricism simulation, Scrum learning centers, an accountabilities card sort, self-organized team formation, Scrum Events Jeopardy, a multi-Sprint comic-book simulation, an artifacts myth-or-fact challenge, impediment analysis, and a final synthesis activity.</p>
+  <p>The design moves repeatedly through experience, reflection, explanation, and another chance to apply what you learned. That rhythm helps Scrum become something you can reason about and use—not just terminology to remember for a test.</p>
+
+  <h2>Two-Day Course Flow</h2>
+  <div class="grid">
+    <div class="card schedule-card">
+      <h3>Day 1 — Build the foundation</h3>
+      <ul>
+        <li>Scrum, the Agile Manifesto, and empiricism</li>
+        <li>Scrum accountabilities and values</li>
+        <li>Team formation and working agreements</li>
+        <li>Scrum events</li>
+        <li>Sprint 1 of the product simulation</li>
+        <li>Reflection and questions</li>
+      </ul>
+    </div>
+    <div class="card schedule-card">
+      <h3>Day 2 — Apply and integrate</h3>
+      <ul>
+        <li>Definition of Done and technical debt</li>
+        <li>Sprints 2 and 3 of the simulation</li>
+        <li>Scrum artifacts and commitments</li>
+        <li>Organizational impediments</li>
+        <li>True leaders who serve</li>
+        <li>Exam guidance, resources, and next steps</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>What Is Included</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Certification support</h3>
+      <ul>
+        <li>Scrum Alliance CSM exam fee</li>
+        <li>Practice test</li>
+        <li>One-on-one tutoring support until you pass</li>
+        <li>Two-year Scrum Alliance membership after certification</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Learning and community</h3>
+      <ul>
+        <li>100% live instruction</li>
+        <li>Exclusive course resources</li>
+        <li>PMI Professional Development Units</li>
+        <li>Two-year Comparative Agility assessment membership</li>
+        <li>Lifetime access to the Superheroes Academy Slack community</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Choose Your Learning Plan</h2>
+  <div class="grid">
+    <div class="card plan">
+      <p class="plan-label">Core certification experience</p>
+      <h3>CSM Signature</h3>
+      <p class="price">$550 CAD</p>
+      <ul>
+        <li>Live CSM course and certification support</li>
+        <li>Practice test, resources, memberships, PDUs, and community</li>
+      </ul>
+    </div>
+    <div class="card plan">
+      <p class="plan-label">Add AI and personal support</p>
+      <h3>CSM AI Plus</h3>
+      <p class="price">$750 CAD</p>
+      <ul>
+        <li>Everything in Signature</li>
+        <li>Introduction to AI for Agilists resource</li>
+        <li>Six months of Max Good AI Coach access</li>
+        <li>30 minutes of one-on-one consulting, career, or résumé support</li>
+      </ul>
+    </div>
+    <div class="card plan featured">
+      <p class="plan-label">Limited-time offer</p>
+      <h3>CSM AI Accelerator Pro</h3>
+      <p class="price">$750 CAD <span class="compare">$925 CAD</span></p>
+      <ul>
+        <li>Everything in AI Plus</li>
+        <li>AI for Scrum Masters or another eligible on-demand microcredential</li>
+        <li>$50 discount on your next A-CSM course</li>
+        <li>60 minutes of one-on-one career and résumé support</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">Prices are charged in Canadian dollars. Availability and promotional pricing may vary by course date.</p>
+
+  <h2>CSM Exam</h2>
+  <p>After completing the approved course, you will receive access to the online Scrum Alliance CSM exam. The exam has 50 multiple-choice questions, a 60-minute time limit, and a passing score of 74%. Scrum Alliance includes two attempts when taken within 90 days of the course.</p>
+
+  <h2>Meet Your Trainer</h2>
+  <p><strong>Brock Argue</strong> is a Scrum Alliance Certified Scrum Trainer, Certified Enterprise Coach, and Certified Team Coach, as well as an ICF Professional Certified Coach and ORSC-trained systems coach. He brings more than two decades of experience in software development, leadership, facilitation, training, and organizational coaching.</p>
+  <p>Over the past two decades, Brock has supported agile journeys at organizations including the Federal Reserve Bank of New York, WestJet Airlines, ADP, Suncor Energy, Benevity, and the Calgary Public Library. As Co-founder of Superheroes Academy, he brings a grounded, human-centered approach to coaching, mentoring, and certification programs.</p>
+  <p>His style is warm, direct, and deeply practical. Brock cares about the work behind the buzzwords: helping people notice what is happening, tell the truth skillfully, learn from experience, and make one better choice at a time.</p>
+
+  <section class="cta-band" aria-labelledby="cta-heading">
+    <h2 id="cta-heading">Ready to experience Scrum?</h2>
+    <p>Choose the course date and learning plan that fit you best.</p>
+    <a class="cta" href="https://www.superheroes.academy/store/p/csm" target="_blank" rel="noopener">Explore CSM registration options</a>
+  </section>
+</main>
+</body>
+</html>
