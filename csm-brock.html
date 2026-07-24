@@ -164,22 +164,6 @@
       margin-bottom: 0;
     }
 
-    .activity {
-      position: relative;
-      padding-top: 46px;
-    }
-
-    .activity::before {
-      position: absolute;
-      top: 18px;
-      left: 20px;
-      width: 38px;
-      height: 5px;
-      background: var(--orange);
-      border-radius: 999px;
-      content: "";
-    }
-
     ul {
       margin: 8px 0 0;
       padding-left: 22px;
@@ -187,10 +171,6 @@
 
     li + li {
       margin-top: 7px;
-    }
-
-    .schedule-card {
-      border-top: 5px solid var(--aqua);
     }
 
     .plan {
@@ -231,6 +211,540 @@
     .note {
       color: var(--muted);
       font-size: .92rem;
+    }
+
+    .section-overline {
+      margin: 0 0 8px;
+      color: #a64d0a;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .audience-section {
+      position: relative;
+      margin: 64px 0;
+      padding: clamp(30px, 5vw, 54px);
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 95% 0, rgba(53, 174, 173, .34), transparent 30%),
+        linear-gradient(145deg, #092932 0%, #0b3e48 100%);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .audience-section::after {
+      position: absolute;
+      right: -80px;
+      bottom: -110px;
+      width: 260px;
+      height: 260px;
+      border: 42px solid rgba(255, 201, 91, .11);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .audience-heading {
+      display: grid;
+      grid-template-columns: minmax(0, .8fr) minmax(300px, 1.2fr);
+      gap: 40px;
+      align-items: end;
+    }
+
+    .audience-heading h2 {
+      max-width: 470px;
+      margin: 0;
+      color: white;
+      font-size: clamp(2rem, 4.6vw, 3.4rem);
+      letter-spacing: -.035em;
+    }
+
+    .audience-heading p:last-child {
+      margin: 0;
+      color: #cde9ea;
+      font-size: 1.05rem;
+    }
+
+    .audience-section .section-overline {
+      color: var(--gold);
+    }
+
+    .audience-roles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 38px;
+      border-top: 1px solid rgba(255, 255, 255, .2);
+    }
+
+    .audience-role {
+      position: relative;
+      z-index: 1;
+      padding: 30px 28px 4px 0;
+    }
+
+    .audience-role + .audience-role {
+      padding-left: 28px;
+      border-left: 1px solid rgba(255, 255, 255, .2);
+    }
+
+    .audience-number {
+      display: block;
+      margin-bottom: 20px;
+      color: var(--gold);
+      font-size: 3.4rem;
+      font-weight: 800;
+      letter-spacing: -.06em;
+      line-height: .75;
+    }
+
+    .audience-role h3 {
+      max-width: 230px;
+      color: white;
+      font-size: 1.2rem;
+      line-height: 1.25;
+    }
+
+    .audience-role p {
+      margin: 0;
+      color: #cde9ea;
+      font-size: .94rem;
+    }
+
+    .audience-note {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      margin: 34px 0 0;
+      padding: 9px 15px;
+      color: var(--navy);
+      background: var(--gold);
+      border-radius: 999px;
+      font-size: .88rem;
+      font-weight: 800;
+    }
+
+    .mastery-section {
+      margin: 72px 0;
+    }
+
+    .mastery-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, .75fr);
+      gap: 44px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .mastery-header h2 {
+      max-width: 560px;
+      margin: 0;
+      font-size: clamp(2rem, 4.3vw, 3.25rem);
+      letter-spacing: -.035em;
+    }
+
+    .mastery-header > p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .mastery-map {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 3px solid var(--teal);
+    }
+
+    .mastery-item {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 18px;
+      padding: 28px 30px 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mastery-item:nth-child(even) {
+      padding-right: 0;
+      padding-left: 30px;
+      border-left: 1px solid var(--border);
+    }
+
+    .mastery-number {
+      color: transparent;
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -.08em;
+      line-height: .9;
+      -webkit-text-stroke: 1.5px var(--aqua);
+    }
+
+    .mastery-item h3 {
+      margin-bottom: 6px;
+      color: var(--teal);
+      font-size: 1.08rem;
+    }
+
+    .mastery-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .method-section {
+      position: relative;
+      margin: 72px 0;
+      padding: clamp(32px, 5vw, 54px);
+      overflow: hidden;
+      color: white;
+      background:
+        linear-gradient(115deg, transparent 0 72%, rgba(53, 174, 173, .12) 72% 100%),
+        var(--navy);
+      border-radius: 4px 56px 4px 56px;
+    }
+
+    .method-section .section-overline {
+      color: var(--gold);
+    }
+
+    .method-intro {
+      display: grid;
+      grid-template-columns: minmax(0, .85fr) minmax(300px, 1.15fr);
+      gap: 44px;
+      align-items: end;
+    }
+
+    .method-intro h2 {
+      margin: 0;
+      color: white;
+      font-size: clamp(2rem, 4.3vw, 3.25rem);
+      letter-spacing: -.035em;
+    }
+
+    .method-intro > p {
+      margin: 0;
+      color: #cde9ea;
+      font-size: 1.04rem;
+    }
+
+    .learning-loop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin: 42px 0 38px;
+    }
+
+    .loop-step {
+      position: relative;
+      min-height: 170px;
+      padding: 22px 30px 18px 0;
+      border-top: 1px solid rgba(255, 255, 255, .25);
+      border-bottom: 1px solid rgba(255, 255, 255, .25);
+    }
+
+    .loop-step + .loop-step {
+      padding-left: 30px;
+    }
+
+    .loop-step:not(:last-child)::after {
+      position: absolute;
+      top: 50%;
+      right: -12px;
+      z-index: 2;
+      display: grid;
+      width: 26px;
+      height: 26px;
+      color: var(--navy);
+      background: var(--gold);
+      border-radius: 50%;
+      content: "→";
+      font-weight: 900;
+      line-height: 1;
+      place-items: center;
+      transform: translateY(-50%);
+    }
+
+    .loop-number {
+      display: block;
+      margin-bottom: 22px;
+      color: var(--aqua);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .loop-step h3 {
+      color: white;
+      font-size: 1.35rem;
+    }
+
+    .loop-step p {
+      margin: 0;
+      color: #cde9ea;
+      font-size: .9rem;
+    }
+
+    .activity-toolkit {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .activity-toolkit li {
+      position: relative;
+      margin: 0;
+      padding-left: 14px;
+      color: #e8fbfb;
+      font-size: .86rem;
+      font-weight: 700;
+    }
+
+    .activity-toolkit li::before {
+      position: absolute;
+      top: .58em;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background: var(--orange);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .journey-section {
+      margin: 72px 0;
+      padding: clamp(30px, 5vw, 52px);
+      background:
+        linear-gradient(90deg, rgba(255, 201, 91, .12) 1px, transparent 1px),
+        linear-gradient(rgba(255, 201, 91, .12) 1px, transparent 1px),
+        #fff9f0;
+      background-size: 34px 34px;
+      border-radius: 24px;
+    }
+
+    .journey-header {
+      display: flex;
+      gap: 40px;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 38px;
+    }
+
+    .journey-header h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4.3vw, 3.25rem);
+      letter-spacing: -.035em;
+    }
+
+    .journey-header > p {
+      max-width: 390px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .course-timeline {
+      position: relative;
+    }
+
+    .course-timeline::before {
+      position: absolute;
+      top: 44px;
+      bottom: 44px;
+      left: 43px;
+      width: 3px;
+      background: linear-gradient(var(--teal), var(--orange));
+      content: "";
+    }
+
+    .journey-day {
+      position: relative;
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .journey-day + .journey-day {
+      margin-top: 38px;
+    }
+
+    .day-marker {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      width: 88px;
+      height: 88px;
+      color: white;
+      background: var(--teal);
+      border: 8px solid #fff9f0;
+      border-radius: 50%;
+      box-shadow: 0 7px 20px rgba(9, 41, 50, .15);
+      font-size: .85rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      line-height: 1.15;
+      text-align: center;
+      text-transform: uppercase;
+      place-items: center;
+    }
+
+    .journey-day:last-child .day-marker {
+      color: var(--navy);
+      background: var(--gold);
+    }
+
+    .day-content {
+      padding: 18px 0 28px;
+      border-top: 2px solid var(--teal);
+    }
+
+    .journey-day:last-child .day-content {
+      border-color: var(--orange);
+    }
+
+    .day-content h3 {
+      margin-bottom: 16px;
+      font-size: 1.35rem;
+    }
+
+    .day-agenda {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 26px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: agenda;
+    }
+
+    .day-agenda li {
+      position: relative;
+      margin: 0;
+      padding: 9px 0 9px 34px;
+      color: var(--muted);
+      border-bottom: 1px solid rgba(15, 86, 96, .13);
+      counter-increment: agenda;
+    }
+
+    .day-agenda li::before {
+      position: absolute;
+      top: 9px;
+      left: 0;
+      color: var(--teal);
+      content: counter(agenda, decimal-leading-zero);
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+
+    .journey-day:last-child .day-agenda li::before {
+      color: #98430b;
+    }
+
+    .included-section {
+      display: grid;
+      grid-template-columns: minmax(240px, .72fr) minmax(0, 1.28fr);
+      margin: 72px 0;
+      overflow: hidden;
+      color: white;
+      background: var(--teal);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .included-title {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+      padding: clamp(30px, 5vw, 48px);
+      color: var(--navy);
+      background: var(--gold);
+    }
+
+    .included-title::after {
+      position: absolute;
+      right: -54px;
+      bottom: -54px;
+      width: 140px;
+      height: 140px;
+      border: 28px solid rgba(255, 255, 255, .25);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .included-title .section-overline {
+      color: #8a470e;
+    }
+
+    .included-title h2 {
+      margin: 0 0 20px;
+      color: var(--navy);
+      font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+      letter-spacing: -.04em;
+    }
+
+    .included-title p:last-child {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .included-ledger {
+      padding: clamp(30px, 5vw, 48px);
+    }
+
+    .included-group {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      gap: 24px;
+      padding: 24px 0;
+      border-top: 1px solid rgba(255, 255, 255, .23);
+    }
+
+    .included-group:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .included-group:last-child {
+      padding-bottom: 0;
+    }
+
+    .included-group h3 {
+      color: var(--gold);
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+
+    .included-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .included-list li {
+      position: relative;
+      margin: 0;
+      padding-left: 28px;
+      color: #e8fbfb;
+      font-size: .94rem;
+    }
+
+    .included-list li::before {
+      position: absolute;
+      top: .08em;
+      left: 0;
+      color: var(--gold);
+      content: "✓";
+      font-weight: 900;
     }
 
     .cta-band {
@@ -633,6 +1147,91 @@
         grid-template-columns: 1fr;
       }
 
+      .audience-heading,
+      .mastery-header,
+      .method-intro,
+      .included-section {
+        grid-template-columns: 1fr;
+      }
+
+      .audience-heading {
+        gap: 18px;
+      }
+
+      .audience-roles {
+        grid-template-columns: 1fr;
+      }
+
+      .audience-role {
+        display: grid;
+        grid-template-columns: 58px minmax(0, 1fr);
+        gap: 0 16px;
+        padding: 24px 0;
+      }
+
+      .audience-role + .audience-role {
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, .2);
+        border-left: 0;
+      }
+
+      .audience-number {
+        grid-row: 1 / span 2;
+        margin: 2px 0 0;
+        font-size: 2.7rem;
+      }
+
+      .mastery-header,
+      .method-intro {
+        gap: 18px;
+      }
+
+      .mastery-map {
+        grid-template-columns: 1fr;
+      }
+
+      .mastery-item,
+      .mastery-item:nth-child(even) {
+        padding: 24px 0;
+        border-left: 0;
+      }
+
+      .learning-loop {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .loop-step,
+      .loop-step + .loop-step {
+        min-height: 0;
+        padding: 22px;
+        border: 0;
+        border-top: 1px solid rgba(255, 255, 255, .24);
+      }
+
+      .learning-loop {
+        border-bottom: 1px solid rgba(255, 255, 255, .24);
+      }
+
+      .loop-step:not(:last-child)::after {
+        display: none;
+      }
+
+      .journey-header {
+        display: block;
+      }
+
+      .journey-header > p {
+        margin-top: 14px;
+      }
+
+      .day-agenda {
+        grid-template-columns: 1fr;
+      }
+
+      .included-title {
+        min-height: 270px;
+      }
+
       .benefit-strip {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -659,6 +1258,53 @@
     }
 
     @media (max-width: 460px) {
+      .audience-section,
+      .journey-section {
+        border-radius: 16px;
+      }
+
+      .mastery-item {
+        grid-template-columns: 56px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .mastery-number {
+        font-size: 2.25rem;
+      }
+
+      .method-section {
+        border-radius: 4px 34px 4px 34px;
+      }
+
+      .learning-loop {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-day {
+        grid-template-columns: 62px minmax(0, 1fr);
+        gap: 16px;
+      }
+
+      .course-timeline::before {
+        left: 30px;
+      }
+
+      .day-marker {
+        width: 62px;
+        height: 62px;
+        border-width: 5px;
+        font-size: .7rem;
+      }
+
+      .day-content {
+        padding-top: 11px;
+      }
+
+      .included-group {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
       .benefit-strip {
         grid-template-columns: 1fr;
       }
@@ -728,111 +1374,220 @@
     </blockquote>
   </section>
 
-  <h2>Who This Course Is For</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>New and aspiring Scrum Masters</h3>
-      <p>Build a strong foundation and practice the accountability before or while stepping into the role.</p>
+  <section class="audience-section" aria-labelledby="audience-heading">
+    <div class="audience-heading">
+      <div>
+        <p class="section-overline">Built for the work ahead</p>
+        <h2 id="audience-heading">Who This Course Is For</h2>
+      </div>
+      <p>Come for a strong Scrum foundation. Leave with a shared language, practical experience, and a clearer way to lead in complexity.</p>
     </div>
-    <div class="card">
-      <h3>Scrum Team members</h3>
-      <p>Develop a shared understanding of Scrum accountabilities, events, artifacts, commitments, and empiricism.</p>
+    <div class="audience-roles">
+      <article class="audience-role">
+        <span class="audience-number" aria-hidden="true">01</span>
+        <h3>New and aspiring Scrum Masters</h3>
+        <p>Build a strong foundation and practice the accountability before or while stepping into the role.</p>
+      </article>
+      <article class="audience-role">
+        <span class="audience-number" aria-hidden="true">02</span>
+        <h3>Scrum Team members</h3>
+        <p>Develop a shared understanding of Scrum accountabilities, events, artifacts, commitments, and empiricism.</p>
+      </article>
+      <article class="audience-role">
+        <span class="audience-number" aria-hidden="true">03</span>
+        <h3>Leaders and change agents</h3>
+        <p>Learn how Scrum changes decision-making, team design, leadership, and the way organizations respond to complexity.</p>
+      </article>
     </div>
-    <div class="card">
-      <h3>Leaders and change agents</h3>
-      <p>Learn how Scrum changes decision-making, team design, leadership, and the way organizations respond to complexity.</p>
-    </div>
-  </div>
-  <p class="note">No prior Scrum experience or certification is required.</p>
+    <p class="audience-note">No prior Scrum experience or certification required.</p>
+  </section>
 
-  <h2>What You Will Learn and Practice</h2>
-  <div class="grid">
-    <div class="card activity">
-      <h3>Scrum foundations and empiricism</h3>
-      <p>Define Scrum, connect it to the Agile Manifesto, and experience transparency, inspection, and adaptation.</p>
+  <section class="mastery-section" aria-labelledby="mastery-heading">
+    <div class="mastery-header">
+      <div>
+        <p class="section-overline">Your mastery map</p>
+        <h2 id="mastery-heading">What You Will Learn and Practice</h2>
+      </div>
+      <p>Eight connected capabilities take you from understanding the framework to using it with a real team.</p>
     </div>
-    <div class="card activity">
-      <h3>Accountabilities and collaboration</h3>
-      <p>Explore how the Product Owner, Developers, and Scrum Master work together to create valuable Increments.</p>
+    <div class="mastery-map">
+      <article class="mastery-item">
+        <span class="mastery-number" aria-hidden="true">01</span>
+        <div>
+          <h3>Scrum foundations and empiricism</h3>
+          <p>Define Scrum, connect it to the Agile Manifesto, and experience transparency, inspection, and adaptation.</p>
+        </div>
+      </article>
+      <article class="mastery-item">
+        <span class="mastery-number" aria-hidden="true">02</span>
+        <div>
+          <h3>Accountabilities and collaboration</h3>
+          <p>Explore how the Product Owner, Developers, and Scrum Master work together to create valuable Increments.</p>
+        </div>
+      </article>
+      <article class="mastery-item">
+        <span class="mastery-number" aria-hidden="true">03</span>
+        <div>
+          <h3>Events, artifacts, and commitments</h3>
+          <p>Understand the purpose and boundaries of Scrum's events, artifacts, Product Goal, Sprint Goal, and Definition of Done.</p>
+        </div>
+      </article>
+      <article class="mastery-item">
+        <span class="mastery-number" aria-hidden="true">04</span>
+        <div>
+          <h3>A complete Scrum simulation</h3>
+          <p>Perform Sprint Planning, Sprint Review, and Sprint Retrospective across three Sprints while building a product with your team.</p>
+        </div>
+      </article>
+      <article class="mastery-item">
+        <span class="mastery-number" aria-hidden="true">05</span>
+        <div>
+          <h3>Quality and technical debt</h3>
+          <p>See the impact of an unclear Definition of Done, then improve quality and reduce surprises in later Sprints.</p>
+        </div>
+      </article>
+      <article class="mastery-item">
+        <span class="mastery-number" aria-hidden="true">06</span>
+        <div>
+          <h3>Facilitation and group decisions</h3>
+          <p>Practice techniques that help teams form, make decisions, surface different perspectives, and move forward together.</p>
+        </div>
+      </article>
+      <article class="mastery-item">
+        <span class="mastery-number" aria-hidden="true">07</span>
+        <div>
+          <h3>Product Backlog work</h3>
+          <p>Explore Product Backlog refinement, stakeholder collaboration, Product Owner authority, and the role of the Sprint Goal.</p>
+        </div>
+      </article>
+      <article class="mastery-item">
+        <span class="mastery-number" aria-hidden="true">08</span>
+        <div>
+          <h3>Impediments and true leadership</h3>
+          <p>Analyze organizational impediments and distinguish when a Scrum Master facilitates, teaches, mentors, or coaches.</p>
+        </div>
+      </article>
     </div>
-    <div class="card activity">
-      <h3>Events, artifacts, and commitments</h3>
-      <p>Understand the purpose and boundaries of Scrum's events, artifacts, Product Goal, Sprint Goal, and Definition of Done.</p>
-    </div>
-    <div class="card activity">
-      <h3>A complete Scrum simulation</h3>
-      <p>Perform Sprint Planning, Sprint Review, and Sprint Retrospective across three Sprints while building a product with your team.</p>
-    </div>
-    <div class="card activity">
-      <h3>Quality and technical debt</h3>
-      <p>See the impact of an unclear Definition of Done, then improve quality and reduce surprises in later Sprints.</p>
-    </div>
-    <div class="card activity">
-      <h3>Facilitation and group decisions</h3>
-      <p>Practice techniques that help teams form, make decisions, surface different perspectives, and move forward together.</p>
-    </div>
-    <div class="card activity">
-      <h3>Product Backlog work</h3>
-      <p>Explore Product Backlog refinement, stakeholder collaboration, Product Owner authority, and the role of the Sprint Goal.</p>
-    </div>
-    <div class="card activity">
-      <h3>Impediments and true leadership</h3>
-      <p>Analyze organizational impediments and distinguish when a Scrum Master facilitates, teaches, mentors, or coaches.</p>
-    </div>
-  </div>
+  </section>
 
-  <h2>How the Learning Works</h2>
-  <p>The course uses Zoom, Mural, breakout teams, short teaching segments, games, simulations, structured reflection, and frequent debriefs. Activities include Agile Manifesto Bingo, an empiricism simulation, Scrum learning centers, an accountabilities card sort, self-organized team formation, Scrum Events Jeopardy, a multi-Sprint comic-book simulation, an artifacts myth-or-fact challenge, impediment analysis, and a final synthesis activity.</p>
-  <p>The design moves repeatedly through experience, reflection, explanation, and another chance to apply what you learned. That rhythm helps Scrum become something you can reason about and use—not just terminology to remember for a test.</p>
+  <section class="method-section" aria-labelledby="method-heading">
+    <div class="method-intro">
+      <div>
+        <p class="section-overline">Learn by doing</p>
+        <h2 id="method-heading">How the Learning Works</h2>
+      </div>
+      <p>Every concept moves through a deliberate learning loop, so Scrum becomes something you can reason about and use—not just terminology to remember for a test.</p>
+    </div>
+    <div class="learning-loop" aria-label="The four-part learning loop">
+      <article class="loop-step">
+        <span class="loop-number">Step 01</span>
+        <h3>Experience</h3>
+        <p>Enter a game, simulation, or team challenge before being handed the answer.</p>
+      </article>
+      <article class="loop-step">
+        <span class="loop-number">Step 02</span>
+        <h3>Reflect</h3>
+        <p>Notice what happened, compare perspectives, and make the invisible dynamics visible.</p>
+      </article>
+      <article class="loop-step">
+        <span class="loop-number">Step 03</span>
+        <h3>Explain</h3>
+        <p>Connect the experience to Scrum theory, purpose, boundaries, and practical choices.</p>
+      </article>
+      <article class="loop-step">
+        <span class="loop-number">Step 04</span>
+        <h3>Apply</h3>
+        <p>Try again with new insight, adapt your approach, and carry the learning forward.</p>
+      </article>
+    </div>
+    <ul class="activity-toolkit" aria-label="Course activities and learning tools">
+      <li>Zoom and Mural</li>
+      <li>Breakout Scrum Teams</li>
+      <li>Focused teaching segments</li>
+      <li>Agile Manifesto Bingo</li>
+      <li>Empiricism simulation</li>
+      <li>Scrum learning centers</li>
+      <li>Accountabilities card sort</li>
+      <li>Self-organized team formation</li>
+      <li>Scrum Events Jeopardy</li>
+      <li>Three-Sprint comic-book simulation</li>
+      <li>Artifacts myth-or-fact challenge</li>
+      <li>Impediment analysis</li>
+      <li>Structured reflection and debriefs</li>
+      <li>Final synthesis activity</li>
+    </ul>
+  </section>
 
-  <h2>Two-Day Course Flow</h2>
-  <div class="grid">
-    <div class="card schedule-card">
-      <h3>Day 1 — Build the foundation</h3>
-      <ul>
-        <li>Scrum, the Agile Manifesto, and empiricism</li>
-        <li>Scrum accountabilities and values</li>
-        <li>Team formation and working agreements</li>
-        <li>Scrum events</li>
-        <li>Sprint 1 of the product simulation</li>
-        <li>Reflection and questions</li>
-      </ul>
+  <section class="journey-section" aria-labelledby="journey-heading">
+    <div class="journey-header">
+      <div>
+        <p class="section-overline">A two-act learning journey</p>
+        <h2 id="journey-heading">Two-Day Course Flow</h2>
+      </div>
+      <p>Day one builds the shared foundation. Day two turns that foundation into integrated practice and next steps.</p>
     </div>
-    <div class="card schedule-card">
-      <h3>Day 2 — Apply and integrate</h3>
-      <ul>
-        <li>Definition of Done and technical debt</li>
-        <li>Sprints 2 and 3 of the simulation</li>
-        <li>Scrum artifacts and commitments</li>
-        <li>Organizational impediments</li>
-        <li>True leaders who serve</li>
-        <li>Exam guidance, resources, and next steps</li>
-      </ul>
+    <div class="course-timeline">
+      <article class="journey-day">
+        <div class="day-marker"><span>Day<br>1</span></div>
+        <div class="day-content">
+          <h3>Build the foundation</h3>
+          <ol class="day-agenda">
+            <li>Scrum, the Agile Manifesto, and empiricism</li>
+            <li>Scrum accountabilities and values</li>
+            <li>Team formation and working agreements</li>
+            <li>Scrum events</li>
+            <li>Sprint 1 of the product simulation</li>
+            <li>Reflection and questions</li>
+          </ol>
+        </div>
+      </article>
+      <article class="journey-day">
+        <div class="day-marker"><span>Day<br>2</span></div>
+        <div class="day-content">
+          <h3>Apply and integrate</h3>
+          <ol class="day-agenda">
+            <li>Definition of Done and technical debt</li>
+            <li>Sprints 2 and 3 of the simulation</li>
+            <li>Scrum artifacts and commitments</li>
+            <li>Organizational impediments</li>
+            <li>True leaders who serve</li>
+            <li>Exam guidance, resources, and next steps</li>
+          </ol>
+        </div>
+      </article>
     </div>
-  </div>
+  </section>
 
-  <h2>What Is Included</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Certification support</h3>
-      <ul>
-        <li>Scrum Alliance CSM exam fee</li>
-        <li>Practice test</li>
-        <li>One-on-one tutoring support until you pass</li>
-        <li>Two-year Scrum Alliance membership after certification</li>
-      </ul>
+  <section class="included-section" aria-labelledby="included-heading">
+    <div class="included-title">
+      <div>
+        <p class="section-overline">More than two live days</p>
+        <h2 id="included-heading">What Is Included</h2>
+      </div>
+      <p>Your certification pathway, learning support, and professional community are built into the experience.</p>
     </div>
-    <div class="card">
-      <h3>Learning and community</h3>
-      <ul>
-        <li>100% live instruction</li>
-        <li>Exclusive course resources</li>
-        <li>PMI Professional Development Units</li>
-        <li>Two-year Comparative Agility assessment membership</li>
-        <li>Lifetime access to the Superheroes Academy Slack community</li>
-      </ul>
+    <div class="included-ledger">
+      <div class="included-group">
+        <h3>Certification support</h3>
+        <ul class="included-list">
+          <li>Scrum Alliance CSM exam fee</li>
+          <li>Practice test</li>
+          <li>One-on-one tutoring support until you pass</li>
+          <li>Two-year Scrum Alliance membership after certification</li>
+        </ul>
+      </div>
+      <div class="included-group">
+        <h3>Learning and community</h3>
+        <ul class="included-list">
+          <li>100% live instruction</li>
+          <li>Exclusive course resources</li>
+          <li>PMI Professional Development Units</li>
+          <li>Two-year Comparative Agility assessment membership</li>
+          <li>Lifetime access to the Superheroes Academy Slack community</li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </section>
 
   <div class="benefit-strip" aria-label="Course benefits. Hover or focus each item for details.">
     <article class="benefit-card" tabindex="0">
