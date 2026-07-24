@@ -58,7 +58,7 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+      grid-template-columns: 1fr;
       overflow: hidden;
       color: white;
       background:
@@ -72,21 +72,23 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 48px 42px;
+      padding: 32px 42px 38px;
+      border-top: 1px solid rgba(255, 255, 255, .12);
     }
 
     .hero-media {
       display: flex;
       align-items: center;
-      padding: 22px;
-      background: #ff9b49;
+      padding: 0;
+      background: var(--navy);
     }
 
     .hero img {
       display: block;
       width: 100%;
       height: auto;
-      border-radius: 12px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
     }
 
     .eyebrow {
@@ -289,13 +291,13 @@
 <body>
 <main>
   <section class="hero" aria-labelledby="course-title">
+    <div class="hero-media">
+      <img src="images/BrockArgue-csm-header-v2.png" alt="Brock Argue with CST, CEC, CTC, ICF-PCC, ORSC, ICP-ACC, SPC, VeDA, TBR Practitioner, and TBR Certified Trainer credentials. Superheroes Academy: Practice. Reflect. Grow. Repeat.">
+    </div>
     <div class="hero-copy">
       <p class="eyebrow">Superheroes Academy | Live-online CSM certification program</p>
       <h1 id="course-title">Certified ScrumMaster® with Brock Argue</h1>
       <p class="lede">Do not just memorize Scrum. Experience how it works. Form a Scrum Team, build a product through three Sprints, and leave ready to make Scrum more useful in the real world.</p>
-    </div>
-    <div class="hero-media">
-      <img src="images/BrockArgue1.jpg" alt="Brock Argue with his professional coaching, training, and agile credentials">
     </div>
   </section>
 
