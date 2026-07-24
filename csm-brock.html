@@ -265,6 +265,319 @@
       outline-offset: 3px;
     }
 
+    .hero-copy .cta {
+      align-self: flex-start;
+      margin-top: 22px;
+    }
+
+    .promise-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin: 28px 0;
+      overflow: hidden;
+      color: white;
+      background: rgba(255, 255, 255, .18);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .promise {
+      min-height: 100%;
+      padding: 24px;
+      background: var(--teal);
+    }
+
+    .promise strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--gold);
+      font-size: 1.05rem;
+    }
+
+    .promise p {
+      margin: 0;
+      color: #e8fbfb;
+      font-size: .94rem;
+    }
+
+    .featured-quote,
+    .split-section {
+      display: grid;
+      grid-template-columns: minmax(220px, .7fr) minmax(0, 1.3fr);
+      gap: 30px;
+      align-items: center;
+      margin: 42px 0;
+      padding: 30px;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .featured-quote {
+      background: var(--mist);
+    }
+
+    .featured-quote img {
+      display: block;
+      width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+
+    blockquote {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    blockquote p {
+      margin-bottom: 16px;
+    }
+
+    blockquote cite {
+      color: var(--muted);
+      font-size: .95rem;
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .benefit-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin: 28px 0 44px;
+    }
+
+    .benefit-card {
+      position: relative;
+      min-height: 205px;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 7px 22px rgba(9, 41, 50, .06);
+      outline: none;
+    }
+
+    .benefit-front,
+    .benefit-back {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 14px;
+      text-align: center;
+      transition: opacity .22s ease, transform .22s ease;
+    }
+
+    .benefit-front img {
+      width: 72px;
+      height: 72px;
+      margin-bottom: 14px;
+      object-fit: contain;
+    }
+
+    .benefit-front strong {
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .benefit-back {
+      color: white;
+      background: var(--teal);
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    .benefit-back p {
+      margin: 0;
+      font-size: .92rem;
+      line-height: 1.45;
+    }
+
+    .benefit-card:hover .benefit-front,
+    .benefit-card:focus .benefit-front,
+    .benefit-card:focus-within .benefit-front {
+      opacity: 0;
+      transform: translateY(-12px);
+    }
+
+    .benefit-card:hover .benefit-back,
+    .benefit-card:focus .benefit-back,
+    .benefit-card:focus-within .benefit-back {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .benefit-card:focus-visible {
+      outline: 4px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .ai-section {
+      background: linear-gradient(135deg, #edf8f7, #f4f7fb);
+    }
+
+    .story-section {
+      background: #fff8ef;
+    }
+
+    .split-section img {
+      display: block;
+      width: 100%;
+      max-height: 330px;
+      object-fit: contain;
+    }
+
+    .split-section h2 {
+      margin-top: 0;
+    }
+
+    .section-label {
+      margin: 0 0 6px;
+      color: var(--orange);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .faq {
+      margin: 42px 0;
+    }
+
+    .faq details {
+      margin-bottom: 10px;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      box-shadow: 0 5px 15px rgba(9, 41, 50, .04);
+    }
+
+    .faq summary {
+      padding: 18px 48px 18px 20px;
+      color: var(--ink);
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+
+    .faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq summary::after {
+      float: right;
+      margin-right: -28px;
+      color: var(--orange);
+      content: "+";
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    .faq details[open] summary::after {
+      content: "−";
+    }
+
+    .faq details p {
+      margin: 0;
+      padding: 0 20px 20px;
+      color: var(--muted);
+    }
+
+    .social-proof {
+      margin: 48px 0;
+      padding: 32px;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .social-proof h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .logo-wall {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+      align-items: center;
+      margin: 26px 0 38px;
+    }
+
+    .logo-wall img {
+      display: block;
+      width: 100%;
+      height: 74px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: .78;
+    }
+
+    .rave-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .rave-card {
+      padding: 22px;
+      background: var(--canvas);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .rave-person {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .rave-person img {
+      width: 62px;
+      height: 62px;
+      background: var(--mist);
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .rave-person strong,
+    .rave-person span {
+      display: block;
+    }
+
+    .rave-person span {
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .rave-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .raves-link {
+      margin: 24px 0 0;
+      text-align: center;
+    }
+
+    .raves-link a {
+      color: var(--teal);
+      font-weight: 800;
+    }
+
     @media (max-width: 760px) {
       main {
         padding: 14px;
@@ -282,8 +595,36 @@
         padding: 16px;
       }
 
+      .promise-strip,
+      .featured-quote,
+      .split-section,
+      .rave-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .logo-wall {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .featured-quote,
+      .split-section,
+      .social-proof {
+        padding: 22px;
+      }
+
       h2 {
         margin-top: 34px;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .benefit-strip,
+      .logo-wall {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -298,10 +639,26 @@
       <p class="eyebrow">Superheroes Academy | Live-online CSM certification program</p>
       <h1 id="course-title">Certified ScrumMaster® with Brock Argue</h1>
       <p class="lede">Do not just memorize Scrum. Experience how it works. Form a Scrum Team, build a product through three Sprints, and leave ready to make Scrum more useful in the real world.</p>
+      <a class="cta" href="https://www.superheroes.academy/store/p/csm" target="_blank" rel="noopener">Explore dates and learning plans</a>
     </div>
   </section>
 
   <div id="dateInfoContainer" class="date-info" hidden></div>
+
+  <section class="promise-strip" aria-label="Course promises">
+    <article class="promise">
+      <strong>100% money-back guarantee</strong>
+      <p>Choose your CSM with confidence. Your purchase is refundable any time before you receive your certification.</p>
+    </article>
+    <article class="promise">
+      <strong>Support until you pass</strong>
+      <p>Your exam fee, practice test, and personalized one-to-one tutoring support are included.</p>
+    </article>
+    <article class="promise">
+      <strong>AI Accelerator available</strong>
+      <p>Add AI coaching, curated models, career support, and an eligible Scrum Alliance microcredential.</p>
+    </article>
+  </section>
 
   <h2>Course Summary</h2>
   <p>This is a practical, two-day, live-online Certified ScrumMaster course for people who want more than a slide marathon. You will work in a Scrum Team, make real decisions under time pressure, build and inspect a product, adapt your plan, and reflect on what helped or hindered the team.</p>
@@ -310,6 +667,14 @@
   <div class="callout">
     <strong>Brock's promise:</strong> Expect an active learning environment with real practice, useful reflection, playful challenge, and grounded conversation. You will leave with a clearer understanding of Scrum and practical next steps you can use with your team.
   </div>
+
+  <section class="featured-quote" aria-label="Student testimonial from Hollie-Anne Gale">
+    <img src="images/testimonials/Hollie-AnneGaleTestimonial.png" alt="Hollie-Anne Gale">
+    <blockquote>
+      <p>“Hands down this has been my most memorable and impactful training experience! You will feel right at home! One topic after another my mind was blown - I kept waiting to be unmoved or disappointed: but it never came! Every session was incredibly easy to put straight into practice. I love the Superhero’s approach!”</p>
+      <cite>Hollie-Anne Gale · Agile Transformation Lead</cite>
+    </blockquote>
+  </section>
 
   <h2>Who This Course Is For</h2>
   <div class="grid">
@@ -417,6 +782,70 @@
     </div>
   </div>
 
+  <div class="benefit-strip" aria-label="Course benefits. Hover or focus each item for details.">
+    <article class="benefit-card" tabindex="0">
+      <div class="benefit-front">
+        <img src="images/benefits/microcredential.svg" alt="">
+        <strong>AI Accelerator Package</strong>
+      </div>
+      <div class="benefit-back">
+        <p>Future-proof your practice with Max Good, curated AI models, AI learning resources, and an eligible microcredential in the Pro plan.</p>
+      </div>
+    </article>
+    <article class="benefit-card" tabindex="0">
+      <div class="benefit-front">
+        <img src="images/benefits/guarantee.svg" alt="">
+        <strong>100% Money-Back Guarantee</strong>
+      </div>
+      <div class="benefit-back">
+        <p>Request a refund any time before you receive your CSM certification. Microcredentials already granted are subject to the policy below.</p>
+      </div>
+    </article>
+    <article class="benefit-card" tabindex="0">
+      <div class="benefit-front">
+        <img src="images/benefits/certificationincluded.png" alt="">
+        <strong>Certification Included</strong>
+      </div>
+      <div class="benefit-back">
+        <p>Your approved course, CSM exam fee, practice support, and two-year Scrum Alliance membership are included.</p>
+      </div>
+    </article>
+    <article class="benefit-card" tabindex="0">
+      <div class="benefit-front">
+        <img src="images/benefits/paymentplans.png" alt="">
+        <strong>Payment Plans</strong>
+      </div>
+      <div class="benefit-back">
+        <p>Ask our team about no-interest payment arrangements that help make your learning investment manageable.</p>
+      </div>
+    </article>
+    <article class="benefit-card" tabindex="0">
+      <div class="benefit-front">
+        <img src="images/benefits/noPrework.svg" alt="">
+        <strong>No Prework</strong>
+      </div>
+      <div class="benefit-back">
+        <p>Arrive ready to participate. The course begins with shared foundations and moves quickly into active practice.</p>
+      </div>
+    </article>
+  </div>
+
+  <section class="split-section ai-section" aria-labelledby="ai-heading">
+    <img src="images/AI-SM.webp" alt="Max Good, the Superheroes Academy AI Agile Coach">
+    <div>
+      <p class="section-label">AI Accelerator</p>
+      <h2 id="ai-heading">Maximize Your Agile Future with AI</h2>
+      <p>Choose an AI-enabled learning plan to extend your CSM experience beyond the live class. Depending on your plan, your package can include:</p>
+      <ul>
+        <li><strong>Max Good, your AI Agile Coach:</strong> On-demand support for Agile challenges and continued learning after class.</li>
+        <li><strong>Access to leading AI models:</strong> Curated models grounded in influential Agile and product-development works.</li>
+        <li><strong>AI learning resources:</strong> A practical introduction to using AI thoughtfully as an Agilist.</li>
+        <li><strong>Pro-level extras:</strong> An eligible Scrum Alliance microcredential plus expanded career and résumé support.</li>
+      </ul>
+      <p class="note">Package inclusions vary by learning plan. Review the plan comparison below for details.</p>
+    </div>
+  </section>
+
   <h2>Choose Your Learning Plan</h2>
   <div class="grid">
     <div class="card plan">
@@ -460,6 +889,106 @@
   <p><strong>Brock Argue</strong> is a Scrum Alliance Certified Scrum Trainer, Certified Enterprise Coach, and Certified Team Coach, as well as an ICF Professional Certified Coach and ORSC-trained systems coach. He brings more than two decades of experience in software development, leadership, facilitation, training, and organizational coaching.</p>
   <p>Over the past two decades, Brock has supported agile journeys at organizations including the Federal Reserve Bank of New York, WestJet Airlines, ADP, Suncor Energy, Benevity, and the Calgary Public Library. As Co-founder of Superheroes Academy, he brings a grounded, human-centered approach to coaching, mentoring, and certification programs.</p>
   <p>His style is warm, direct, and deeply practical. Brock cares about the work behind the buzzwords: helping people notice what is happening, tell the truth skillfully, learn from experience, and make one better choice at a time.</p>
+
+  <section class="split-section story-section" aria-labelledby="story-heading">
+    <img src="images/superheroes-academy-story.svg" alt="Superheroes Academy community illustration">
+    <div>
+      <p class="section-label">Our Story</p>
+      <h2 id="story-heading">The Superheroes Academy Story</h2>
+      <p>Superheroes Academy was founded in 2016 to level up Agile professionals worldwide. We have trained students in more than 100 countries and applied Scrum in every context imaginable.</p>
+      <p><strong>Once a Superhero, Always a Superhero!®</strong> Our approach prioritizes outcomes and partnership, not transactions. We go the extra mile and work with you for as long as it takes to meet your goals.</p>
+    </div>
+  </section>
+
+  <section class="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Frequently Asked Questions</h2>
+    <details>
+      <summary>Are the CSM exam and certification fees included?</summary>
+      <p>Yes. Your approved live course, CSM exam fee, practice test, and two-year Scrum Alliance membership are included. Scrum Alliance includes two exam attempts when they are taken within 90 days of the course.</p>
+    </details>
+    <details>
+      <summary>How big are the classes?</summary>
+      <p>Classes typically include 6–15 participants so there is room for personal attention, discussion, team practice, and questions about applying Scrum in your context.</p>
+    </details>
+    <details>
+      <summary>What support is available after the course?</summary>
+      <p>You receive course resources, personalized one-to-one tutoring support until you pass the exam, and lifetime access to the Superheroes Academy Slack community of Agile professionals.</p>
+    </details>
+    <details>
+      <summary>I am a project manager or do not work in software. Is this relevant to me?</summary>
+      <p>Absolutely. Scrum is used well beyond software, and this course welcomes people from project management, operations, finance, education, healthcare, product, and many other fields. The activities help you reason about Scrum in your own context.</p>
+    </details>
+    <details>
+      <summary>What is the course format?</summary>
+      <p>This is a two-day, live-online course delivered through Zoom and Mural. Expect breakout teams, games, simulations, short teaching segments, structured reflection, and frequent debriefs—not a slide marathon.</p>
+    </details>
+    <details>
+      <summary>Do I need prior Scrum experience?</summary>
+      <p>No. The course begins with shared foundations and is designed for new Scrum Masters, Scrum Team members, leaders, and experienced practitioners who want to strengthen their understanding.</p>
+    </details>
+    <details>
+      <summary>What is the refund policy?</summary>
+      <p>We offer a 100% money-back guarantee on your CSM purchase any time before you receive your certification. If your package includes a microcredential and access has already been granted by Scrum Alliance, the refund is reduced by $75 for each granted microcredential.</p>
+    </details>
+    <details>
+      <summary>Can I reschedule or ask about a discount or payment plan?</summary>
+      <p>Yes. We understand that plans change, and we offer several ways to make training more accessible. Contact <a href="mailto:info@superheroes.academy">info@superheroes.academy</a> to discuss rescheduling, group or self-pay discounts, and no-interest payment arrangements.</p>
+    </details>
+    <details>
+      <summary>What AI options are available?</summary>
+      <p>The AI Plus and AI Accelerator Pro plans extend the class with Max Good AI Coach access, AI learning resources, personal support, and—on the Pro plan—an eligible Scrum Alliance microcredential. See the learning-plan comparison for current inclusions.</p>
+    </details>
+    <details>
+      <summary>When will new course dates be posted?</summary>
+      <p>New dates are added regularly. If none of the available dates works for you, email <a href="mailto:info@superheroes.academy">info@superheroes.academy</a> and our team will do its best to help.</p>
+    </details>
+  </section>
+
+  <section class="social-proof" aria-labelledby="brands-heading">
+    <h2 id="brands-heading">Superheroes Academy-trained experts fuel success at the world’s top brands.</h2>
+    <div class="logo-wall" aria-label="Organizations our team and alumni have worked with">
+      <img src="images/logos/Picture1.png-4.png" alt="Federal Reserve Bank of New York">
+      <img src="images/logos/Picture1.png-2.png" alt="ADP">
+      <img src="images/logos/Picture1.png-17.png" alt="Benevity">
+      <img src="images/logos/Picture1.png-5.png" alt="Calgary Public Library">
+      <img src="images/logos/Picture1.png-13.png" alt="NAIT">
+      <img src="images/logos/Picture1.png-7.png" alt="Alectra">
+    </div>
+
+    <div class="rave-grid" aria-label="Student raves">
+      <article class="rave-card">
+        <div class="rave-person">
+          <img src="images/testimonials/Patrick_Isaac_Tesimonial.png" alt="Patrick Isaac">
+          <div>
+            <strong>Patrick Isaac</strong>
+            <span>Scrum Master</span>
+          </div>
+        </div>
+        <p>“Superheroes Academy is the go-to place if you want instructors who not only care about what you learn, but how you learn it. Their unique 10-week program allows you to absorb the knowledge and implement what you've just learned each week. I've taken three of their courses and I can not wait to take a fourth!”</p>
+      </article>
+      <article class="rave-card">
+        <div class="rave-person">
+          <img src="images/testimonials/MydeenYussoufTestimonial.png" alt="Mohamed Yussouf">
+          <div>
+            <strong>Mohamed Yussouf</strong>
+            <span>Scrum Master</span>
+          </div>
+        </div>
+        <p>“Superheroes Academy trainers make complex concepts engaging, inspiring and easy to grasp. The learning environment is fun and collaborative - we didn’t just learn about Scrum — we lived it. This is not just a course; it's a transformative experience!”</p>
+      </article>
+      <article class="rave-card">
+        <div class="rave-person">
+          <img src="images/testimonials/Lee_Cooke_Testimonial.png" alt="Lee Cooke">
+          <div>
+            <strong>Lee Cooke</strong>
+            <span>Agile Coach</span>
+          </div>
+        </div>
+        <p>“Superheroes Academy is brilliant. The way they structure their course's timeline, the content, discussions and knowledge of trainers is super impressive. They make you feel part of the course and part of each other's learning journey. Each session is a different experience, organically unfolding while achieving the objectives of each class. Highly recommend these heroes!! Thank you all, truly.”</p>
+      </article>
+    </div>
+    <p class="raves-link"><a href="https://www.superheroes.academy/raves" target="_blank" rel="noopener">Read more student raves</a></p>
+  </section>
 
   <section class="cta-band" aria-labelledby="cta-heading">
     <h2 id="cta-heading">Ready to experience Scrum?</h2>
