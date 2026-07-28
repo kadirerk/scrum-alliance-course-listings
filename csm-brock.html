@@ -914,6 +914,115 @@
       background: #fff8ef;
     }
 
+    .trainer-section {
+      margin: 42px 0;
+      padding: clamp(28px, 5vw, 44px);
+      background:
+        linear-gradient(135deg, rgba(53, 174, 173, .1), rgba(255, 201, 91, .12)),
+        var(--paper);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--teal);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .trainer-section h2 {
+      margin-top: 0;
+    }
+
+    .trainer-section > p {
+      max-width: 920px;
+    }
+
+    .trainer-links-intro {
+      margin: 26px 0 12px;
+      color: var(--teal);
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .trainer-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .trainer-link {
+      position: relative;
+      display: grid;
+      gap: 4px;
+      min-height: 118px;
+      padding: 19px 54px 19px 20px;
+      color: var(--ink);
+      background: white;
+      border: 1px solid rgba(20, 103, 111, .24);
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(9, 41, 50, .06);
+      text-decoration: none;
+      transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+
+    .trainer-link:hover,
+    .trainer-link:focus-visible {
+      border-color: var(--teal);
+      box-shadow: 0 12px 26px rgba(9, 41, 50, .12);
+      outline: 3px solid rgba(53, 174, 173, .22);
+      outline-offset: 3px;
+      transform: translateY(-2px);
+    }
+
+    .trainer-link--fuse {
+      border-color: rgba(238, 128, 38, .28);
+    }
+
+    .trainer-link--fuse:hover,
+    .trainer-link--fuse:focus-visible {
+      border-color: var(--orange);
+      outline-color: rgba(238, 128, 38, .2);
+    }
+
+    .trainer-link-kicker {
+      color: var(--orange);
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .trainer-link strong {
+      color: var(--teal);
+      font-size: 1.12rem;
+      line-height: 1.25;
+    }
+
+    .trainer-link-description {
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.4;
+    }
+
+    .trainer-link-arrow {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      display: grid;
+      width: 30px;
+      height: 30px;
+      color: white;
+      background: var(--teal);
+      border-radius: 50%;
+      font-size: 1rem;
+      font-weight: 900;
+      line-height: 1;
+      place-items: center;
+    }
+
+    .trainer-link--fuse .trainer-link-arrow {
+      background: var(--orange);
+    }
+
     .split-section img {
       display: block;
       width: 100%;
@@ -1114,6 +1223,7 @@
       .promise-strip,
       .featured-quote,
       .split-section,
+      .trainer-links,
       .rave-grid {
         grid-template-columns: 1fr;
       }
@@ -1647,10 +1757,27 @@
   <h2>CSM Exam</h2>
   <p>After completing the approved course, you will receive access to the online Scrum Alliance CSM exam. The exam has 50 multiple-choice questions, a 60-minute time limit, and a passing score of 74%. Scrum Alliance includes two attempts when taken within 90 days of the course.</p>
 
-  <h2>Meet Your Trainer</h2>
-  <p><strong>Brock Argue</strong> is a Scrum Alliance Certified Scrum Trainer, Certified Enterprise Coach, and Certified Team Coach, as well as an ICF Professional Certified Coach and ORSC-trained systems coach. He brings more than two decades of experience in software development, leadership, facilitation, training, and organizational coaching.</p>
-  <p>Over the past two decades, Brock has supported agile journeys at organizations including the Federal Reserve Bank of New York, WestJet Airlines, ADP, Suncor Energy, Benevity, and the Calgary Public Library. As Co-founder of Superheroes Academy, he brings a grounded, human-centered approach to coaching, mentoring, and certification programs.</p>
-  <p>His style is warm, direct, and deeply practical. Brock cares about the work behind the buzzwords: helping people notice what is happening, tell the truth skillfully, learn from experience, and make one better choice at a time.</p>
+  <section class="trainer-section" aria-labelledby="trainer-heading">
+    <h2 id="trainer-heading">Meet Your Trainer</h2>
+    <p><strong>Brock Argue</strong> is a Scrum Alliance Certified Scrum Trainer, Certified Enterprise Coach, and Certified Team Coach, as well as an ICF Professional Certified Coach and ORSC-trained systems coach. He brings more than two decades of experience in software development, leadership, facilitation, training, and organizational coaching.</p>
+    <p>Over the past two decades, Brock has supported agile journeys at organizations including the Federal Reserve Bank of New York, WestJet Airlines, ADP, Suncor Energy, Benevity, and the Calgary Public Library. As Co-founder of Superheroes Academy, he brings a grounded, human-centered approach to coaching, mentoring, and certification programs.</p>
+    <p>His style is warm, direct, and deeply practical. Brock cares about the work behind the buzzwords: helping people notice what is happening, tell the truth skillfully, learn from experience, and make one better choice at a time.</p>
+    <p class="trainer-links-intro">Explore Brock's work</p>
+    <div class="trainer-links" aria-label="Organizations Brock works with">
+      <a class="trainer-link" href="https://superheroes.academy/" target="_blank" rel="noopener">
+        <span class="trainer-link-kicker">Agile learning</span>
+        <strong>Superheroes Academy</strong>
+        <span class="trainer-link-description">Training, mentoring, and coaching</span>
+        <span class="trainer-link-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="trainer-link trainer-link--fuse" href="https://www.fusefacilitation.ca/" target="_blank" rel="noopener">
+        <span class="trainer-link-kicker">Facilitation</span>
+        <strong>FUSE Facilitation</strong>
+        <span class="trainer-link-description">Facilitation and collaborative change</span>
+        <span class="trainer-link-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
 
   <section class="split-section story-section" aria-labelledby="story-heading">
     <img src="images/superheroes-academy-story.svg" alt="Superheroes Academy community illustration">
