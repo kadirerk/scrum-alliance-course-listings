@@ -207,27 +207,71 @@
       gap: 18px;
       margin-top: 46px;
     }
+    .shift-hint {
+      margin: 10px 0 0;
+      color: #9fb6cc;
+      font-size: .88rem;
+      font-weight: 700;
+    }
     .shift-card {
       position: relative;
       min-height: 280px;
       overflow: hidden;
+      border-radius: 24px;
+      outline: none;
+    }
+    .shift-face {
+      position: absolute;
+      inset: 0;
       padding: 34px 30px;
       border: 1px solid rgba(255,255,255,.12);
       border-radius: 24px;
+      transition: opacity .25s ease, transform .25s ease;
+    }
+    .shift-front {
       background: rgba(255,255,255,.055);
     }
-    .shift-card::after {
-      content: attr(data-number);
+    .shift-number {
       position: absolute;
       right: 18px;
       bottom: -24px;
-      color: rgba(115,201,230,.12);
+      color: rgba(115,201,230,.14);
       font-size: 8rem;
       font-weight: 950;
       line-height: 1;
     }
-    .shift-card h3 { color: var(--sky); }
-    .shift-card p { position: relative; z-index: 1; margin-top: 20px; color: #d7e6ed; }
+    .shift-front h3 { position: relative; z-index: 1; color: var(--sky); }
+    .shift-front .shift-prompt { position: relative; z-index: 1; margin-top: 20px; color: #d7e6ed; font-weight: 750; }
+    .shift-back {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--orange);
+      color: var(--navy);
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    .shift-back .eyebrow { color: var(--navy-2); }
+    .shift-back p { margin: 0; font-weight: 650; line-height: 1.5; }
+    .shift-card:hover .shift-front,
+    .shift-card:focus .shift-front,
+    .shift-card:focus-within .shift-front {
+      opacity: 0;
+      transform: translateY(-14px);
+    }
+    .shift-card:hover .shift-back,
+    .shift-card:focus .shift-back,
+    .shift-card:focus-within .shift-back {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .shift-card:focus-visible {
+      outline: 4px solid var(--sky);
+      outline-offset: 3px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .shift-face { transition: none; }
+    }
 
     .pathway {
       background: var(--sky-soft);
@@ -541,18 +585,40 @@
     <div class="wrap">
       <p class="eyebrow">The leadership shift</p>
       <h2>Three tensions every agile leader must learn to hold.</h2>
-      <div class="shift-grid">
-        <article class="shift-card" data-number="1">
-          <h3>Direction and discovery</h3>
-          <p>Create meaningful direction without pretending the path is fully knowable. Learn to invite evidence, learning, and adaptation into how work is led.</p>
+      <p class="shift-hint">Hover or focus each tension to see the shift.</p>
+      <div class="shift-grid" aria-label="Three tensions every agile leader must learn to hold. Hover or focus each card for the shift.">
+        <article class="shift-card" tabindex="0">
+          <div class="shift-face shift-front">
+            <span class="shift-number">01</span>
+            <h3>Direction and discovery</h3>
+            <p class="shift-prompt">How do you lead when the path isn’t fully knowable?</p>
+          </div>
+          <div class="shift-face shift-back">
+            <p class="eyebrow">The shift</p>
+            <p>Create meaningful direction without pretending the path is fully knowable. Learn to invite evidence, learning, and adaptation into how work is led.</p>
+          </div>
         </article>
-        <article class="shift-card" data-number="2">
-          <h3>Accountability and autonomy</h3>
-          <p>Set clear boundaries and outcomes while giving capable people room to decide, experiment, and own how value is created.</p>
+        <article class="shift-card" tabindex="0">
+          <div class="shift-face shift-front">
+            <span class="shift-number">02</span>
+            <h3>Accountability and autonomy</h3>
+            <p class="shift-prompt">Where do you hold the line—and where do you let go?</p>
+          </div>
+          <div class="shift-face shift-back">
+            <p class="eyebrow">The shift</p>
+            <p>Set clear boundaries and outcomes while giving capable people room to decide, experiment, and own how value is created.</p>
+          </div>
         </article>
-        <article class="shift-card" data-number="3">
-          <h3>Performance and humanity</h3>
-          <p>Build environments where high standards, psychological safety, candid feedback, and sustainable performance reinforce one another.</p>
+        <article class="shift-card" tabindex="0">
+          <div class="shift-face shift-front">
+            <span class="shift-number">03</span>
+            <h3>Performance and humanity</h3>
+            <p class="shift-prompt">Can high standards and psychological safety coexist?</p>
+          </div>
+          <div class="shift-face shift-back">
+            <p class="eyebrow">The shift</p>
+            <p>Build environments where high standards, psychological safety, candid feedback, and sustainable performance reinforce one another.</p>
+          </div>
         </article>
       </div>
     </div>
@@ -614,7 +680,7 @@
           <div class="trainer-image"><img src="images/BrockArgue1.jpg" alt="Brock Argue"></div>
           <div class="trainer-copy">
             <h3>Brock Argue</h3>
-            <p class="credentials">CST · CEC · CTC · ICF-PCC · ORSC-trained systems coach</p>
+            <p class="credentials">CST · CEC · CTC · ICF-PCC · ORSC · ICP-ACC · SPC · VeDA · TBR Practitioner · TBR Certified Trainer</p>
             <p>Brock brings more than two decades of experience in software development, leadership, facilitation, training, and organizational coaching. He has supported agile journeys at organizations including the Federal Reserve Bank of New York, WestJet, ADP, Suncor Energy, Benevity, and the Calgary Public Library.</p>
             <p>His style is warm, direct, and deeply practical—helping people notice what is happening, tell the truth skillfully, and make one better choice at a time.</p>
           </div>
