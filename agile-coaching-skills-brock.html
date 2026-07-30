@@ -1,0 +1,1737 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A practical, four-hour, live-online Agile Coaching Skills microcredential course with Brock Argue and Superheroes Academy.">
+  <title>Superheroes Academy - Apply Agile Coaching Skills for Impact with Brock Argue</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js"></script>
+  <script>
+    window.addEventListener("message", function (event) {
+      if (event.origin !== "https://www.scrumalliance.org") return;
+      if (!event.data || event.data.type !== "dateInfo") return;
+
+      const dateInfoContainer = document.getElementById("dateInfoContainer");
+      if (dateInfoContainer) {
+        dateInfoContainer.innerHTML = event.data.data;
+        dateInfoContainer.hidden = false;
+      }
+    }, false);
+  </script>
+  <style>
+    :root {
+      --ink: #17313a;
+      --muted: #48646b;
+      --navy: #092932;
+      --teal: #0f5660;
+      --aqua: #35aead;
+      --mist: #e8f6f5;
+      --paper: #ffffff;
+      --canvas: #f7fbfb;
+      --gold: #ffc95b;
+      --orange: #ff8c26;
+      --border: #d7e6e7;
+      --shadow: 0 14px 36px rgba(9, 41, 50, .10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      width: min(1040px, 100%);
+      margin: 0 auto;
+      padding: 28px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin-bottom: 16px;
+      font-size: clamp(2.35rem, 6vw, 4.15rem);
+      line-height: 1.02;
+      letter-spacing: -.04em;
+    }
+
+    h2 {
+      margin-bottom: 14px;
+      color: var(--teal);
+      font-size: clamp(1.65rem, 3.4vw, 2.45rem);
+      line-height: 1.15;
+      letter-spacing: -.02em;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 1.12rem;
+      line-height: 1.25;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    a {
+      color: var(--teal);
+    }
+
+    .hero {
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 75% 0, rgba(53, 174, 173, .34), transparent 36%),
+        var(--navy);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-media {
+      background: var(--navy);
+    }
+
+    .hero-media img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .hero-copy {
+      padding: clamp(28px, 5vw, 48px);
+      border-top: 1px solid rgba(255, 255, 255, .13);
+    }
+
+    .eyebrow,
+    .section-overline,
+    .section-label {
+      margin: 0 0 9px;
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .section-overline,
+    .section-label {
+      color: #a64d0a;
+    }
+
+    .lede {
+      max-width: 780px;
+      color: #e7f7f7;
+      font-size: 1.15rem;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      margin-top: 8px;
+      padding: 12px 22px;
+      color: #092932;
+      background: var(--gold);
+      border: 2px solid var(--gold);
+      border-radius: 999px;
+      font-weight: 800;
+      line-height: 1.2;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .cta:hover,
+    .cta:focus-visible {
+      background: white;
+      border-color: white;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+      transform: translateY(-2px);
+    }
+
+    .date-info {
+      margin: 28px 0 0;
+      padding: 20px 24px;
+      background: var(--mist);
+      border-left: 6px solid var(--aqua);
+      border-radius: 10px;
+    }
+
+    .date-info[hidden] {
+      display: none;
+    }
+
+    .promise-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin: 28px 0 58px;
+      overflow: hidden;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 9px 25px rgba(9, 41, 50, .06);
+    }
+
+    .promise {
+      padding: 22px;
+      background: white;
+    }
+
+    .promise strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--teal);
+      font-size: 1.03rem;
+    }
+
+    .promise p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(230px, .65fr);
+      gap: clamp(28px, 5vw, 58px);
+      align-items: center;
+      margin: 0 0 54px;
+    }
+
+    .summary-copy > p {
+      font-size: 1.04rem;
+    }
+
+    .summary-promise {
+      margin-top: 22px;
+      padding: 20px 22px;
+      background: var(--mist);
+      border-left: 6px solid var(--aqua);
+      border-radius: 9px;
+    }
+
+    .summary-badge {
+      display: grid;
+      place-items: center;
+      padding: 26px;
+      background:
+        radial-gradient(circle at 50% 45%, white 0 46%, transparent 47%),
+        linear-gradient(145deg, #fff4e7, #e4f5f4);
+      border: 1px solid var(--border);
+      border-radius: 26px 8px 26px 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .summary-badge img {
+      width: min(220px, 100%);
+      height: auto;
+    }
+
+    .featured-quote {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 26px;
+      align-items: center;
+      margin: 56px 0;
+      padding: clamp(24px, 4vw, 38px);
+      color: white;
+      background:
+        linear-gradient(110deg, rgba(53, 174, 173, .14), transparent 45%),
+        var(--navy);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .featured-quote img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border: 5px solid rgba(255, 255, 255, .16);
+      border-radius: 50%;
+    }
+
+    .featured-quote blockquote {
+      margin: 0;
+    }
+
+    .featured-quote p {
+      margin-bottom: 10px;
+      font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+      line-height: 1.45;
+    }
+
+    .featured-quote cite {
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 800;
+    }
+
+    .audience-section {
+      position: relative;
+      margin: 64px 0;
+      padding: clamp(30px, 5vw, 54px);
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 96% 0, rgba(53, 174, 173, .34), transparent 30%),
+        linear-gradient(145deg, #092932, #0b3e48);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .audience-section::after {
+      position: absolute;
+      right: -80px;
+      bottom: -120px;
+      width: 270px;
+      height: 270px;
+      border: 42px solid rgba(255, 201, 91, .11);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .audience-heading,
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, .85fr) minmax(300px, 1.15fr);
+      gap: 38px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    .audience-heading h2 {
+      margin-bottom: 0;
+      color: white;
+    }
+
+    .audience-heading > p {
+      margin-bottom: 2px;
+      color: #d8eeee;
+    }
+
+    .audience-roles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .audience-role {
+      padding: 22px;
+      background: rgba(255, 255, 255, .075);
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 14px;
+    }
+
+    .audience-role h3 {
+      color: white;
+    }
+
+    .audience-role p {
+      margin-bottom: 0;
+      color: #d8eeee;
+    }
+
+    .audience-number,
+    .module-number {
+      display: block;
+      margin-bottom: 13px;
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .audience-note {
+      position: relative;
+      z-index: 1;
+      margin: 24px 0 0;
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .stances-section {
+      position: relative;
+      margin: 92px 0;
+      padding: clamp(32px, 6vw, 58px);
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 50% 46%, rgba(53, 174, 173, .21), transparent 28%),
+        linear-gradient(145deg, #092932, #0b3e48);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-heading h2,
+    .section-heading p {
+      margin-bottom: 0;
+    }
+
+    .section-heading > p {
+      color: var(--muted);
+    }
+
+    .stances-section .section-heading h2 {
+      color: white;
+    }
+
+    .stances-section .section-heading > p {
+      color: #d6ebeb;
+    }
+
+    .stances-section .section-overline {
+      color: var(--gold);
+    }
+
+    .stance-map {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 236px minmax(0, 1fr);
+      grid-template-rows: repeat(3, minmax(120px, auto));
+      gap: 10px 42px;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .stance {
+      position: relative;
+      min-height: 0;
+      padding: 18px 0;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .2);
+      box-shadow: none;
+    }
+
+    .stance-left {
+      grid-column: 1;
+      padding-right: 24px;
+      text-align: right;
+    }
+
+    .stance-right {
+      grid-column: 3;
+      padding-left: 24px;
+    }
+
+    .stance-1 {
+      grid-row: 1;
+    }
+
+    .stance-2 {
+      grid-row: 2;
+    }
+
+    .stance-3 {
+      grid-row: 3;
+    }
+
+    .stance-left::after,
+    .stance-right::before {
+      position: absolute;
+      top: 50%;
+      width: 28px;
+      height: 1px;
+      background: rgba(255, 201, 91, .65);
+      content: "";
+    }
+
+    .stance-left::after {
+      right: -29px;
+    }
+
+    .stance-right::before {
+      left: -29px;
+    }
+
+    .stance h3 {
+      color: white;
+    }
+
+    .stance p {
+      margin-bottom: 0;
+      color: #d6ebeb;
+      font-size: .94rem;
+    }
+
+    .stance-center {
+      display: flex;
+      grid-column: 2;
+      grid-row: 1 / span 3;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 226px;
+      height: 226px;
+      min-height: 210px;
+      padding: 28px;
+      justify-self: center;
+      color: white;
+      background:
+        radial-gradient(circle at 32% 26%, rgba(255, 255, 255, .18), transparent 24%),
+        var(--teal);
+      border: 8px solid rgba(255, 255, 255, .11);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 1px rgba(255, 201, 91, .55),
+        0 18px 34px rgba(0, 0, 0, .24);
+      text-align: center;
+    }
+
+    .stance-center h3,
+    .stance-center p {
+      color: white;
+    }
+
+    .stance-center h3 {
+      font-size: 1.08rem;
+      line-height: 1.25;
+    }
+
+    .stance-center p {
+      font-size: .82rem;
+      line-height: 1.4;
+    }
+
+    .modules-section {
+      margin: 72px 0;
+      padding: clamp(30px, 5vw, 54px);
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px 28px 8px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .studio-section {
+      margin: 96px 0;
+    }
+
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 28px;
+      border-top: 3px solid var(--navy);
+      counter-reset: studio;
+    }
+
+    .studio-card {
+      display: grid;
+      grid-template-columns: 78px minmax(210px, .72fr) minmax(0, 1.28fr);
+      gap: 0 24px;
+      align-items: start;
+      min-height: 0;
+      padding: 24px 0;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+      box-shadow: none;
+      counter-increment: studio;
+    }
+
+    .studio-card::before {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      color: var(--orange);
+      content: "0" counter(studio);
+      font-size: 2.65rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+
+    .studio-card h3 {
+      grid-column: 2;
+      grid-row: 2;
+      margin: 4px 0 0;
+      font-size: 1.18rem;
+    }
+
+    .studio-card p {
+      grid-column: 3;
+      grid-row: 1 / span 2;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    .studio-tag {
+      grid-column: 2;
+      grid-row: 1;
+      color: #a64d0a;
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .module-rail {
+      position: relative;
+      display: grid;
+      gap: 0;
+      margin-top: 28px;
+    }
+
+    .module-rail::before {
+      position: absolute;
+      top: 12px;
+      bottom: 12px;
+      left: 27px;
+      width: 3px;
+      background: linear-gradient(var(--orange), var(--aqua), var(--gold));
+      content: "";
+    }
+
+    .module {
+      position: relative;
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 20px;
+      padding: 0 0 27px;
+    }
+
+    .module:last-child {
+      padding-bottom: 0;
+    }
+
+    .module-dot {
+      display: grid;
+      place-items: center;
+      position: relative;
+      z-index: 1;
+      width: 56px;
+      height: 56px;
+      color: var(--navy);
+      background: var(--gold);
+      border: 7px solid white;
+      border-radius: 50%;
+      font-weight: 900;
+      box-shadow: 0 4px 14px rgba(9, 41, 50, .14);
+    }
+
+    .module:nth-child(even) .module-dot {
+      background: var(--aqua);
+    }
+
+    .module-content {
+      padding: 12px 18px 16px;
+      background: var(--canvas);
+      border-radius: 10px;
+    }
+
+    .module-content p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .included-section {
+      margin: 72px 0;
+    }
+
+    .included-ledger {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .included-group {
+      padding: 28px;
+    }
+
+    .included-group + .included-group {
+      background: var(--mist);
+      border-left: 1px solid var(--border);
+    }
+
+    .included-list {
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .included-list li {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .included-list li + li {
+      margin-top: 10px;
+    }
+
+    .included-list li::before {
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      content: "✓";
+      font-weight: 900;
+    }
+
+    .benefit-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 52px 0 70px;
+    }
+
+    .benefit-card {
+      min-height: 220px;
+      perspective: 900px;
+      position: relative;
+      outline: none;
+    }
+
+    .benefit-front,
+    .benefit-back {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      text-align: center;
+      border-radius: 14px;
+      backface-visibility: hidden;
+      transition: transform .5s ease;
+      box-shadow: 0 8px 24px rgba(9, 41, 50, .08);
+    }
+
+    .benefit-front {
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .benefit-front img {
+      width: 68px;
+      height: 68px;
+      margin-bottom: 14px;
+      object-fit: contain;
+    }
+
+    .benefit-back {
+      color: white;
+      background: var(--teal);
+      transform: rotateY(180deg);
+    }
+
+    .benefit-back p {
+      margin-bottom: 0;
+    }
+
+    .benefit-card:hover .benefit-front,
+    .benefit-card:focus .benefit-front {
+      transform: rotateY(180deg);
+    }
+
+    .benefit-card:hover .benefit-back,
+    .benefit-card:focus .benefit-back {
+      transform: rotateY(360deg);
+    }
+
+    .science-section,
+    .story-section {
+      display: grid;
+      grid-template-columns: minmax(260px, .8fr) minmax(0, 1.2fr);
+      gap: clamp(28px, 5vw, 52px);
+      align-items: center;
+      margin: 70px 0;
+      padding: clamp(28px, 5vw, 46px);
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .science-section img,
+    .story-section img {
+      width: 100%;
+      max-height: 330px;
+      object-fit: contain;
+    }
+
+    .offer-section {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+      gap: 30px;
+      align-items: center;
+      margin: 72px 0;
+      padding: clamp(30px, 5vw, 52px);
+      color: white;
+      background:
+        radial-gradient(circle at 100% 10%, rgba(255, 201, 91, .22), transparent 32%),
+        var(--navy);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .offer-section h2 {
+      color: white;
+    }
+
+    .offer-section p {
+      color: #d8eeee;
+    }
+
+    .offer-price {
+      padding: 28px;
+      color: var(--ink);
+      background: white;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .offer-price span {
+      display: block;
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .offer-price strong {
+      display: block;
+      margin: 4px 0;
+      color: var(--teal);
+      font-size: 2.25rem;
+      line-height: 1.15;
+    }
+
+    .offer-price del {
+      color: var(--muted);
+    }
+
+    .offer-price p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .trainer-section {
+      margin: 72px 0;
+      padding: clamp(30px, 5vw, 52px);
+      background:
+        linear-gradient(90deg, rgba(53, 174, 173, .11), transparent 48%),
+        white;
+      border: 1px solid var(--border);
+      border-left: 7px solid var(--aqua);
+      border-radius: 12px 22px 22px 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .trainer-links-intro {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .trainer-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .trainer-link {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      padding: 18px;
+      color: white;
+      background: var(--teal);
+      border-radius: 12px;
+      text-decoration: none;
+    }
+
+    .trainer-link--fuse {
+      background: #773f87;
+    }
+
+    .trainer-link-kicker,
+    .trainer-link-description {
+      grid-column: 1;
+      font-size: .8rem;
+      opacity: .83;
+    }
+
+    .trainer-link strong {
+      grid-column: 1;
+      font-size: 1.08rem;
+    }
+
+    .trainer-link-arrow {
+      grid-column: 2;
+      grid-row: 1 / span 3;
+      align-self: center;
+      font-size: 1.4rem;
+    }
+
+    .faq {
+      margin: 72px 0;
+    }
+
+    .faq details {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .faq details + details {
+      margin-top: 10px;
+    }
+
+    .faq summary {
+      position: relative;
+      padding: 18px 48px 18px 20px;
+      cursor: pointer;
+      color: var(--ink);
+      font-weight: 800;
+      list-style: none;
+    }
+
+    .faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq summary::after {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      color: var(--orange);
+      content: "+";
+      font-size: 1.45rem;
+      transform: translateY(-50%);
+    }
+
+    .faq details[open] summary::after {
+      content: "−";
+    }
+
+    .faq details p {
+      margin: 0;
+      padding: 0 20px 20px;
+      color: var(--muted);
+    }
+
+    .social-proof {
+      margin: 72px 0;
+      overflow: hidden;
+    }
+
+    .logo-marquee {
+      margin: 28px 0 38px;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 7%, black 93%, transparent);
+      mask-image: linear-gradient(90deg, transparent, black 7%, black 93%, transparent);
+    }
+
+    .logo-track {
+      display: flex;
+      width: max-content;
+      animation: brand-scroll 48s linear infinite;
+    }
+
+    .logo-marquee:hover .logo-track,
+    .logo-marquee:focus .logo-track,
+    .logo-marquee:focus-within .logo-track {
+      animation-play-state: paused;
+    }
+
+    .logo-set {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding-right: 30px;
+    }
+
+    .logo-set img {
+      width: 118px;
+      height: 64px;
+      object-fit: contain;
+      filter: grayscale(1);
+      opacity: .72;
+    }
+
+    @keyframes brand-scroll {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .rave-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .rave-card {
+      padding: 22px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 7px 22px rgba(9, 41, 50, .06);
+    }
+
+    .rave-person {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 13px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .rave-person img {
+      width: 58px;
+      height: 58px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .rave-person strong,
+    .rave-person span {
+      display: block;
+    }
+
+    .rave-person span {
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .rave-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .raves-link {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .raves-link a {
+      font-weight: 800;
+    }
+
+    .cta-band {
+      margin: 72px 0 10px;
+      padding: clamp(32px, 6vw, 58px);
+      color: white;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(255, 201, 91, .24), transparent 35%),
+        var(--teal);
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-band h2 {
+      color: white;
+    }
+
+    .cta-band p {
+      color: #e8f8f8;
+      font-size: 1.05rem;
+    }
+
+    @media (max-width: 850px) {
+      .promise-strip,
+      .audience-roles,
+      .rave-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .summary,
+      .audience-heading,
+      .section-heading,
+      .science-section,
+      .story-section,
+      .offer-section {
+        grid-template-columns: 1fr;
+      }
+
+      .stance-map {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+        gap: 8px 26px;
+      }
+
+      .stance-center {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        margin-bottom: 20px;
+      }
+
+      .stance-left,
+      .stance-right {
+        padding-right: 0;
+        padding-left: 0;
+        text-align: left;
+      }
+
+      .stance-left::after,
+      .stance-right::before {
+        display: none;
+      }
+
+      .stance-left.stance-1 {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .stance-right.stance-1 {
+        grid-column: 2;
+        grid-row: 2;
+      }
+
+      .stance-left.stance-2 {
+        grid-column: 1;
+        grid-row: 3;
+      }
+
+      .stance-right.stance-2 {
+        grid-column: 2;
+        grid-row: 3;
+      }
+
+      .stance-left.stance-3 {
+        grid-column: 1;
+        grid-row: 4;
+      }
+
+      .stance-right.stance-3 {
+        grid-column: 2;
+        grid-row: 4;
+      }
+
+      .studio-card {
+        grid-template-columns: 68px minmax(190px, .85fr) minmax(0, 1.15fr);
+      }
+
+      .benefit-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .included-ledger {
+        grid-template-columns: 1fr;
+      }
+
+      .included-group + .included-group {
+        border-top: 1px solid var(--border);
+        border-left: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 14px;
+      }
+
+      .hero,
+      .audience-section,
+      .offer-section,
+      .cta-band {
+        border-radius: 14px;
+      }
+
+      .featured-quote {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .featured-quote img {
+        margin: 0 auto;
+      }
+
+      .benefit-strip,
+      .trainer-links {
+        grid-template-columns: 1fr;
+      }
+
+      .stance-center {
+        width: 190px;
+        height: 190px;
+        min-height: 190px;
+      }
+
+      .stance-map {
+        grid-template-columns: 1fr;
+      }
+
+      .stance-center,
+      .stance-left.stance-1,
+      .stance-right.stance-1,
+      .stance-left.stance-2,
+      .stance-right.stance-2,
+      .stance-left.stance-3,
+      .stance-right.stance-3 {
+        grid-column: 1;
+      }
+
+      .stance-center {
+        grid-row: 1;
+      }
+
+      .stance-left.stance-1 {
+        grid-row: 2;
+      }
+
+      .stance-right.stance-1 {
+        grid-row: 3;
+      }
+
+      .stance-left.stance-2 {
+        grid-row: 4;
+      }
+
+      .stance-right.stance-2 {
+        grid-row: 5;
+      }
+
+      .stance-left.stance-3 {
+        grid-row: 6;
+      }
+
+      .stance-right.stance-3 {
+        grid-row: 7;
+      }
+
+      .studio-card {
+        grid-template-columns: 56px 1fr;
+        gap: 0 16px;
+      }
+
+      .studio-card::before {
+        grid-column: 1;
+        grid-row: 1 / span 3;
+        font-size: 2.1rem;
+      }
+
+      .studio-tag {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .studio-card h3 {
+        grid-column: 2;
+        grid-row: 2;
+      }
+
+      .studio-card p {
+        grid-column: 2;
+        grid-row: 3;
+        margin-top: 10px;
+      }
+
+      .benefit-card {
+        min-height: 205px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .logo-marquee {
+        overflow-x: auto;
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+
+      .logo-track {
+        animation: none;
+      }
+
+      .logo-set[aria-hidden="true"] {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <section class="hero" aria-labelledby="course-title">
+    <div class="hero-media">
+      <img src="images/BrockArgue-csm-header-v3.png" alt="Brock Argue, Certified Scrum Trainer, with CST, CEC, CTC, ICF-PCC, ORSC, ICP-ACC, SPC, VeDA, TBR Practitioner, and TBR Certified Trainer credentials. Superheroes Academy: Practice. Reflect. Grow. Repeat.">
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">Superheroes Academy | Live-online Scrum Alliance microcredential</p>
+      <h1 id="course-title">Apply Agile Coaching Skills for Impact with Brock Argue</h1>
+      <p class="lede">Move beyond knowing coaching techniques. Practise Advising, Leading, Teaching, Mentoring, Facilitating, and Coaching—all anchored in a coaching mindset—when real people and real work make the answer less obvious.</p>
+      <a class="cta" href="https://www.superheroes.academy/store/p/agile-coaching-skills" target="_blank" rel="noopener">Explore dates and register</a>
+    </div>
+  </section>
+
+  <div id="dateInfoContainer" class="date-info" hidden></div>
+
+  <section class="promise-strip" aria-label="Course promises">
+    <article class="promise">
+      <strong>100% money-back guarantee</strong>
+      <p>Choose your course with confidence. Your purchase is refundable before your Scrum Alliance credential is granted.</p>
+    </article>
+    <article class="promise">
+      <strong>Credential included</strong>
+      <p>Complete the live experience and receive the Scrum Alliance Apply Agile Coaching Skills for Impact microcredential.</p>
+    </article>
+    <article class="promise">
+      <strong>Four hours of active practice</strong>
+      <p>Expect coaching conversations, feedback, reflection, and application—not a slide marathon.</p>
+    </article>
+  </section>
+
+  <section class="summary" aria-labelledby="summary-heading">
+    <div class="summary-copy">
+      <p class="section-overline">Course summary</p>
+      <h2 id="summary-heading">Turn good intentions into skillful intervention</h2>
+      <p>Agile coaches rarely struggle because they lack advice. The harder challenge is recognizing what a person, team, or situation needs—and responding without taking away ownership.</p>
+      <p>In this practical four-hour course, you will explore six complementary coaching stances—Advising, Leading, Teaching, Mentoring, Facilitating, and Coaching—and practise moving between them intentionally. You will work with realistic scenarios, test language that builds clarity and trust, and leave with a personal action plan for applying the skills in your own context.</p>
+      <div class="summary-promise">
+        <strong>Brock's promise:</strong> You will not spend four hours talking about coaching. You will coach, facilitate, advise, teach, mentor, lead, reflect, and try again—with useful feedback along the way.
+      </div>
+    </div>
+    <div class="summary-badge">
+      <img src="images/microcredentials/apply-agile-coaching-skills-for-impact.png" alt="Scrum Alliance Apply Agile Coaching Skills for Impact microcredential badge">
+    </div>
+  </section>
+
+  <section class="featured-quote" aria-label="Student testimonial from Lee Cooke">
+    <img src="images/testimonials/Lee_Cooke_Testimonial.png" alt="Lee Cooke">
+    <blockquote>
+      <p>“Superheroes Academy is brilliant. The way they structure their course's timeline, the content, discussions and knowledge of trainers is super impressive. They make you feel part of the course and part of each other's learning journey.”</p>
+      <cite>Lee Cooke · Agile Coach</cite>
+    </blockquote>
+  </section>
+
+  <section class="audience-section" aria-labelledby="audience-heading">
+    <div class="audience-heading">
+      <div>
+        <p class="section-overline">Built for human systems</p>
+        <h2 id="audience-heading">Who This Course Is For</h2>
+      </div>
+      <p>Bring a real situation you want to navigate more skillfully. Leave with a broader range and a clearer sense of when to use it.</p>
+    </div>
+    <div class="audience-roles">
+      <article class="audience-role">
+        <span class="audience-number" aria-hidden="true">01</span>
+        <h3>Scrum Masters and Agile Coaches</h3>
+        <p>Strengthen the coaching, facilitation, teaching, mentoring, and leadership skills behind effective service to teams.</p>
+      </article>
+      <article class="audience-role">
+        <span class="audience-number" aria-hidden="true">02</span>
+        <h3>Leaders and people managers</h3>
+        <p>Replace reflexive problem-solving with conversations that build ownership, insight, and capability.</p>
+      </article>
+      <article class="audience-role">
+        <span class="audience-number" aria-hidden="true">03</span>
+        <h3>Facilitators and change agents</h3>
+        <p>Expand your range when groups need alignment, learning, feedback, direction, or space to think.</p>
+      </article>
+    </div>
+    <p class="audience-note">No certification prerequisite. Familiarity with Agile or Scrum is helpful.</p>
+  </section>
+
+  <section class="stances-section" aria-labelledby="stances-heading">
+    <div class="section-heading">
+      <div>
+        <p class="section-overline">Your coaching range</p>
+        <h2 id="stances-heading">Six Stances. One Coaching Mindset.</h2>
+      </div>
+      <p>The Agile Coaching Growth Wheel helps you notice your default stance, expand your range, and choose deliberately while treating people as resourceful and capable.</p>
+    </div>
+    <div class="stance-map">
+      <article class="stance stance-left stance-1">
+        <h3>Advise</h3>
+        <p>Ask permission, offer multiple options without attachment, and hand the final choice back.</p>
+      </article>
+      <article class="stance stance-left stance-2">
+        <h3>Lead</h3>
+        <p>Balance managing and leading as an ongoing polarity, and model the change you hope to inspire.</p>
+      </article>
+      <article class="stance stance-left stance-3">
+        <h3>Teach</h3>
+        <p>Design active learning with the 4 C's while treating learners as capable partners in meaning-making.</p>
+      </article>
+      <article class="stance stance-center">
+        <h3>Anchor every stance in a coaching mindset</h3>
+        <p>People are resourceful. Preserve their choices, make your stance clear, and model the change you want to see.</p>
+      </article>
+      <article class="stance stance-right stance-1">
+        <h3>Mentor</h3>
+        <p>Ask permission, share one short experience as a possibility, and let the learner decide what is useful.</p>
+      </article>
+      <article class="stance stance-right stance-2">
+        <h3>Facilitate</h3>
+        <p>Guide groups through divergence, the groan zone, and convergence while helping every voice be heard.</p>
+      </article>
+      <article class="stance stance-right stance-3">
+        <h3>Coach</h3>
+        <p>Listen, reflect, and ask open questions that help someone think for themselves and choose a next step.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="studio-section" aria-labelledby="studio-heading">
+    <div class="section-heading">
+      <div>
+        <p class="section-overline">Where capability becomes practice</p>
+        <h2 id="studio-heading">Your Agile Coaching Practice Studio</h2>
+      </div>
+      <p>Mural becomes a shared canvas for visual thinking, sticky-note exploration, and group sensemaking, while breakout rooms create space for focused practice and peer dialogue.</p>
+    </div>
+    <div class="studio-grid">
+      <article class="studio-card">
+        <span class="studio-tag">Notice your range</span>
+        <h3>Agile Coaching Growth Wheel</h3>
+        <p>Move through the stances in a visual Mural map, identify what comes naturally, and choose one competency you want to strengthen.</p>
+      </article>
+      <article class="studio-card">
+        <span class="studio-tag">Advise</span>
+        <h3>Troika Consulting</h3>
+        <p>Bring a real challenge, listen while peers explore it, and decide what—if anything—you want to take forward.</p>
+      </article>
+      <article class="studio-card">
+        <span class="studio-tag">Lead</span>
+        <h3>Managing AND Leading Polarity Map</h3>
+        <p>Map the upsides and downsides of both poles, then learn to recognize the early signals that tell you when to shift.</p>
+      </article>
+      <article class="studio-card">
+        <span class="studio-tag">Teach + facilitate</span>
+        <h3>4 C's and the Diamond of Participation</h3>
+        <p>Redesign a dull lesson, explore divergence and convergence, and practise facilitative listening for stronger group ownership.</p>
+      </article>
+      <article class="studio-card">
+        <span class="studio-tag">Coach</span>
+        <h3>GROW Coaching Triads</h3>
+        <p>Coach a real situation, experience being coached, and observe the conversation for powerful questions, progress, and shifts in energy.</p>
+      </article>
+      <article class="studio-card">
+        <span class="studio-tag">Integrate</span>
+        <h3>Real-World Coaching Dilemmas</h3>
+        <p>Combine multiple stances to address a challenging organizational scenario, then receive observations and insight from peers.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="modules-section" aria-labelledby="modules-heading">
+    <div class="section-heading">
+      <div>
+        <p class="section-overline">Four connected lessons</p>
+        <h2 id="modules-heading">From Toolkit to Real-World Action</h2>
+      </div>
+      <p>Each lesson builds your range, creates deliberate practice, and connects the learning to a challenge you can act on immediately.</p>
+    </div>
+    <div class="module-rail">
+      <article class="module">
+        <div class="module-dot" aria-hidden="true">1</div>
+        <div class="module-content">
+          <h3>Assess Your Agile Coaching Toolkit</h3>
+          <p>Use the Agile Coaching Growth Wheel to explore the difference between skill and competency, identify your natural stances, and choose an area for growth.</p>
+        </div>
+      </article>
+      <article class="module">
+        <div class="module-dot" aria-hidden="true">2</div>
+        <div class="module-content">
+          <h3>Agile Coaching Skills Practice</h3>
+          <p>Develop fluency across Advising, Leading, Teaching, Mentoring, Facilitating, and Coaching—each anchored in a coaching mindset—and use the Superheroes Support Model to balance them.</p>
+        </div>
+      </article>
+      <article class="module">
+        <div class="module-dot" aria-hidden="true">3</div>
+        <div class="module-content">
+          <h3>Coaching Strategies in Action</h3>
+          <p>Draw on your experience and multiple coaching stances to address a realistic dilemma, then refine your approach through peer and facilitator feedback.</p>
+        </div>
+      </article>
+      <article class="module">
+        <div class="module-dot" aria-hidden="true">4</div>
+        <div class="module-content">
+          <h3>Next Steps: Applying Your Learning</h3>
+          <p>Reflect on the course, select a meaningful action, and build a practical plan with specific steps, support, timing, and a success measure.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="included-section" aria-labelledby="included-heading">
+    <div class="section-heading">
+      <div>
+        <p class="section-overline">More than a badge</p>
+        <h2 id="included-heading">What Is Included</h2>
+      </div>
+      <p>Your credential, resources, practice, and professional community are built into the experience.</p>
+    </div>
+    <div class="included-ledger">
+      <div class="included-group">
+        <h3>Credential and learning</h3>
+        <ul class="included-list">
+          <li>Four-hour live-online course</li>
+          <li>Scrum Alliance Apply Agile Coaching Skills for Impact microcredential</li>
+          <li>Digital participant guide with notes, reflections, and practice prompts</li>
+          <li>Real-time coaching practice and strengths-based feedback</li>
+        </ul>
+      </div>
+      <div class="included-group">
+        <h3>Application and community</h3>
+        <ul class="included-list">
+          <li>Agile Coaching Growth Wheel and Superheroes Support Model</li>
+          <li>Facilitative listening tools and realistic coaching scenarios</li>
+          <li>Personal action plan for immediate application</li>
+          <li>Lifetime access to the Superheroes Academy Slack community</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="benefit-strip" aria-label="Course benefits. Hover or focus each item for details.">
+    <article class="benefit-card" tabindex="0">
+      <div class="benefit-front">
+        <img src="images/benefits/microcredential.svg" alt="">
+        <strong>Microcredential Included</strong>
+      </div>
+      <div class="benefit-back">
+        <p>Complete the approved course and receive the Scrum Alliance Apply Agile Coaching Skills for Impact microcredential.</p>
+      </div>
+    </article>
+    <article class="benefit-card" tabindex="0">
+      <div class="benefit-front">
+        <img src="images/benefits/guarantee.svg" alt="">
+        <strong>100% Money-Back Guarantee</strong>
+      </div>
+      <div class="benefit-back">
+        <p>Your purchase is refundable before your Scrum Alliance credential is granted. See the course policy for details.</p>
+      </div>
+    </article>
+    <article class="benefit-card" tabindex="0">
+      <div class="benefit-front">
+        <img src="images/benefits/certificationincluded.png" alt="">
+        <strong>No Exam or Hidden Fee</strong>
+      </div>
+      <div class="benefit-back">
+        <p>There is no exam. Your live course, credential fee, and included resources are covered by the course price.</p>
+      </div>
+    </article>
+    <article class="benefit-card" tabindex="0">
+      <div class="benefit-front">
+        <img src="images/benefits/noPrework.svg" alt="">
+        <strong>No Prerequisite</strong>
+      </div>
+      <div class="benefit-back">
+        <p>No certification is required. Bring curiosity and a real coaching or leadership situation you want to explore.</p>
+      </div>
+    </article>
+  </div>
+
+  <section class="science-section" aria-labelledby="science-heading">
+    <img src="images/whitepaper.png" alt="Experiential learning at Superheroes Academy">
+    <div>
+      <p class="section-label">Science-backed learning</p>
+      <h2 id="science-heading">Designed for Transfer, Not Just Recall</h2>
+      <p>Most training delivers facts and hopes they survive contact with the real world. Our courses use Co-Constructed Developmental Teaching Theory to help you connect experience, reflection, explanation, and application.</p>
+      <p>You will practise the skill, make sense of what happened, receive useful feedback, and try again—so the learning is easier to use when the next real conversation arrives.</p>
+      <p><a href="https://www.superheroes.academy/experiential-learning" target="_blank" rel="noopener"><strong>Explore our experiential learning approach</strong></a></p>
+    </div>
+  </section>
+
+  <section class="offer-section" aria-labelledby="offer-heading">
+    <div>
+      <p class="eyebrow">Premium bundle · Limited-time offer</p>
+      <h2 id="offer-heading">Everything You Need to Put the Skills to Work</h2>
+      <p>Your live microcredential course, credential fee, exclusive resources, community access, hands-on practice, and continued support are included.</p>
+      <a class="cta" href="https://www.superheroes.academy/store/p/agile-coaching-skills" target="_blank" rel="noopener">Choose your course date</a>
+    </div>
+    <div class="offer-price">
+      <span>Course investment</span>
+      <strong>$299 USD</strong>
+      <del>$349 USD</del>
+      <p>Checkout is charged as $408 CAD. Currency conversion may vary.</p>
+    </div>
+  </section>
+
+  <section class="trainer-section" aria-labelledby="trainer-heading">
+    <p class="section-overline">Experienced. Human. Practical.</p>
+    <h2 id="trainer-heading">Meet Your Trainer</h2>
+    <p><strong>Brock Argue</strong> is a Scrum Alliance Certified Scrum Trainer, Certified Enterprise Coach, and Certified Team Coach, as well as an ICF Professional Certified Coach and ORSC-trained systems coach. He brings more than two decades of experience in software development, leadership, facilitation, training, and organizational coaching.</p>
+    <p>Over the past two decades, Brock has supported agile journeys at organizations including the Federal Reserve Bank of New York, WestJet Airlines, ADP, Suncor Energy, Benevity, and the Calgary Public Library. As Co-founder of Superheroes Academy, he brings a grounded, human-centered approach to coaching, mentoring, and professional learning.</p>
+    <p>His style is warm, direct, and deeply practical. Brock cares about the work behind the buzzwords: helping people notice what is happening, tell the truth skillfully, learn from experience, and make one better choice at a time.</p>
+    <p class="trainer-links-intro">Explore Brock's work</p>
+    <div class="trainer-links" aria-label="Organizations Brock works with">
+      <a class="trainer-link" href="https://superheroes.academy/" target="_blank" rel="noopener">
+        <span class="trainer-link-kicker">Agile learning</span>
+        <strong>Superheroes Academy</strong>
+        <span class="trainer-link-description">Training, mentoring, and coaching</span>
+        <span class="trainer-link-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="trainer-link trainer-link--fuse" href="https://www.fusefacilitation.ca/" target="_blank" rel="noopener">
+        <span class="trainer-link-kicker">Facilitation</span>
+        <strong>FUSE Facilitation</strong>
+        <span class="trainer-link-description">Facilitation and collaborative change</span>
+        <span class="trainer-link-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="story-section" aria-labelledby="story-heading">
+    <img src="images/superheroes-academy-story.svg" alt="Superheroes Academy community illustration">
+    <div>
+      <p class="section-label">Our Story</p>
+      <h2 id="story-heading">The Superheroes Academy Story</h2>
+      <p>Superheroes Academy was founded in 2016 to level up Agile professionals worldwide. We have trained students in more than 100 countries and applied Scrum in every context imaginable.</p>
+      <p><strong>Once a Superhero, Always a Superhero!®</strong> Our approach prioritizes outcomes and partnership, not transactions. We go the extra mile and work with you for as long as it takes to meet your goals.</p>
+    </div>
+  </section>
+
+  <section class="faq" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Frequently Asked Questions</h2>
+    <details>
+      <summary>Is there an exam or an additional credential fee?</summary>
+      <p>No. There is no exam, and the Scrum Alliance microcredential fee is included in your course price.</p>
+    </details>
+    <details>
+      <summary>Do I need an existing Scrum Alliance certification?</summary>
+      <p>No certification is required. Familiarity with Agile or Scrum is helpful, and the course is accessible to Scrum Masters, coaches, leaders, facilitators, and change agents from many backgrounds.</p>
+    </details>
+    <details>
+      <summary>What is the course format?</summary>
+      <p>This is a four-hour, live-online course delivered through Zoom and Mural. Expect visual collaboration, focused teaching, breakout practice, coaching conversations, realistic scenarios, structured reflection, and feedback—not a slide marathon.</p>
+    </details>
+    <details>
+      <summary>How big are the classes?</summary>
+      <p>Classes are intentionally small so there is room for personal attention, meaningful practice, feedback, and questions about applying the skills in your context.</p>
+    </details>
+    <details>
+      <summary>What materials are included?</summary>
+      <p>You receive a digital participant guide, the Agile Coaching Growth Wheel and Superheroes Support Model, facilitative listening tools, practical prompts, an action-planning template, and access to the Superheroes Academy Slack community.</p>
+    </details>
+    <details>
+      <summary>When will I receive my microcredential?</summary>
+      <p>After you successfully complete the live course, Superheroes Academy will submit your attendance to Scrum Alliance. Scrum Alliance will then add the microcredential to your profile.</p>
+    </details>
+    <details>
+      <summary>What support is available after the course?</summary>
+      <p>You retain access to your course resources and the Superheroes Academy Slack community, where you can continue learning with Agile professionals and trainers.</p>
+    </details>
+    <details>
+      <summary>What is the refund policy?</summary>
+      <p>We offer a 100% money-back guarantee before your Scrum Alliance credential is granted. Once the credential has been issued, the course is considered completed and is no longer refundable.</p>
+    </details>
+    <details>
+      <summary>Can I reschedule or ask about a group discount?</summary>
+      <p>Yes. Contact <a href="mailto:info@superheroes.academy">info@superheroes.academy</a> to discuss rescheduling, team enrollment, group pricing, or accessibility needs.</p>
+    </details>
+    <details>
+      <summary>Can my employer receive a tax invoice?</summary>
+      <p>Yes. Contact <a href="mailto:info@superheroes.academy">info@superheroes.academy</a> if your organization needs an invoice or additional purchasing documentation.</p>
+    </details>
+  </section>
+
+  <section class="social-proof" aria-labelledby="brands-heading">
+    <h2 id="brands-heading">Superheroes Academy-trained experts fuel success at the world's top brands.</h2>
+    <div class="logo-marquee" tabindex="0" aria-label="Organizations our team and alumni have worked with. Animation pauses on hover or keyboard focus.">
+      <div class="logo-track">
+        <div class="logo-set">
+          <img src="images/logos/Picture1.png-1.png" alt="+GF+">
+          <img src="images/logos/Picture1.png-2.png" alt="ADP">
+          <img src="images/logos/Picture1.png-3.png" alt="LAVVI">
+          <img src="images/logos/Picture1.png-4.png" alt="Federal Reserve Bank of New York">
+          <img src="images/logos/Picture1.png-5.png" alt="Calgary Public Library">
+          <img src="images/logos/Picture1.png-6.png" alt="Nude Solutions">
+          <img src="images/logos/Picture1.png-7.png" alt="Alectra">
+          <img src="images/logos/Picture1.png-8.png" alt="Drillinginfo">
+          <img src="images/logos/Picture1.png-9.png" alt="Escher Group">
+          <img src="images/logos/Picture1.png-10.png" alt="Oildex">
+          <img src="images/logos/Picture1.png-11.png" alt="GBS Data Corporation">
+          <img src="images/logos/Picture1.png-12.png" alt="Prairie Lithium">
+          <img src="images/logos/Picture1.png-13.png" alt="NAIT">
+          <img src="images/logos/Picture1.png-14.png" alt="Nuvei">
+          <img src="images/logos/Picture1.png-15.png" alt="Circle Cardiovascular Imaging">
+          <img src="images/logos/Picture1.png-16.png" alt="Credivera">
+          <img src="images/logos/Picture1.png-17.png" alt="Benevity">
+        </div>
+        <div class="logo-set" aria-hidden="true">
+          <img src="images/logos/Picture1.png-1.png" alt="">
+          <img src="images/logos/Picture1.png-2.png" alt="">
+          <img src="images/logos/Picture1.png-3.png" alt="">
+          <img src="images/logos/Picture1.png-4.png" alt="">
+          <img src="images/logos/Picture1.png-5.png" alt="">
+          <img src="images/logos/Picture1.png-6.png" alt="">
+          <img src="images/logos/Picture1.png-7.png" alt="">
+          <img src="images/logos/Picture1.png-8.png" alt="">
+          <img src="images/logos/Picture1.png-9.png" alt="">
+          <img src="images/logos/Picture1.png-10.png" alt="">
+          <img src="images/logos/Picture1.png-11.png" alt="">
+          <img src="images/logos/Picture1.png-12.png" alt="">
+          <img src="images/logos/Picture1.png-13.png" alt="">
+          <img src="images/logos/Picture1.png-14.png" alt="">
+          <img src="images/logos/Picture1.png-15.png" alt="">
+          <img src="images/logos/Picture1.png-16.png" alt="">
+          <img src="images/logos/Picture1.png-17.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="rave-grid" aria-label="Student raves">
+      <article class="rave-card">
+        <div class="rave-person">
+          <img src="images/testimonials/Patrick_Isaac_Tesimonial.png" alt="Patrick Isaac">
+          <div>
+            <strong>Patrick Isaac</strong>
+            <span>Scrum Master</span>
+          </div>
+        </div>
+        <p>“Superheroes Academy is the go-to place if you want instructors who not only care about what you learn, but how you learn it. I've taken three of their courses and I cannot wait to take a fourth!”</p>
+      </article>
+      <article class="rave-card">
+        <div class="rave-person">
+          <img src="images/testimonials/MydeenYussoufTestimonial.png" alt="Mohamed Yussouf">
+          <div>
+            <strong>Mohamed Yussouf</strong>
+            <span>Scrum Master</span>
+          </div>
+        </div>
+        <p>“Superheroes Academy trainers make complex concepts engaging, inspiring and easy to grasp. The learning environment is fun and collaborative. This is not just a course; it's a transformative experience!”</p>
+      </article>
+      <article class="rave-card">
+        <div class="rave-person">
+          <img src="images/testimonials/Hollie-AnneGaleTestimonial.png" alt="Hollie-Anne Gale">
+          <div>
+            <strong>Hollie-Anne Gale</strong>
+            <span>Agile Transformation Lead</span>
+          </div>
+        </div>
+        <p>“Hands down this has been my most memorable and impactful training experience. Every session was incredibly easy to put straight into practice. I love the Superheroes approach!”</p>
+      </article>
+    </div>
+    <p class="raves-link"><a href="https://www.superheroes.academy/raves" target="_blank" rel="noopener">Read more student raves</a></p>
+  </section>
+
+  <section class="cta-band" aria-labelledby="cta-heading">
+    <h2 id="cta-heading">Ready to expand your coaching range?</h2>
+    <p>Choose the course date that fits and join Brock for four focused hours of practice, reflection, and useful feedback.</p>
+    <a class="cta" href="https://www.superheroes.academy/store/p/agile-coaching-skills" target="_blank" rel="noopener">Explore Agile Coaching Skills registration</a>
+  </section>
+</main>
+</body>
+</html>
